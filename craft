@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const App = require('@supercharge/framework/application')
+
+/**
+ * Kick off the command line helper called "craft". Craft commands
+ * can scaffold features or project files. The CLI command will
+ * execute in the terminal and terminate itself once finished.
+ */
+new App()
+  .fromAppRoot(__dirname)
+  .consoleForLife()

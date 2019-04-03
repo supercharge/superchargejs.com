@@ -1,0 +1,36 @@
+{
+  "name": "supercharge",
+  "description": "Supercharge application boilerplate",
+  "version": "1.0.0-beta0",
+  "dependencies": {
+    "@sindresorhus/slugify": "~0.8.0",
+    "@supercharge/framework": "1.0.0-beta0.1",
+    "boom": "~7.3.0",
+    "hapi-dev-errors": "~3.2.3",
+    "joi": "~14.3.1",
+    "marked": "~0.6.1",
+    "validator": "~10.11.0"
+  },
+  "devDependencies": {
+    "ava": "~1.2.1",
+    "cross-env": "~5.2.0",
+    "eslint": "~5.14.0",
+    "eslint-config-standard": "~12.0.0",
+    "eslint-plugin-import": "~2.16.0",
+    "eslint-plugin-node": "~8.0.1",
+    "eslint-plugin-promise": "~4.0.1",
+    "eslint-plugin-standard": "~4.0.0",
+    "nyc": "~13.3.0"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "coverage": "cross-env NODE_ENV=testing nyc ava",
+    "lint": "eslint . --ext .js",
+    "test": "cross-env NODE_ENV=testing ava",
+    "test-single": "cross-env NODE_ENV=testing ava --match"
+  }
+}

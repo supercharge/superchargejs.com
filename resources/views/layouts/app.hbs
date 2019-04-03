@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{> layout/head}}
+
+    {{#stack 'css'}}
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/prism.css">
+    {{/stack}}
+</head>
+
+<body class="bg-pattern">
+
+    {{> header }}
+
+    <div class="container mb-5" role="main">
+        <div class="row">
+            {{{ content }}}
+        </div>
+    </div>
+
+    {{> footer }}
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Supercharge is a Node.js framework and starter kit to make your developer life enjoyable.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{title}}</title>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@marcuspoehls">
+    <meta name="twitter:title" content="Supercharge Node.js Framework">
+    <meta name="twitter:creator" content="@marcuspoehls">
+    {{!<meta name="twitter:image" content="http://res.cloudinary.com/dchiba2d6/image/upload/v1525818714/advanced-vue/advanced-vue-learn-card_2x.png"> }}
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    {{> header }}
+
+    {{{ content }}}
+
+    {{> footer }}
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $form = $('#mc-embedded-subscribe-form')
+        if ($form.length > 0) {
+            $('button').bind('click', function (event) {
+                if (event) event.preventDefault()
+                register($form)
+            })
+        }
+    })
+
+    function register($form) {
+        $('#mc-embedded-subscribe').val('Subscribing …');
+        $.ajax({
+            type: $form.attr('method'),
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            cache: false,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            error: function (ignoreErr) { },
+            success: function (data) {
+                if (data.result === 'success') {
+                    $('#mce-EMAIL').css('borderColor', '#39C38D')
+                    $('#subscribe-result').css('color', '#39C38D')
+                    $('#subscribe-result').html('<p>Thank you for subscribing.<br>A confirmation email is on its way to your inbox :) </p>')
+                    $('#mce-EMAIL').val('')
+                    return
+                }
+
+                $('#mce-EMAIL').css('borderColor', '#F3554F')
+                $('#subscribe-result').css('color', '#F3554F')
+                $('#subscribe-result').html('<p>' + data.msg.substring(4) + '</p>')
+            }
+        })
+    };
+</script>
+
+<script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//piwik.futurestud.io/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '6']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    })();
+</script>
+
+</html>

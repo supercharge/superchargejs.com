@@ -1,0 +1,94 @@
+<section class="sidebar d-none d-md-block col-md-3 no-padding-right pb-5">
+  <div class="dropdown version-switch">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+      aria-expanded="true">
+      {{currentVersion}}
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+      {{#each versions}}
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="/docs/{{@key}}">{{this}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  {{#each index as |value title|}}
+    <h2 id="{{value.slug}}">{{title}}</h2>
+    <ul>
+      {{#each value.sections as |slug title|}}
+        <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px" {{/isEqual}}>
+          <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{/each}}
+</section>
+
+<div class="overlay"></div>
+
+<nav class="sidebar sidebar--mobile pb-5">
+  <a href="/">
+    <img src="/images/supercharge-text.svg" alt="Supercharge Node.js Framework" height="50" class="mb-5">
+  </a>
+
+  <div class="dropdown version-switch">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+      aria-expanded="true">
+      {{currentVersion}}
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+      {{#each versions}}
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="/docs/{{@key}}">{{this}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  {{#each index as |value title|}}
+    <h2 id="{{value.slug}}">{{title}}</h2>
+    <ul>
+      {{#each value.sections as |slug title|}}
+        <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px" {{/isEqual}}>
+          <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{/each}}
+</nav>
+
+<article class="docs col-md-7 mr-auto pb-5">
+  {{{docsContent}}}
+</article>
+
+<script>
+  let $toggler = document.getElementsByClassName('sidebar__toggler')
+  let $sidebar = document.getElementsByClassName('sidebar--mobile')[0]
+  let $overlay = document.getElementsByClassName('overlay')[0]
+  let $navbar = document.getElementsByClassName('navbar-collapse')[0]
+  let $body = document.getElementsByTagName("body")[0];
+
+  Array.from($toggler).forEach(e => {
+    e.addEventListener('click', openSidebar);
+  });
+
+  $overlay.addEventListener('click', closeSidebar)
+
+  function openSidebar() {
+    $body.style.overflow = 'hidden';
+    $sidebar.classList.add('sidebar--mobile-active')
+    $overlay.classList.add('overlay--active')
+  }
+
+  function closeSidebar() {
+    $body.style.overflow = 'auto';
+    $sidebar.classList.remove('sidebar--mobile-active')
+    $overlay.classList.remove('overlay--active')
+    $navbar.classList.remove('show')
+  }
+</script>
