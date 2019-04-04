@@ -4,25 +4,17 @@
 
         {{> logo }}
 
+        {{> nav/nav-center}}
+
         <button class="navbar-toggler sidebar__toggler" type="button" data-toggle="collapse"
             data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        {{!-- <div class="navbar-collapse collapse w-100" id="collapsingNavbar"> --}}
-        {{!-- <div class="navbar-nav mr-auto">
-                {{> nav/nav-left}}
-            </div> --}}
-
-        {{!-- <div class="navbar-nav ml-auto mr-auto justify-content-center"> --}}
-        {{> nav/nav-center}}
-        {{!-- </div> --}}
-
         <div class="col-md-2 collapse navbar-collapse justify-content-between" id="collapsingNavbar">
             {{> nav/nav-right}}
         </div>
-        {{!-- </div> --}}
 
     </div>
 </nav>
