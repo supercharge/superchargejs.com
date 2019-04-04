@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "supercharge-website",
+      "script": "./server.js",
+      "instances": 2,
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 2018
+      }
+    }
+  ]
+}
