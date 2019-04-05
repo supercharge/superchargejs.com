@@ -18,14 +18,14 @@ module.exports = [
     path: '/docs/{version}/{page?}',
     config: {
       handler: async (request, h) => {
-        const docs = new Documentation()
         const { version, page = 'installation' } = request.params
+        const docs = new Documentation({ version })
 
-        if (!docs.isValidVersion(version)) {
+        if (!docs.isValidVersion()) {
           return h.redirect(`/docs/${Config.get('docs.default')}/${version}`)
         }
 
-        const content = await docs.get(version, page)
+        const content = await docs.get(page)
 
         if (!content) {
           return h.notFound()

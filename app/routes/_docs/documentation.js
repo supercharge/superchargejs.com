@@ -6,33 +6,37 @@ const Helper = require('@supercharge/framework/helper')
 const Config = require('@supercharge/framework/config')
 
 class Documentation {
-  isValidVersion (version) {
-    return !!this.versions()[version]
+  constructor ({ version }) {
+    this.version = version
   }
 
-  async get (version, page) {
-    return this.readAndParseFile(version, `${page}.md`)
+  async get (page) {
+    return this.readAndParseFile(`${page}.md`)
   }
 
-  async getIndex (version) {
-    return require(Helper.resourcePath(`docs/${version}/navigation`))
+  async getIndex () {
+    return require(Helper.resourcePath(`docs/${this.version}/navigation`))
   }
 
-  async readAndParseFile (version, file) {
-    const path = Helper.resourcePath(`docs/${version}/${file}`)
+  async readAndParseFile (file) {
+    const path = Helper.resourcePath(`docs/${this.version}/${file}`)
 
     if (await Fs.exists(path)) {
       const content = await Fs.readFile(path)
 
-      return this.replaceLinks(version, Markdown(content))
+      return this.replaceLinks(Markdown(content))
     }
   }
 
-  replaceLinks (version, content) {
+  replaceLinks (content) {
     const pattern = encodeURIComponent('{{version}}')
     const regEx = new RegExp(pattern, 'g')
 
-    return content.replace(regEx, version)
+    return content.replace(regEx, this.version)
+  }
+
+  isValidVersion () {
+    return !!this.versions()[this.version]
   }
 
   versions () {
