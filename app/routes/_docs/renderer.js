@@ -1,6 +1,7 @@
 'use strict'
 
 const Markdown = require('marked')
+
 const renderer = new Markdown.Renderer()
 const alertRenderer = new Markdown.Renderer()
 
@@ -15,11 +16,11 @@ const icon = `
   </svg>
 `
 
-alertRenderer.heading = function(text, level) {
+alertRenderer.heading = function (text, level) {
   return `<h${level} class="alert-heading">${text}</h${level}>`
 }
 
-renderer.heading = function(text, level) {
+renderer.heading = function (text, level) {
   if (level === 1) {
     return `<h1>${text}</h1>`
   }
@@ -34,7 +35,7 @@ renderer.heading = function(text, level) {
           </h${level}>`
 }
 
-renderer.code = function(content, identifier, escaped) {
+renderer.code = function (content, identifier, escaped) {
   if (['info', 'success', 'warning'].includes(identifier)) {
     return `<div class="alert alert-${identifier} docs__alert row">
               <div class="col-1">
@@ -50,8 +51,6 @@ renderer.code = function(content, identifier, escaped) {
   return new Markdown.Renderer().code(content, identifier, escaped)
 }
 
-Markdown.setOptions({
-  renderer
-})
+Markdown.setOptions({ renderer })
 
 module.exports = Markdown
