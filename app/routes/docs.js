@@ -28,7 +28,7 @@ module.exports = [
         const content = await docs.get(version, page)
 
         if (!content) {
-          return h.view('errors/404').code(404)
+          return h.notFound()
         }
 
         const title = `${_.startCase(page).replace('-', ' ') || 'Installation'} — Supercharge`
