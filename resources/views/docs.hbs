@@ -7,9 +7,9 @@
     </button>
 
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-      {{#each versions}}
+      {{#each versions as |version name|}}
         <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="/docs/{{@key}}">{{this}}</a>
+          <a role="menuitem" tabindex="-1" href="/docs/{{version}}">{{name}}</a>
         </li>
       {{/each}}
     </ul>
@@ -42,9 +42,9 @@
     </button>
 
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-      {{#each versions}}
+      {{#each versions as |version name|}}
         <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="/docs/{{@key}}">{{this}}</a>
+          <a role="menuitem" tabindex="-1" href="/docs/{{version}}">{{name}}</a>
         </li>
       {{/each}}
     </ul>
@@ -62,33 +62,35 @@
   {{/each}}
 </nav>
 
-<article class="docs col-md-7 mr-auto pb-5">
+<article class="docs col-md-9 col-lg-8 col-xl-7 mr-auto pb-5">
   {{{docsContent}}}
 </article>
 
-<script>
-  let $toggler = document.getElementsByClassName('sidebar__toggler')
-  let $sidebar = document.getElementsByClassName('sidebar--mobile')[0]
-  let $overlay = document.getElementsByClassName('overlay')[0]
-  let $navbar = document.getElementsByClassName('navbar-collapse')[0]
-  let $body = document.getElementsByTagName("body")[0];
+{{#append 'scripts'}}
+  <script>
+    let $toggler = document.getElementsByClassName('sidebar__toggler')
+    let $sidebar = document.getElementsByClassName('sidebar--mobile')[0]
+    let $overlay = document.getElementsByClassName('overlay')[0]
+    let $navbar = document.getElementsByClassName('navbar-collapse')[0]
+    let $body = document.getElementsByTagName("body")[0];
 
-  Array.from($toggler).forEach(e => {
-    e.addEventListener('click', openSidebar);
-  });
+    Array.from($toggler).forEach(e => {
+      e.addEventListener('click', openSidebar);
+    });
 
-  $overlay.addEventListener('click', closeSidebar)
+    $overlay.addEventListener('click', closeSidebar)
 
-  function openSidebar() {
-    $body.style.overflow = 'hidden';
-    $sidebar.classList.add('sidebar--mobile-active')
-    $overlay.classList.add('overlay--active')
-  }
+    function openSidebar() {
+      $body.style.overflow = 'hidden';
+      $sidebar.classList.add('sidebar--mobile-active')
+      $overlay.classList.add('overlay--active')
+    }
 
-  function closeSidebar() {
-    $body.style.overflow = 'auto';
-    $sidebar.classList.remove('sidebar--mobile-active')
-    $overlay.classList.remove('overlay--active')
-    $navbar.classList.remove('show')
-  }
-</script>
+    function closeSidebar() {
+      $body.style.overflow = 'auto';
+      $sidebar.classList.remove('sidebar--mobile-active')
+      $overlay.classList.remove('overlay--active')
+      $navbar.classList.remove('show')
+    }
+  </script>
+{{/append}}
