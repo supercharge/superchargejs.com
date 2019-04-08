@@ -32,44 +32,6 @@
 </body>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        var $form = $('#mc-embedded-subscribe-form')
-        if ($form.length > 0) {
-            $('button').bind('click', function (event) {
-                if (event) event.preventDefault()
-                register($form)
-            })
-        }
-    })
-
-    function register($form) {
-        $('#mc-embedded-subscribe').val('Subscribing …');
-        $.ajax({
-            type: $form.attr('method'),
-            url: $form.attr('action'),
-            data: $form.serialize(),
-            cache: false,
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            error: function (ignoreErr) { },
-            success: function (data) {
-                if (data.result === 'success') {
-                    $('#mce-EMAIL').css('borderColor', '#39C38D')
-                    $('#subscribe-result').css('color', '#39C38D')
-                    $('#subscribe-result').html('<p>Thank you for subscribing.<br>A confirmation email is on its way to your inbox :) </p>')
-                    $('#mce-EMAIL').val('')
-                    return
-                }
-
-                $('#mce-EMAIL').css('borderColor', '#F3554F')
-                $('#subscribe-result').css('color', '#F3554F')
-                $('#subscribe-result').html('<p>' + data.msg.substring(4) + '</p>')
-            }
-        })
-    };
-</script>
-
-<script type="text/javascript">
     var _paq = _paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['trackPageView']);
