@@ -9,7 +9,9 @@
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
       {{#each versions as |name version|}}
         <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="/docs/{{version}}">{{name}}</a>
+          <a role="menuitem" tabindex="-1" href="/docs/{{version}}/{{../currentPage}}">
+            {{name}}
+          </a>
         </li>
       {{/each}}
     </ul>
