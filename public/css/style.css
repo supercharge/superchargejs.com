@@ -252,8 +252,6 @@ a.btn-primary, .btn-primary {
 
 .docs img[src^='/images/docs'] {
   background: hsl(200, 23%, 96%);
-  border: 1px solid hsl(200, 23%, 92%);
-  max-width: 100%;
   padding: 32px;
 }
 
@@ -277,6 +275,11 @@ a.btn-primary, .btn-primary {
 
 .docs a {
   font-weight: 600;
+}
+
+.docs img {
+  border: 1px solid hsl(200, 23%, 92%);
+  max-width: 100%;
 }
 
 .docs__heading a {
