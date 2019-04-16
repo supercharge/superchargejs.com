@@ -320,6 +320,10 @@ a.btn-primary, .btn-primary {
   padding: .75rem 1rem;
 }
 
+.docs__alert img {
+  border: none;
+}
+
 .docs__alert .col {
   padding-left: 0;
 }
