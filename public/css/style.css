@@ -352,6 +352,11 @@ a.btn-primary, .btn-primary {
   text-shadow: none;
 }
 
+.alert-info a code {
+  color: #DD4A68;
+  font-weight: normal;
+}
+
 .alert-info a:hover {
   color: hsl(200, 23%, 92%);
 }
