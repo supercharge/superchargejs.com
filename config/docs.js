@@ -11,7 +11,7 @@ module.exports = {
    * redirects requests to “/docs” to “/docs/{default}”.
    *
    */
-  default: '1.0-beta0',
+  default: '1.0-beta1',
 
   /**
    * --------------------------------------------------------------------------
@@ -25,6 +25,7 @@ module.exports = {
    */
   versions: {
     master: 'Master',
-    '1.0-beta0': '1.0-beta0'
+    '1.0-beta0': '1.0-beta0',
+    '1.0-beta1': '1.0-beta1'
   }
 }
