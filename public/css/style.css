@@ -282,6 +282,10 @@ a.btn-primary, .btn-primary {
   max-width: 100%;
 }
 
+.docs table {
+  font-size: 14px;
+}
+
 .docs__heading a {
   color: #3AA7DF;
   float: left;

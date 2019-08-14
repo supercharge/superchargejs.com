@@ -51,6 +51,15 @@ renderer.code = function (content, identifier, escaped) {
   return new Markdown.Renderer().code(content, identifier, escaped)
 }
 
+renderer.table = function (header, body) {
+  return `
+    <table class="table table-hover">
+      ${header}
+      ${body}
+    </table>
+  `
+}
+
 Markdown.setOptions({ renderer })
 
 module.exports = Markdown
