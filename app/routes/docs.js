@@ -8,7 +8,7 @@ module.exports = [
   {
     method: 'GET',
     path: '/docs',
-    config: {
+    options: {
       handler: (_, h) => h.redirect(`/docs/${Config.get('docs.default')}`)
     }
   },
@@ -16,7 +16,7 @@ module.exports = [
   {
     method: 'GET',
     path: '/docs/{version}/{page?}',
-    config: {
+    options: {
       handler: async (request, h) => {
         const { version, page = 'installation' } = request.params
         const docs = new Documentation({ version })
