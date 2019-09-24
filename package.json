@@ -9,7 +9,7 @@
     "hapi-dev-errors": "~3.2.3",
     "joi": "~14.3.1",
     "marked": "~0.6.1",
-    "validator": "~10.11.0"
+    "validator": "~11.1.0"
   },
   "devDependencies": {
     "ava": "~1.2.1",
