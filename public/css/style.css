@@ -34,6 +34,26 @@ a:hover {
   color: #2957ff;
 }
 
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding: .5rem .625rem;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #2957ff;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #2957ff;
+  /* border-bottom: 1px solid #DD4A68; */
+  font-weight: 700;
+}
+
+.nav-link {
+  padding: .5rem 25rem;
+}
+
 strong {
     color: hsl(200, 30%, 20%);
 }
@@ -55,6 +75,10 @@ footer {
   border-top: 1px solid hsl(200, 23%, 94%);
   padding-top: 56px;
   padding-bottom: 56px;
+}
+
+.mt-10 {
+  margin-top: 8rem !important;
 }
 
 .transition {
