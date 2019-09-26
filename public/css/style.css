@@ -484,8 +484,15 @@ a.btn-primary, .btn-primary {
 .mt-8 {
   margin-top: 5rem;
 }
+
 .mt-10 {
   margin-top: 7rem;
+}
+
+@media (min-width: 576px) {
+  .mt-sm-10, .my-sm-10 {
+    margin-top: 7rem!important;
+  }
 }
 
 .terminal {
