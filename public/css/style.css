@@ -493,6 +493,10 @@ a.btn-primary, .btn-primary {
   .mt-sm-10, .my-sm-10 {
     margin-top: 7rem!important;
   }
+
+  .mb-sm-10 {
+    margin-bottom: 7rem!important;
+  }
 }
 
 .terminal {
