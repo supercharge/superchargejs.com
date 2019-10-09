@@ -11,7 +11,7 @@ module.exports = {
    * redirects requests to “/docs” to “/docs/{default}”.
    *
    */
-  default: '1.0-beta1',
+  default: 'master',
 
   /**
    * --------------------------------------------------------------------------
