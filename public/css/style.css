@@ -2,7 +2,7 @@
 
 body {
   font-family: "Inter UI";
-  color: hsl(200, 16%, 24%);
+  color: hsl(200, 16%, 36%);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -269,7 +269,7 @@ a.btn-primary, .btn-primary {
 }
 
 .docs p {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 24px;
   line-height: 1.75;
 }
