@@ -1,0 +1,42 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3a51ce");
+
+@font-face {
+    font-family: 'BRHendrix';
+    font-weight: 500;
+    src: url('webfonts/3A51D3_0_0.eot');
+    src: url('webfonts/3A51D3_0_0.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/3A51D3_0_0.woff2') format('woff2'),
+        url('webfonts/3A51D3_0_0.woff') format('woff'),
+        url('webfonts/3A51D3_0_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BRHendrix';
+    font-weight: 600;
+    src: url('webfonts/3A51D3_1_0.eot');
+    src: url('webfonts/3A51D3_1_0.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/3A51D3_1_0.woff2') format('woff2'),
+        url('webfonts/3A51D3_1_0.woff') format('woff'),
+        url('webfonts/3A51D3_1_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BRHendrix';
+    font-weight: 700;
+    src: url('webfonts/3A51D3_2_0.eot');
+    src: url('webfonts/3A51D3_2_0.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/3A51D3_2_0.woff2') format('woff2'),
+        url('webfonts/3A51D3_2_0.woff') format('woff'),
+        url('webfonts/3A51D3_2_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BRHendrix';
+    font-weight: 900;
+    src: url('webfonts/3A51D3_3_0.eot');
+    src: url('webfonts/3A51D3_3_0.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/3A51D3_3_0.woff2') format('woff2'),
+         url('webfonts/3A51D3_3_0.woff') format('woff'),
+         url('webfonts/3A51D3_3_0.ttf') format('truetype');
+}

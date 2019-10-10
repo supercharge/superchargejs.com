@@ -1,13 +1,19 @@
-@import url("https://rsms.me/inter/inter-ui.css");
+@import url('https://rsms.me/inter/inter.css');
 
 body {
-  font-family: "Inter UI";
+  font-family: 'Inter', sans-serif;
   color: hsl(200, 16%, 36%);
   -webkit-overflow-scrolling: touch;
+}
+@supports (font-variation-settings: normal) {
+  body { font-family: 'Inter var', sans-serif; }
 }
 
 h1, h2, h3, h4, h5 {
   color: #2c3643;
+  font-family: 'BRHendrix', 'Inter', sans-serif;
+  font-feature-settings: "salt", "ss01" on;
+  letter-spacing: -0.025em;
 }
 
 h1 {
@@ -255,7 +261,7 @@ a.btn-primary, .btn-primary {
 }
 
 .docs h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin-top: 48px;
   margin-bottom: 10px;
