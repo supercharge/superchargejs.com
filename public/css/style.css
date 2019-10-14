@@ -599,3 +599,7 @@ a.btn-primary, .btn-primary {
   border-color: #dbdbdb;
   border-radius: 0 0 0 3px;
 }
+
+.algolia-autocomplete {
+  width: 100%;
+}
