@@ -32,7 +32,7 @@ h3 {
   color: hsl(200, 15%, 15%);
 }
 
-a, a:visited, a:active {
+a, a:link, a:visited, a:active {
   color: #2436de;
 }
 
