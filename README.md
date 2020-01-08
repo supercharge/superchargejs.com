@@ -6,7 +6,7 @@ This repository contains the source of the [superchargejs.com](https://superchar
 First, clone this repository to your machine.
 
 ```
-git clone https://github.com/superchargejs/superchargejs.com.git
+git clone https://github.com/supercharge/superchargejs.com.git
 ```
 
 Next, change your terminal into the cloned directory. Then install the project’s dependencies:
@@ -33,7 +33,7 @@ Enjoy!
 ## Documentation
 One of the main purposes of the Supercharge website is serving the documentation.
 
-The Supercharge documentation lives in the [superchargejs/docs](https://github.com/superchargejs/docs) repository. The website renders the markdown files as HTML pages.
+The Supercharge documentation lives in the [superchargejs/docs](https://github.com/supercharge/docs) repository. The website renders the markdown files as HTML pages.
 
 To serve docs in your local installation, create the `resources/docs` directory and navigate into it:
 
@@ -42,10 +42,10 @@ mkdir resources/docs
 cd resources/docs
 ```
 
-From here, clone the [superchargejs/docs](https://github.com/superchargejs/docs) repository into the `master` folder:
+From here, clone the [superchargejs/docs](https://github.com/supercharge/docs) repository into the `master` folder:
 
 ```
-git clone https://github.com/superchargejs/docs.git master
+git clone https://github.com/supercharge/docs.git master
 ```
 
 The directory has to be named `master` because the default documentation version is called `master`. The `config/docs.js`  configuration file contains the version mappings. The keys represent the expected folder names within `resources/docs`.
@@ -54,5 +54,5 @@ The directory has to be named `master` because the default documentation version
 ---
 
 > [superchargejs.com](https://superchargejs.com) &nbsp;&middot;&nbsp;
-> GitHub [@superchargejs](https://github.com/superchargejs/) &nbsp;&middot;&nbsp;
+> GitHub [@superchargejs](https://github.com/supercharge/) &nbsp;&middot;&nbsp;
 > Twitter [@superchargejs](https://twitter.com/superchargejs)
