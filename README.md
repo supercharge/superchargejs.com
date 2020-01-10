@@ -33,7 +33,7 @@ Enjoy!
 ## Documentation
 One of the main purposes of the Supercharge website is serving the documentation.
 
-The Supercharge documentation lives in the [superchargejs/docs](https://github.com/supercharge/docs) repository. The website renders the markdown files as HTML pages.
+The Supercharge documentation lives in the [supercharge/docs](https://github.com/supercharge/docs) repository. The website renders the markdown files as HTML pages.
 
 To serve docs in your local installation, create the `resources/docs` directory and navigate into it:
 
@@ -42,7 +42,7 @@ mkdir resources/docs
 cd resources/docs
 ```
 
-From here, clone the [superchargejs/docs](https://github.com/supercharge/docs) repository into the `master` folder:
+From here, clone the [supercharge/docs](https://github.com/supercharge/docs) repository into the `master` folder:
 
 ```
 git clone https://github.com/supercharge/docs.git master
