@@ -6,7 +6,7 @@
     "@sindresorhus/slugify": "~0.9.1",
     "@supercharge/framework": "1.0.0-beta0.1",
     "boom": "~7.3.0",
-    "hapi-dev-errors": "~3.3.0",
+    "hapi-dev-errors": "~4.0.0",
     "joi": "~14.3.1",
     "marked": "~0.8.0"
   },
