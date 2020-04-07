@@ -4,7 +4,7 @@
   "version": "1.0.0-beta0",
   "dependencies": {
     "@sindresorhus/slugify": "~0.9.1",
-    "@supercharge/framework": "1.0.0-beta0.1",
+    "@supercharge/framework": "1.0.0-beta9",
     "boom": "~7.3.0",
     "hapi-dev-errors": "~3.3.0",
     "joi": "~14.3.1",
