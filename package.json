@@ -8,7 +8,7 @@
     "boom": "~7.3.0",
     "hapi-dev-errors": "~3.3.0",
     "joi": "~14.3.1",
-    "marked": "~0.8.0"
+    "marked": "~1.0.0"
   },
   "devDependencies": {
     "ava": "~2.4.0",
