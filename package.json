@@ -3,7 +3,7 @@
   "description": "Supercharge application boilerplate",
   "version": "1.0.0-beta0",
   "dependencies": {
-    "@sindresorhus/slugify": "~0.9.1",
+    "@sindresorhus/slugify": "~1.0.0",
     "@supercharge/framework": "1.0.0-beta0.1",
     "boom": "~7.3.0",
     "hapi-dev-errors": "~3.3.0",
