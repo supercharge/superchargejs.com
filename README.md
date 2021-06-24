@@ -1,58 +1,68 @@
-# Supercharge Website
-This repository contains the source of the [superchargejs.com](https://superchargejs.com) website.
+<div align="center">
+  <a href="https://superchargejs.com">
+    <img width="471" style="max-width:100%;" src="https://superchargejs.com/images/supercharge-text.svg" />
+  </a>
+  <br/>
+  <br/>
+  <p>
+    Supercharge is an open-source Node.js framework <br>
+    making your server-side development enjoyable.
+  </p>
+  <br/>
+  <p>
+    <a href="https://superchargejs.com/docs"><strong>Docs</strong></a>
+  </p>
+  <br/>
+  <br/>
+  <p>
+    <em>Follow <a href="http://twitter.com/marcuspoehls">@marcuspoehls</a> and <a href="http://twitter.com/superchargejs">@superchargejs</a> for updates!</em>
+  </p>
+</div>
+
+---
 
 
-## Setup
-First, clone this repository to your machine.
-
-```
-git clone https://github.com/supercharge/superchargejs.com.git
-```
-
-Next, change your terminal into the cloned directory. Then install the project’s dependencies:
-
-```
-npm install
-```
-
-Then go ahead and set up the project using the help of the Craft CLI:
-
-```
-node craft setup
-```
-
-That’s it! You can now start the Supercharge server:
-
-```
-node server.js
-```
-
-Enjoy!
-
-
-## Documentation
-One of the main purposes of the Supercharge website is serving the documentation.
-
-The Supercharge documentation lives in the [supercharge/docs](https://github.com/supercharge/docs) repository. The website renders the markdown files as HTML pages.
-
-To serve docs in your local installation, create the `resources/docs` directory and navigate into it:
+## Quick Start
+Use the official Supercharge installer to quickly create a new application. Installing is as simple as this:
 
 ```
-mkdir resources/docs
-cd resources/docs
+npm install -g @supercharge/installer
 ```
 
-From here, clone the [supercharge/docs](https://github.com/supercharge/docs) repository into the `master` folder:
+You can create a new application once you installed the Supercharge installer on your computer.
+
+Use the `supercharge new <app-name>` command:
 
 ```
-git clone https://github.com/supercharge/docs.git master
+$ supercharge new my-app-name
+Crafting a new Supercharge application
+
+  ✔ Ensure installation directory is empty
+  ✔ Crafting your application
+  ✔ Install application dependencies
+  ✔ Initialize application setup
 ```
 
-The directory has to be named `master` because the default documentation version is called `master`. The `config/docs.js`  configuration file contains the version mappings. The keys represent the expected folder names within `resources/docs`.
+That’s it! Change into the app directory and start the server with `node server` 🚀
 
+
+## About Supercharge
+Supercharge is Node.js framework — not just a web-framework.
+
+Supercharge builds on top of the hapi.js web framework and adds dozens utilities, like configuration and database management, mailing, logging, encryptiong, hashing, pagination, and more. It also integrates Mongoose as a powerful ORM for intuitive database interactions.
+
+
+## Learning
+Supercharge has an extensive [documentation](https://superchargejs.com/docs) that gives you all the information to get started with the framework.
+
+Did you create a tutorial, video, blog post, plugin, library, or anything else related to Supercharge? Please let me know! Create an issue or tweet me [@marcuspoehls](https://twitter.com/marcuspoehls). I'm very happy to create a content list and share it with everybody!
+
+
+## License
+Supercharge is [MIT licensed](https://github.com/superchargejs/framework/blob/master/LICENSE).
 
 ---
 
 > [superchargejs.com](https://superchargejs.com) &nbsp;&middot;&nbsp;
-> GitHub [@superchargejs](https://github.com/supercharge/) &nbsp;&middot;&nbsp;
+> GitHub [@superchargejs](https://github.com/superchargejs/) &nbsp;&middot;&nbsp;
 > Twitter [@superchargejs](https://twitter.com/superchargejs)
