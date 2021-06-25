@@ -1,12 +1,16 @@
 @import url('https://rsms.me/inter/inter.css');
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'BRHendrix', 'Inter', sans-serif;
+  font-weight: 300;
   color: hsl(200, 16%, 36%);
   -webkit-overflow-scrolling: touch;
 }
 @supports (font-variation-settings: normal) {
-  body { font-family: 'Inter var', sans-serif; }
+  body {
+    font-family: 'BRHendrix', 'Inter', sans-serif;
+    font-weight: 300;
+  }
 }
 
 h1, h2, h3, h4, h5 {

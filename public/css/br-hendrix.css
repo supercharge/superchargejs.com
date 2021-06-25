@@ -1,42 +1,96 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 4109542, 2021-06-25T08:48:33-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: BRHendrix-Light by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/light/
+ *
+ * Webfont: BRHendrix-LightItalic by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/light-italic/
+ *
+ * Webfont: BRHendrix-Regular by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/regular/
+ *
+ * Webfont: BRHendrix-RegularItalic by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/regular-italic/
+ *
+ * Webfont: BRHendrix-Medium by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/medium/
+ *
+ * Webfont: BRHendrix-MediumItalic by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/medium-italic/
+ *
+ * Webfont: BRHendrix-SemiBold by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/semi-bold/
+ *
+ * Webfont: BRHendrix-Bold by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/bold/
+ *
+ * Webfont: BRHendrix-Black by Brink
+ * URL: https://www.myfonts.com/fonts/brink/br-hendrix/black/
+ *
+ *
+ * Webfonts copyright: Copyright © 2019 by Christoph York. All rights reserved. Modification of this file requires prior written permission from Brink Type.
+ *
+ * © 2021 MyFonts Inc
+*/
+
+
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/3a51ce");
+@import url("//hello.myfonts.net/count/3eb4e6");
 
 @font-face {
-    font-family: 'BRHendrix';
-    font-weight: 500;
-    src: url('webfonts/3A51D3_0_0.eot');
-    src: url('webfonts/3A51D3_0_0.eot?#iefix') format('embedded-opentype'),
-        url('webfonts/3A51D3_0_0.woff2') format('woff2'),
-        url('webfonts/3A51D3_0_0.woff') format('woff'),
-        url('webfonts/3A51D3_0_0.ttf') format('truetype');
+  font-family: 'BRHendrix';
+  font-weight: 300;
+  src: url('webFonts/BRHendrixLight/font.woff2') format('woff2'), url('webFonts/BRHendrixLight/font.woff') format('woff');
 }
-
 @font-face {
-    font-family: 'BRHendrix';
-    font-weight: 600;
-    src: url('webfonts/3A51D3_1_0.eot');
-    src: url('webfonts/3A51D3_1_0.eot?#iefix') format('embedded-opentype'),
-        url('webfonts/3A51D3_1_0.woff2') format('woff2'),
-        url('webfonts/3A51D3_1_0.woff') format('woff'),
-        url('webfonts/3A51D3_1_0.ttf') format('truetype');
+  font-family: 'BRHendrix';
+  font-weight: 500;
+  src: url('webFonts/BRHendrixMedium/font.woff2') format('woff2'), url('webFonts/BRHendrixMedium/font.woff') format('woff');
 }
-
 @font-face {
-    font-family: 'BRHendrix';
-    font-weight: 700;
-    src: url('webfonts/3A51D3_2_0.eot');
-    src: url('webfonts/3A51D3_2_0.eot?#iefix') format('embedded-opentype'),
-        url('webfonts/3A51D3_2_0.woff2') format('woff2'),
-        url('webfonts/3A51D3_2_0.woff') format('woff'),
-        url('webfonts/3A51D3_2_0.ttf') format('truetype');
+  font-family: 'BRHendrix';
+  font-weight: 300;
+  font-style: italic;
+  src: url('webFonts/BRHendrixLightItalic/font.woff2') format('woff2'), url('webFonts/BRHendrixLightItalic/font.woff') format('woff');
 }
-
 @font-face {
-    font-family: 'BRHendrix';
-    font-weight: 900;
-    src: url('webfonts/3A51D3_3_0.eot');
-    src: url('webfonts/3A51D3_3_0.eot?#iefix') format('embedded-opentype'),
-         url('webfonts/3A51D3_3_0.woff2') format('woff2'),
-         url('webfonts/3A51D3_3_0.woff') format('woff'),
-         url('webfonts/3A51D3_3_0.ttf') format('truetype');
+  font-family: 'BRHendrix';
+  font-weight: 400;
+  font-style: italic;
+  src: url('webFonts/BRHendrixRegularItalic/font.woff2') format('woff2'), url('webFonts/BRHendrixRegularItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BRHendrix';
+  font-weight: 400;
+  src: url('webFonts/BRHendrixRegular/font.woff2') format('woff2'), url('webFonts/BRHendrixRegular/font.woff') format('woff');
+}
+@font-face {
+  font-family: "BRHendrix-Black";
+  font-family: 'BRHendrix';
+  font-weight: 900;
+  src: url('webFonts/BRHendrixBlack/font.woff2') format('woff2'), url('webFonts/BRHendrixBlack/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BRHendrix';
+  font-weight: 700;
+  src: url('webFonts/BRHendrixBold/font.woff2') format('woff2'), url('webFonts/BRHendrixBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BRHendrix';
+  font-weight: 500;
+  font-style: italic;
+  src: url('webFonts/BRHendrixMediumItalic/font.woff2') format('woff2'), url('webFonts/BRHendrixMediumItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BRHendrix';
+  font-weight: 600;
+  src: url('webFonts/BRHendrixSemiBold/font.woff2') format('woff2'), url('webFonts/BRHendrixSemiBold/font.woff') format('woff');
 }
