@@ -8,15 +8,16 @@
  */
 
 import { Route } from '@supercharge/facades'
-import { ShowDocsController } from '../app/http/controllers/ShowDocsController'
-import { ShowDocsVersionController } from '../app/http/controllers/ShowDocsVersionController'
+import { ShowDocs } from '../app/http/controllers/ShowDocs'
+import { ShowPodcast } from '../app/http/controllers/ShowPodcast'
+import { ShowDocsVersion } from '../app/http/controllers/ShowDocsVersion'
+import { ShowStartpage } from '../app/http/controllers/ShowStartpage'
 
-Route.get('/', async ({ response }) => {
-  return response.view('index')
+Route.get('/', ShowStartpage)
+
+Route.get('/podcast', ShowPodcast)
+
+Route.prefix('/docs').group(() => {
+  Route.get('/', ShowDocs)
+  Route.get('/:version/:page*', ShowDocsVersion)
 })
-
-Route.group({ prefix: '/docs' }, () => {
-  Route.get('/', ShowDocsController)
-  Route.get('/:version/:page*', ShowDocsVersionController)
-})
-

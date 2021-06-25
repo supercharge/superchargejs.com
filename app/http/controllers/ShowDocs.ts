@@ -3,7 +3,7 @@
 import { Config } from '@supercharge/facades'
 import { HttpContext } from '@supercharge/contracts'
 
-export class ShowDocsController {
+export class ShowDocs {
   /**
    * Handle the given request.
    */

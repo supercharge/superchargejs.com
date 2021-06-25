@@ -4,7 +4,7 @@ import Str from '@supercharge/strings'
 import { Documentation } from '../../models/documentation'
 import { Application, HttpContext, HttpResponse } from '@supercharge/contracts'
 
-export class ShowDocsVersionController {
+export class ShowDocsVersion {
   /**
    * The application instance.
    */
