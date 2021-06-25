@@ -3,15 +3,15 @@
   "description": "Supercharge application boilerplate",
   "version": "2.0.0-alpha.1",
   "dependencies": {
-    "@supercharge/console": "~2.0.0-alpha.1",
-    "@supercharge/contracts": "~2.0.0-alpha.1",
-    "@supercharge/core": "~2.0.0-alpha.1",
-    "@supercharge/facades": "~2.0.0-alpha.1",
+    "@supercharge/console": "~2.0.0-alpha.2",
+    "@supercharge/contracts": "~2.0.0-alpha.2",
+    "@supercharge/core": "~2.0.0-alpha.2",
+    "@supercharge/facades": "~2.0.0-alpha.2",
     "@supercharge/fs": "~3.0.1",
-    "@supercharge/http": "~2.0.0-alpha.1",
-    "@supercharge/routing": "~2.0.0-alpha.1",
+    "@supercharge/http": "~2.0.0-alpha.2",
+    "@supercharge/routing": "~2.0.0-alpha.2",
     "@supercharge/strings": "~1.18.0",
-    "@supercharge/view": "~2.0.0-alpha.1",
+    "@supercharge/view": "~2.0.0-alpha.2",
     "marked": "~2.1.2"
   },
   "devDependencies": {
