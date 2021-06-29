@@ -37,7 +37,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "npm run dev:server",
-    "dev:server": "nodemon --watch './**/*.ts' --exec 'ts-node' server.ts",
+    "dev:server": "nodemon --watch './**/*.ts' --ext ts,js,hbs --exec 'ts-node' server.ts",
     "test": "echo 'Missing tests.' && exit 1"
   }
 }
