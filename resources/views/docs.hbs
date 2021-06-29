@@ -17,7 +17,7 @@
     </ul>
   </div>
 
-  {{#each index as |value title|}}
+  {{#each navigation as |value title|}}
     <h2 id="{{value.slug}}">{{title}}</h2>
     <ul>
       {{#each value.sections as |slug title|}}
@@ -54,7 +54,7 @@
     </ul>
   </div>
 
-  {{#each index as |value title|}}
+  {{#each navigation as |value title|}}
     <h2 id="{{value.slug}}">{{title}}</h2>
     <ul>
       {{#each value.sections as |slug title|}}
