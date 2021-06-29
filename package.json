@@ -1,7 +1,7 @@
 {
   "name": "supercharge",
-  "description": "Supercharge application boilerplate",
-  "version": "2.0.0-alpha.1",
+  "description": "Supercharge homepage",
+  "version": "2.0.0",
   "dependencies": {
     "@supercharge/console": "~2.0.0-alpha.3",
     "@supercharge/contracts": "~2.0.0-alpha.3",
@@ -16,9 +16,14 @@
   },
   "devDependencies": {
     "@supercharge/tsconfig": "~3.0.0",
+    "@tailwindcss/custom-forms": "~0.2.1",
+    "@tailwindcss/typography": "~0.4.1",
+    "@tailwindcss/ui": "~0.7.2",
     "@types/marked": "~2.0.3",
     "@types/node": "~15.12.5",
     "@typescript-eslint/eslint-plugin": "~4.28.0",
+    "autoprefixer": "~10.2.6",
+    "concurrently": "~6.2.0",
     "eslint": "~7.29.0",
     "eslint-config-standard": "~16.0.3",
     "eslint-config-standard-with-typescript": "~20.0.0",
@@ -27,6 +32,9 @@
     "eslint-plugin-promise": "~5.1.0",
     "eslint-plugin-standard": "~4.1.0",
     "nodemon": "~2.0.7",
+    "postcss": "~8.3.5",
+    "postcss-cli": "~8.3.1",
+    "tailwindcss": "~2.2.4",
     "typescript": "~4.3.4"
   },
   "engines": {
@@ -36,8 +44,10 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "dev": "npm run dev:server",
-    "dev:server": "nodemon --watch './**/*.ts' --ext ts,js,hbs --exec 'ts-node' server.ts",
+    "build:css": "postcss resources/css/app.css -o public/css/app.css",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
+    "dev:css": "postcss --watch resources/css/app.css -o public/css/app.css",
+    "dev:server": "nodemon --ext ts,js,hbs --exec 'ts-node' server.ts",
     "test": "echo 'Missing tests.' && exit 1"
   }
 }

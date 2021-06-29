@@ -1,0 +1,23 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  a, a:link, a:visited, a:active {
+    color: #2436de;
+  }
+}
+
+.algolia-autocomplete {
+  width: 100%;
+}

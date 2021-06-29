@@ -1,4 +1,4 @@
-<section class="sidebar d-none d-md-block col-md-3 no-padding-right pb-5">
+<section class="pb-5 sidebar d-none d-md-block col-md-3 no-padding-right">
   <div class="dropdown version-switch">
     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
       aria-expanded="true">
@@ -31,7 +31,7 @@
 
 <div class="overlay"></div>
 
-<nav class="sidebar sidebar--mobile pb-5">
+<nav class="pb-5 sidebar sidebar--mobile">
   <a href="/">
     <img src="/images/supercharge-text.svg" alt="Supercharge Node.js Framework" height="50" class="mb-5">
   </a>
@@ -66,11 +66,11 @@
   {{/each}}
 </nav>
 
-<article class="docs col-md-9 col-lg-8 col-xl-7 mr-auto pb-5">
+<article class="pb-5 mr-auto docs col-md-9 col-lg-8 col-xl-7">
   {{{docsContent}}}
 </article>
 
-{{#append 'scripts'}}
+{{!-- {{#append 'scripts'}}
   <script>
     let $toggler = document.getElementsByClassName('sidebar__toggler')
     let $sidebar = document.getElementsByClassName('sidebar--mobile')[0]
@@ -97,4 +97,4 @@
       $navbar.classList.remove('show')
     }
   </script>
-{{/append}}
+{{/append}} --}}
