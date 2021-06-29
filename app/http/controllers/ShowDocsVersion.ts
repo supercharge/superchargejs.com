@@ -11,19 +11,24 @@ export class ShowDocsVersion {
   private readonly app: Application
 
   /**
-   * The documentation instance.
+   * The internal properties.
    */
   private readonly meta: {
     docs?: Documentation
   }
 
+  /**
+   * Create a new instance.
+   */
   constructor (app: Application) {
     this.app = app
-    this.meta = { }
+    this.meta = {}
   }
 
   /**
    * Returns the documentation instance.
+   *
+   * @returns {Documentation}
    */
   docs (): Documentation {
     if (this.meta.docs) {
