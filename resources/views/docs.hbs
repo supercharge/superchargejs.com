@@ -1,3 +1,572 @@
+<div class="relative w-full">
+  <div class="container relative flex w-full px-4 mx-auto sm:px-6 lg:px-8">
+    <div class="flex-none w-full lg:grid lg:grid-cols-3 lg:gap-8">
+      <div class="px-4 py-12 -mx-4 bg-blueGray-50 lg:bg-transparent sm:-mx-6 lg:mx-0 sm:py-16 sm:px-6 lg:pl-0 lg:pr-8">
+        <div class="text-sm max-w-[37.5rem] mx-auto lg:max-w-none lg:mx-0 relative lg:sticky lg:top-10"
+          x-data="TableOfContents()" x-init="init()">
+          <ul class="pl-6 space-y-8 border-l border-gray-200">
+            <li class="space-y-3">
+              <a href="#getting-set-up" class="block font-medium text-teal-600 transition-colors duration-300"
+                :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'getting-set-up', 'text-gray-900': activeSlug !== 'getting-set-up' }">Getting
+                set up</a>
+              <ul class="space-y-3">
+                <li class="ml-4">
+                  <a href="#requirements" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'requirements' }">Requirements</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#optional-add-the-inter-font-family" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'optional-add-the-inter-font-family' }">Optional:
+                    Add the Inter font family</a>
+                </li>
+              </ul>
+            </li>
+            <li class="space-y-3">
+              <a href="#using-react" class="block font-medium text-gray-900 transition-colors duration-300"
+                :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'using-react', 'text-gray-900': activeSlug !== 'using-react' }">Using
+                React</a>
+              <ul class="space-y-3">
+                <li class="ml-4">
+                  <a href="#react-installing-dependencies" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'react-installing-dependencies' }">Installing
+                    dependencies</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#react-creating-components" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'react-creating-components' }">Creating
+                    components</a>
+                </li>
+              </ul>
+            </li>
+            <li class="space-y-3">
+              <a href="#using-vue" class="block font-medium text-gray-900 transition-colors duration-300"
+                :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'using-vue', 'text-gray-900': activeSlug !== 'using-vue' }">Using
+                Vue</a>
+              <ul class="space-y-3">
+                <li class="ml-4">
+                  <a href="#vue-installing-dependencies" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'vue-installing-dependencies' }">Installing
+                    dependencies</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#vue-creating-components" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'vue-creating-components' }">Creating
+                    components</a>
+                </li>
+              </ul>
+            </li>
+            <li class="space-y-3">
+              <a href="#using-html-and-your-own-js"
+                class="block font-medium text-gray-900 transition-colors duration-300"
+                :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'using-html-and-your-own-js', 'text-gray-900': activeSlug !== 'using-html-and-your-own-js' }">Using
+                HTML and your own JS</a>
+              <ul class="space-y-3">
+                <li class="ml-4">
+                  <a href="#html-accessibility" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'html-accessibility' }">Accessibility
+                    considerations</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#html-dynamic-classes" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'html-dynamic-classes' }">Dynamic
+                    classes</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#html-transitions" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'html-transitions' }">Transitions</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#html-creating-partials-components" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'html-creating-partials-components' }">Creating
+                    partials/components</a>
+                </li>
+              </ul>
+            </li>
+            <li class="space-y-3">
+              <a href="#resources-and-assets" class="block font-medium text-gray-900 transition-colors duration-300"
+                :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'resources-and-assets', 'text-gray-900': activeSlug !== 'resources-and-assets' }">Resources
+                &amp; assets</a>
+              <ul class="space-y-3">
+                <li class="ml-4">
+                  <a href="#resources-icons" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'resources-icons' }">Icons</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#resources-images" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'resources-images' }">Images</a>
+                </li>
+                <li class="ml-4">
+                  <a href="#resources-illustrations" class="block transition-colors duration-300"
+                    :class="{ 'transition-colors duration-300': initialized, 'text-teal-600': activeSlug === 'resources-illustrations' }">Illustrations</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="absolute top-0 left-0 w-px transition-transform duration-300 origin-top bg-teal-500"
+            :style="'height:'+(height?'1px':'0')+';transform:translateY('+top+'px) scaleY('+height+')'"
+            :class="initialized ? 'transition-transform duration-300' : ''"
+            style="height:1px;transform:translateY(0px) scaleY(20)"></div>
+        </div>
+      </div>
+
+      <div class="relative col-span-2 bg-white lg:-ml-8 lg:shadow-md">
+        <div class="absolute top-0 bottom-0 hidden w-8 bg-white lg:block -right-4"></div>
+
+        <div class="relative py-16 lg:px-16">
+          <div class="prose prose-sm max-w-[37.5rem] mx-auto">
+
+            <h2 id="getting-set-up">
+              Getting set up
+            </h2>
+
+            <h3 id="requirements">
+              Requirements
+            </h3>
+
+            <p><strong>All of the components in Tailwind UI are designed for Tailwind CSS &gt;= v2.0</strong>. To make
+              sure that you are on the latest version of Tailwind, update via npm:</p>
+            <pre class=" language-bash"><code class=" language-bash"><span class="token function">npm</span> <span class="token function">install</span> tailwindcss@latest
+</code></pre>
+            <p>If you are previously coming from Tailwind UI for Tailwind CSS v1, check out our <a
+                href="/changes-for-v2">guide for getting updated to Tailwind CSS v2.0</a>.</p>
+            <p>All of the examples in Tailwind UI rely on the default Tailwind CSS v2.0 configuration, but some rely on
+              additional first-party plugins like <code>@tailwindcss/forms</code>, <code>@tailwindcss/typography</code>,
+              and <code>@tailwindcss/aspect-ratio</code>.</p>
+            <p>When an example requires any plugins or configuration changes, it will be noted in a comment at the top
+              of the example.</p>
+            <p>If you're new to Tailwind CSS, you'll want to <a href="https://tailwindcss.com/docs">read the Tailwind
+                CSS documentation</a> as well to get the most out of Tailwind UI.</p>
+
+
+            <h3 id="optional-add-the-inter-font-family">
+              Optional: Add the Inter font family
+            </h3>
+
+            <p>We've used <a href="https://rsms.me/inter">Inter</a> font family for all of the Tailwind UI examples
+              because it's a beautiful font for UI design and is completely open-source and free. Using a custom font is
+              nice because it allows us to make the components look the same on all browsers and operating systems.</p>
+            <p>You can use any font you want in your own project of course, but if you'd like to use Inter, the easiest
+              way is to first add it via the CDN:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://rsms.me/inter/inter.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p>Then add "Inter var" to your "sans" font family in your Tailwind config:</p>
+            <pre class=" language-js"><code class=" language-js"><span class="token comment">// tailwind.config.js</span>
+<span class="token keyword">const</span> defaultTheme <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'tailwindcss/defaultTheme'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  theme<span class="token operator">:</span> <span class="token punctuation">{</span>
+    extend<span class="token operator">:</span> <span class="token punctuation">{</span>
+      fontFamily<span class="token operator">:</span> <span class="token punctuation">{</span>
+        sans<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Inter var'</span><span class="token punctuation">,</span> <span class="token operator">...</span>defaultTheme<span class="token punctuation">.</span>fontFamily<span class="token punctuation">.</span>sans<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+            <hr id="using-react">
+
+            <h2>
+              Using React
+            </h2>
+
+
+            <h3 id="react-installing-dependencies">
+              Installing dependencies
+            </h3>
+
+            <p>Tailwind UI for React depends on <a href="https://headlessui.dev">Headless UI</a> to power all of the
+              interactive behavior and <a href="https://heroicons.com">Heroicons</a> for icons, so you'll need to add
+              these two libraries to your project:</p>
+            <pre class=" language-bash"><code class=" language-bash"><span class="token function">npm</span> <span class="token function">install</span> @headlessui/react @heroicons/react
+</code></pre>
+            <p><strong>These libraries and Tailwind UI itself all require React &gt;= 16</strong>.</p>
+
+            <h3 id="react-creating-components">
+              Creating components
+            </h3>
+
+            <p>All React examples are provided as a simple single component and make no assumptions about how you want
+              to break things down, what prop APIs you want to expose, or where you get any data from.</p>
+            <p>Some data has been extracted into basic local variables just to clean up duplication and make the code
+              easier to read and understand, but we've tried to do as little as possible to avoid enforcing any
+              unnecessarily rigid opinions.</p>
+            <p>When you're adapting code from Tailwind UI for your own projects, you should break the examples down into
+              smaller components as necessary to achieve whatever level of reuse you need for your project.</p>
+            <p>For example, you might start with this stacked list component:</p>
+            <pre class=" language-jsx"><code class=" language-jsx"><span class="token keyword">const</span> people <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Calvin Hawkins'</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">'calvin.hawkins@example.com'</span><span class="token punctuation">,</span>
+    image<span class="token operator">:</span>
+      <span class="token string">'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Kristen Ramos'</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">'kristen.ramos@example.com'</span><span class="token punctuation">,</span>
+    image<span class="token operator">:</span>
+      <span class="token string">'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Ted Fox'</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">'ted.fox@example.com'</span><span class="token punctuation">,</span>
+    image<span class="token operator">:</span>
+      <span class="token string">'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>divide-y divide-gray-200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>people<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>person<span class="token punctuation">.</span>email<span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>py-4 flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>h-10 w-10 rounded-full<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>person<span class="token punctuation">.</span>image<span class="token punctuation">}</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ml-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm font-medium text-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>person<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm text-gray-500<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>person<span class="token punctuation">.</span>email<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+            <p>After adapting the content for your own project, breaking it down into separate components, and wiring up
+              your data source, it might look more like this:</p>
+            <pre class=" language-jsx"><code class=" language-jsx"><span class="token keyword">function</span> <span class="token function">HockeyTeamItem</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> team <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>py-4 flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>h-10 w-10 rounded-full<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>team<span class="token punctuation">.</span>logo<span class="token punctuation">}</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ml-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm font-medium text-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>team<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm text-gray-500<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>team<span class="token punctuation">.</span>city<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">HockeyTeamList</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> teams <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>divide-y divide-gray-200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>teams<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">team</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">HockeyTeamItem</span></span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>team<span class="token punctuation">.</span>id<span class="token punctuation">}</span></span> <span class="token attr-name">team</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>team<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+            <p>Tailwind UI is more like a set of blueprints, patterns, and ideas than a rigid UI kit. The code you end
+              up with at the end of the day is <em>yours</em>, and you can factor it however you like.</p>
+
+            <hr id="using-vue">
+
+            <h2>
+              Using Vue
+            </h2>
+
+            <h3 id="vue-installing-dependencies">
+              Installing dependencies
+            </h3>
+
+            <p>Tailwind UI for Vue depends on <a href="https://headlessui.dev">Headless UI</a> to power all of the
+              interactive behavior and <a href="https://heroicons.com">Heroicons</a> for icons, so you'll need to add
+              these two libraries to your project:</p>
+            <pre class=" language-bash"><code class=" language-bash"><span class="token function">npm</span> <span class="token function">install</span> @headlessui/vue @heroicons/vue
+</code></pre>
+            <p><strong>These libraries and Tailwind UI itself all require Vue 3+</strong>. We do not currently offer
+              support for Vue 2.</p>
+
+            <h3 id="vue-creating-components">
+              Creating components
+            </h3>
+
+            <p>All Vue examples are provided as a simple single component and make no assumptions about how you want to
+              break things down, what prop APIs you want to expose, or where you get any data from.</p>
+            <p>Some data has been extracted into basic local variables just to clean up duplication and make the code
+              easier to read and understand, but we've tried to do as little as possible to avoid enforcing any
+              unnecessarily rigid opinions.</p>
+            <p>When you're adapting code from Tailwind UI for your own projects, you should break the examples down into
+              smaller components as necessary to achieve whatever level of reuse you need for your project.</p>
+            <p>For example, you might start with this stacked list component:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>divide-y divide-gray-200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person in people<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.email<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>py-4 flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>h-10 w-10 rounded-full<span class="token punctuation">"</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>person.image<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ml-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm font-medium text-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{ person.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm text-gray-500<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{ person.email }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">const</span> people <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Calvin Hawkins'</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">'calvin.hawkins@example.com'</span><span class="token punctuation">,</span>
+    image<span class="token operator">:</span>
+      <span class="token string">'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Kristen Ramos'</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">'kristen.ramos@example.com'</span><span class="token punctuation">,</span>
+    image<span class="token operator">:</span>
+      <span class="token string">'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'Ted Fox'</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">'ted.fox@example.com'</span><span class="token punctuation">,</span>
+    image<span class="token operator">:</span>
+      <span class="token string">'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      people<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p>After adapting the content for your own project, breaking it down into separate components, and wiring up
+              your data source, it might look more like this:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token comment">&lt;!-- HockeyTeamList.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>divide-y divide-gray-200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HockeyTeamItem</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>team in teams<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>team.id<span class="token punctuation">"</span></span> <span class="token attr-name">:team</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>team<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    teams<span class="token operator">:</span> Array
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- HockeyTeamListItem.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>py-4 flex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>h-10 w-10 rounded-full<span class="token punctuation">"</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>team.logo<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ml-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm font-medium text-gray-900<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{ team.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-sm text-gray-500<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{{ team.city }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  props<span class="token operator">:</span> <span class="token punctuation">{</span>
+    team<span class="token operator">:</span> Object
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p>Tailwind UI is more like a set of blueprints, patterns, and ideas than a rigid UI kit. The code you end
+              up with at the end of the day is <em>yours</em>, and you can factor it however you like.</p>
+
+            <hr id="using-html-and-your-own-js">
+
+            <h2>
+              Using HTML and your own JS
+            </h2>
+
+            <p>If you'd rather write any necessary JS yourself or want to integrate with a framework other than React or
+              Vue, we also provide every Tailwind UI example as vanilla HTML that you can adapt yourself.</p>
+            <p>The vast majority of components don't need JavaScript at all and are completely ready to go out of the
+              box, but things that are interactive like dropdowns, modals, etc. require you to write some JS to make
+              them work the way you'd expect.</p>
+            <p>In these situations we've provided some simple comments in the HTML to explain things like what classes
+              you need use for different states <em>(like a toggle switch being on or off)</em>, or what classes we
+              recommend for transitioning elements on to or off of the screen <em>(like a modal opening)</em>.</p>
+
+            <h3 id="html-accessibility">
+              Accessibility considerations
+            </h3>
+
+            <p>We've done our best to ensure that all of the markup in Tailwind UI is as accessible as possible, but
+              when you're building interactive components, <strong>many accessibility best practices can only be
+                implemented with JavaScript.</strong></p>
+            <p>For example:</p>
+            <ul>
+              <li>
+                <strong>Making sure components are properly keyboard accessible</strong> <em>(dropdowns should be
+                  navigated with up/down arrow keys, modals should close when you press escape, tabs should be selected
+                  using the left/right arrow keys, etc.)</em>
+              </li>
+              <li>
+                <strong>Correctly handling focus</strong> <em>(you shouldn't be able to tab to an element behind a
+                  modal, the first item in a dropdown should be auto-focused when the dropdown opens, etc.)</em>
+              </li>
+              <li>
+                <strong>Synchronizing ARIA attributes with component state</strong> <em>(adding
+                  <code>aria-expanded="true"</code> when a dropdown is open, setting <code>aria-checked</code> to true
+                  when a toggle is on, updating <code>aria-activedescendant</code> when navigating the options in an
+                  autocomplete, etc.)</em>
+              </li>
+              <li>...and many other concerns.</li>
+            </ul>
+            <p>If you're using Tailwind UI with React or Vue, all of this complexity is handled for you automatically by
+              <a href="https://headlessui.dev">Headless UI</a>, but if you are providing your own JS, <strong>it is up
+                to you to follow accessibility best practices when adding interactive behavior.</strong>
+            </p>
+            <p>To learn more about building accessible UI components, we recommend studying the <a
+                href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices</a> published by the W3C.
+            </p>
+
+            <h3 id="html-dynamic-classes">
+              Dynamic classes
+            </h3>
+
+            <p>When an element needs different classes applied based on some state <em>(like a toggle being on or
+                off)</em>, we list the classes for each state in a comment directly above the element:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token comment">&lt;!-- On: "bg-indigo-600", Off: "bg-gray-200" --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">aria-checked</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bg-gray-200 relative inline-block flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- On: "translate-x-5", Off: "translate-x-0" --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate-x-0 inline-block h-5 w-5 rounded-full bg-white shadow transform transition ease-in-out duration-200<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p><strong>The HTML we provide is always pre-configured for one of the defined states</strong>, and the
+              classes that you need to change when switching states are always at the very beginning of the class list
+              so they are easy to find.</p>
+            <p>As an example, to adapt this HTML for <a href="https://github.com/alpinejs/alpine">Alpine.js</a>, you can
+              conditionally apply the correct classes using the <code>:class</code> directive based on some state you've
+              declared in <code>x-data</code>:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+  <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{ isOn: false }<span class="token punctuation">"</span></span>
+  <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isOn = !isOn<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:aria-checked</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isOn<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{'bg-indigo-600': isOn, 'bg-gray-200': !isOn }<span class="token punctuation">"</span></span>
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bg-gray-200 relative inline-block flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline<span class="token punctuation">"</span></span>
+  <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span>
+  <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+<span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+    <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{'translate-x-5': isOn, 'translate-x-0': !isOn }<span class="token punctuation">"</span></span>
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>translate-x-0 inline-block h-5 w-5 rounded-full bg-white shadow transform transition ease-in-out duration-200<span class="token punctuation">"</span></span>
+  <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p><em>We've included a basic click handler here to demonstrate the general idea, but <strong>please
+                  reference the <a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices</a>
+                  when building components like this</strong> to ensure you implement all of the necessary keyboard
+                interactions and properly manage any required ARIA attributes.</em></p>
+
+            <h3 id="html-transitions">
+              Transitions
+            </h3>
+
+            <p>For elements that should be dynamically shown or hidden <em>(like the panel on a dropdown)</em>, we
+              include the recommended transition styles in a comment directly above the dynamic element:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>relative ...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    Options
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token comment">&lt;!--
+    Show/hide this element based on the dropdown state
+
+    Entering: "transition ease-out duration-100 transform"
+      From: "opacity-0 scale-95"
+      To: "opacity-100 scale-100"
+    Closing: "transition ease-in duration-75 transform"
+      From: "opacity-100 scale-100"
+      To: "opacity-0 scale-95"
+  --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rounded-md bg-white shadow-xs<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment">&lt;!-- Snipped  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p>As an example, to adapt this HTML for <a href="https://github.com/alpinejs/alpine">Alpine.js</a> you
+              would use the <a href="https://github.com/alpinejs/alpine#x-transition"><code>x-transition</code></a>
+              directive to apply the right classes at each point in the transition lifecycle:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{ isOpen: false }<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>relative ...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isOpen = !isOpen<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    Options
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+    <span class="token attr-name">x-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isOpen<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">x-transition:</span>enter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>transition ease-out duration-100 transform<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">x-transition:</span>enter-start</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>opacity-0 scale-95<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">x-transition:</span>enter-end</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>opacity-100 scale-100<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">x-transition:</span>leave</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>transition ease-in duration-75 transform<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">x-transition:</span>leave-start</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>opacity-100 scale-100<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">x-transition:</span>leave-end</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>opacity-0 scale-95<span class="token punctuation">"</span></span>
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg<span class="token punctuation">"</span></span>
+  <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rounded-md bg-white shadow-xs<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment">&lt;!-- Snipped  --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+            <p><em>We've included a basic click handler here to demonstrate the general idea, but <strong>please
+                  reference the <a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices</a>
+                  when building components like this</strong> to ensure you implement all of the necessary keyboard
+                interactions and properly manage any required ARIA attributes.</em></p>
+
+            <h3 id="html-creating-partials-components">
+              Creating partials/components
+            </h3>
+
+            <p>Since the vanilla HTML examples included in Tailwind UI can't take advantage of things like loops, there
+              is a lot of repetition that wouldn't actually be there in a real-world project where the HTML was being
+              generated from some dynamic data source. We might give you a list component with 5 list items for example
+              that have all the utilities duplicated on each one, whereas in your project you'll actually be generating
+              those list items by looping over an array.</p>
+            <p>When adapting our examples for your own projects, we recommend creating reusable template partials or JS
+              components as needed to manage any duplication.</p>
+            <p>Learn more about this in the <a
+                href="https://tailwindcss.com/docs/extracting-components#extracting-html-components">"Extracting
+                Components" documentation</a> on the Tailwind CSS website.</p>
+
+            <hr id="resources-and-assets">
+
+            <h2>
+              Resources &amp; assets
+            </h2>
+
+            <h3 id="resources-icons">
+              Icons
+            </h3>
+
+            <p>All of the icons we use in Tailwind UI come from <a href="https://heroicons.com">Heroicons</a>, which is
+              a free MIT-licensed icon set we designed and developed ourselves when we started working on Tailwind UI.
+            </p>
+
+            <h3 id="resources-images">
+              Images
+            </h3>
+
+            <p>Images in Tailwind UI come almost exclusively from <a href="https://unsplash.com">Unsplash</a>. It's a
+              great resource if you need freely-usable photography for your projects.</p>
+
+            <h3 id="resources-illustrations">
+              Illustrations
+            </h3>
+
+            <p>Some of the examples in Tailwind UI use illustrations from the free <a
+                href="https://lucid.pixsellz.io">Lucid Illustrations</a> pack by <a
+                href="https://www.pixsellz.io">Pixsellz</a>. You can grab the full set of illustrations and check out
+              their other design resources on <a href="https://www.pixsellz.io">their website</a>.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!--
 <section class="pb-5 sidebar d-none d-md-block col-md-3 no-padding-right">
   <div class="dropdown version-switch">
     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -8,24 +577,24 @@
 
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
       {{#each versions as |name version|}}
-        <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="/docs/{{version}}/{{../currentPage}}">
-            {{name}}
-          </a>
-        </li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="/docs/{{version}}/{{../currentPage}}">
+          {{name}}
+        </a>
+      </li>
       {{/each}}
     </ul>
   </div>
 
   {{#each navigation as |value title|}}
-    <h2 id="{{value.slug}}">{{title}}</h2>
-    <ul>
-      {{#each value.sections as |slug title|}}
-        <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px" {{/isEqual}}>
-          <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
-        </li>
-      {{/each}}
-    </ul>
+  <h3 id="{{value.slug}}">{{title}}</h3>
+  <ul>
+    {{#each value.sections as |slug title|}}
+    <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px" {{/isEqual}}>
+      <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
+    </li>
+    {{/each}}
+  </ul>
   {{/each}}
 </section>
 
@@ -45,24 +614,24 @@
 
     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
       {{#each versions as |name version|}}
-        <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="/docs/{{version}}/{{../currentPage}}">
-            {{name}}
-          </a>
-        </li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="/docs/{{version}}/{{../currentPage}}">
+          {{name}}
+        </a>
+      </li>
       {{/each}}
     </ul>
   </div>
 
   {{#each navigation as |value title|}}
-    <h2 id="{{value.slug}}">{{title}}</h2>
-    <ul>
-      {{#each value.sections as |slug title|}}
-        <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px" {{/isEqual}}>
-          <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
-        </li>
-      {{/each}}
-    </ul>
+  <h2 id="{{value.slug}}">{{title}}</h2>
+  <ul>
+    {{#each value.sections as |slug title|}}
+    <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px" {{/isEqual}}>
+      <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
+    </li>
+    {{/each}}
+  </ul>
   {{/each}}
 </nav>
 
@@ -71,30 +640,30 @@
 </article>
 
 {{!-- {{#append 'scripts'}}
-  <script>
-    let $toggler = document.getElementsByClassName('sidebar__toggler')
-    let $sidebar = document.getElementsByClassName('sidebar--mobile')[0]
-    let $overlay = document.getElementsByClassName('overlay')[0]
-    let $navbar = document.getElementsByClassName('navbar-collapse')[0]
-    let $body = document.getElementsByTagName("body")[0];
+<script>
+  let $toggler = document.getElementsByClassName('sidebar__toggler')
+  let $sidebar = document.getElementsByClassName('sidebar--mobile')[0]
+  let $overlay = document.getElementsByClassName('overlay')[0]
+  let $navbar = document.getElementsByClassName('navbar-collapse')[0]
+  let $body = document.getElementsByTagName("body")[0];
 
-    Array.from($toggler).forEach(e => {
-      e.addEventListener('click', openSidebar);
-    });
+  Array.from($toggler).forEach(e => {
+    e.addEventListener('click', openSidebar);
+  });
 
-    $overlay.addEventListener('click', closeSidebar)
+  $overlay.addEventListener('click', closeSidebar)
 
-    function openSidebar() {
-      $body.style.overflow = 'hidden';
-      $sidebar.classList.add('sidebar--mobile-active')
-      $overlay.classList.add('overlay--active')
-    }
+  function openSidebar() {
+    $body.style.overflow = 'hidden';
+    $sidebar.classList.add('sidebar--mobile-active')
+    $overlay.classList.add('overlay--active')
+  }
 
-    function closeSidebar() {
-      $body.style.overflow = 'auto';
-      $sidebar.classList.remove('sidebar--mobile-active')
-      $overlay.classList.remove('overlay--active')
-      $navbar.classList.remove('show')
-    }
-  </script>
+  function closeSidebar() {
+    $body.style.overflow = 'auto';
+    $sidebar.classList.remove('sidebar--mobile-active')
+    $overlay.classList.remove('overlay--active')
+    $navbar.classList.remove('show')
+  }
+</script>
 {{/append}} --}}

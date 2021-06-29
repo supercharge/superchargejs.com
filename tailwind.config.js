@@ -1,5 +1,8 @@
 'use strict'
 
+const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: [
     './resources/**/*.hbs',
@@ -7,7 +10,15 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: { }
+    colors: {
+      ...colors,
+      'light-blue': colors.sky
+    },
+    extend: {
+      fontFamily: {
+        sans: ['BRHendrix', 'Inter var', ...defaultTheme.fontFamily.sans],
+      },
+    }
   },
   variants: {},
   plugins: [

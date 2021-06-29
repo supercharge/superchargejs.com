@@ -5,19 +5,19 @@
     {{> layout/head}}
 
     {{#stack 'css'}}
-        <link rel="stylesheet" href="/css/br-hendrix.css" type="text/css">
-        <link rel="stylesheet" href="/css/prism.css" type="text/css">
-        <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <link rel="stylesheet" href="/css/br-hendrix.css" type="text/css">
+    <link rel="stylesheet" href="/css/prism.css" type="text/css">
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
     {{/stack}}
 </head>
 
-<body class="">
+<body class="antialiased text-blueGray-700 min-h-full">
 
     {{> header }}
 
-    <div class="" role=" main">
+    <main class="flex-auto flex" role="main">
         {{{ content }}}
-    </div>
+    </main>
 
     {{> footer }}
 
