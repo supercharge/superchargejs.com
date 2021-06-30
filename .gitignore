@@ -1,5 +1,8 @@
 haters
 
+# auto-generated files
+public/css/app.css
+
 lib-cov
 *.seed
 *.log
