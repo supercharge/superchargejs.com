@@ -16,6 +16,17 @@
   a, a:link, a:visited, a:active {
     color: #2436de;
   }
+
+  @font-face {
+    font-family: Cascadida Code;
+    src: url(webfonts/CascadiaCode.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: Cascadida Code;
+    font-style: italic;
+    src: url(webfonts/CascadiaCodeItalic.woff2) format("woff2");
+  }
 }
 
 @layer components {
