@@ -73,7 +73,6 @@
   src: url('webfonts/BRHendrixRegular/font.woff2') format('woff2'), url('webfonts/BRHendrixRegular/font.woff') format('woff');
 }
 @font-face {
-  font-family: "BRHendrix-Black";
   font-family: 'BRHendrix';
   font-weight: 900;
   src: url('webfonts/BRHendrixBlack/font.woff2') format('woff2'), url('webfonts/BRHendrixBlack/font.woff') format('woff');
