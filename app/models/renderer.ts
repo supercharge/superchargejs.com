@@ -12,6 +12,7 @@ const icon = `
     xmlns="http://www.w3.org/2000/svg"
     width="16" height="16" viewBox="0 0 24 24"
     fill="none" stroke="currentColor"
+    class="fill-current stroke-current"
     stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
     class="icon">
       <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
@@ -29,8 +30,8 @@ renderer.heading = (text: string, level: HeadingLevel) => {
 
   const slug = text.toLowerCase().replace(/[^\w]+/g, '-')
 
-  return `<h${level} class="docs__heading">
-            <a href="#${slug}" name="${slug}">
+  return `<h${level} class="flex items-center">
+            <a href="#${slug}" name="${slug}" class="p-1 -ml-8 mr-2 hover:text-blue-800 hover:bg-blueGray-100 rounded">
               ${icon}
             </a>
             ${text}

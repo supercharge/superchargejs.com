@@ -1,9 +1,9 @@
 <div class="relative w-full">
   <div class="container relative flex w-full px-4 mx-auto sm:px-6 lg:px-8">
-    <div class="flex-none w-full lg:grid lg:grid-cols-3 lg:gap-8">
-      <div class="px-4 py-12 -mx-4 bg-blueGray-50 lg:bg-transparent sm:-mx-6 lg:mx-0 sm:py-16 sm:px-6 lg:pl-0 lg:pr-8">
-        <div class="prose text-sm max-w-[37.5rem] mx-auto lg:max-w-none lg:mx-0 relative lg:sticky lg:top-10">
-          <div class="relative inline-block text-left" x-data="{ open: false }">
+    <div class="flex-none w-full lg:grid lg:grid-cols-4 lg:gap-8">
+      <div class="border-r border-coolGray-100">
+        <div class="relative py-16 lg:pl-8">
+          <div class="relative inline-block mb-8" x-data="{ open: false }">
             <div @mouseenter="open = true">
               <button type="button"
                 class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 border rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
@@ -31,33 +31,36 @@
               <div class="py-1" role="none">
 
                 {{#each versions as |name version|}}
-                <a href="/docs/{{version}}/{{../currentPage}}" class="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem" tabindex="-1" id="menu-item-0">
-                  {{name}}</a>
+                  <a href="/docs/{{version}}/{{../currentPage}}"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-blueGray-100 hover:text-blue-800"
+                    role="menuitem" tabindex="-1" id="menu-item-0">
+                    {{name}}</a>
                 {{/each}}
               </div>
             </div>
           </div>
 
           {{#each navigation as |value title|}}
-          <h3 id="{{value.slug}}">{{title}}</h3>
-          <ul>
-            {{#each value.sections as |slug title|}}
-            <li {{#isEqual ../../currentPage slug}} class="font-bold border-bottom negative-padding-r-15px"
-              {{/isEqual}}>
-              <a href="/docs/{{../../version}}/{{slug}}">{{title}}</a>
-            </li>
-            {{/each}}
-          </ul>
+            <h3 id="{{value.slug}}" class="pt-3 pr-3 mb-3 text-sm font-bold">{{title}}</h3>
+
+            <ul class="mb-6 ml-3">
+              {{#each value.sections as |slug title|}}
+                <li
+                  class="leading-6 mb-1 mt-1 {{#isEqual ../../currentPage slug}} border-b border-coolGray-100 font-bold {{/isEqual}}">
+                  <a href="/docs/{{../../version}}/{{slug}}"
+                    class="block px-2 py-1 mr-2 rounded hover:bg-blueGray-100 hover:text-blue-800">{{title}}</a>
+                </li>
+              {{/each}}
+            </ul>
           {{/each}}
         </div>
       </div>
 
-      <div class="relative col-span-2 bg-white lg:-ml-8 lg:shadow-md">
+      <div class="col-span-3">
         <div class="absolute top-0 bottom-0 hidden w-8 bg-white lg:block -right-4"></div>
 
         <div class="relative py-16 lg:px-16">
-          <div class="prose prose-sm max-w-[37.5rem] mx-auto">
+          <div class="max-w-xl prose prose-md">
 
             {{{docsContent}}}
 
@@ -145,5 +148,5 @@
 --}}
 
 {{#append 'scripts'}}
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 {{/append}}
