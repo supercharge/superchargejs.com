@@ -46,7 +46,7 @@
             <ul class="mb-6 ml-3">
               {{#each value.sections as |slug title|}}
                 <li
-                  class="leading-6 mb-1 mt-1 {{#isEqual ../../currentPage slug}} border-b border-coolGray-100 font-bold {{/isEqual}}">
+                  class="leading-6 {{#isEqual ../../currentPage slug}} border-b border-coolGray-100 font-bold {{/isEqual}}">
                   <a href="/docs/{{../../version}}/{{slug}}"
                     class="block px-2 py-1 mr-2 rounded hover:bg-blueGray-100 hover:text-blue-800">{{title}}</a>
                 </li>
