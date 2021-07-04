@@ -12,7 +12,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['BRHendrix', 'Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['ATC Overlook', 'BRHendrix', ...defaultTheme.fontFamily.sans],
+        brhendrix: ['BRHendrix', ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {

@@ -5,6 +5,10 @@
 
 
 @layer base {
+  h1, h2, h3, h4, h5, h6, h7 {
+    @apply font-brhendrix;
+  }
+
   h1 {
     @apply text-2xl;
   }
@@ -30,6 +34,61 @@
     font-family: Cascadida Code;
     font-style: italic;
     src: url(webfonts/CascadiaCodeItalic.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 300;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Light.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 300;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-LightOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 400;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 400;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-RegularOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 500;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Medium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 500;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-MediumOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 600;
+    src: url('webfonts/ATCOverlook/ATCOverlook-SemiBold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 600;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-SemiBoldOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 700;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 900;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Black.woff2') format('woff2');
   }
 }
 
