@@ -1,92 +1,92 @@
 <header class="shadow-sm lg:static lg:overflow-y-visible">
     <div class="p-1 mx-auto max-w-7xl sm:px-4 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="h-16 lg:grid lg:grid-cols-4 lg:gap-8">
             <div class="flex px-2 lg:px-0">
                 <div class="flex items-center flex-shrink-0">
                     {{> logo }}
                 </div>
-
             </div>
-            <div class="flex items-center justify-center flex-1 px-2 lg:ml-6 lg:justify-end">
-                <div class="w-full max-w-lg lg:max-w-sm">
-                    <label for="search" class="sr-only">Search</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 z-10 flex items-center pl-3 pointer-events-none">
-                            <!-- Heroicon name: solid/search -->
-                            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
+            <div class="flex items-center col-span-3">
+                <div class="flex justify-center flex-1 px-5 lg:justify-end">
+                    <div class="w-full">
+                        <label for="search" class="sr-only">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 z-10 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-5 h-5 text-coolGray-300" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
 
-                        <input id="docsearch" name="search"
-                            class="z-0 block w-full py-2 pl-10 pr-3 leading-5 placeholder-gray-500 bg-white border border-gray-300 rounded-md focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            placeholder="Search the docs" type="search">
+                            <input id="docsearch" name="search"
+                                class="z-0 block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md placeholder-coolGray-500 border-coolGray-200 focus:outline-none focus:placeholder-coolGray-300 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                placeholder="Search the docs" type="search">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex items-center lg:hidden">
-                <!-- Mobile menu button -->
-                <button type="button"
-                    class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                    aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <!--
+                <div class="lg:hidden">
+                    <!-- Mobile menu button -->
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!--
                     Icon when menu is closed.
 
                     Heroicon name: outline/menu
 
                     Menu open: "hidden", Menu closed: "block"
                 -->
-                    <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <!--
+                        <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!--
             Icon when menu is open.
 
             Heroicon name: outline/x
 
             Menu open: "block", Menu closed: "hidden"
           -->
-                    <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="hidden lg:ml-4 lg:flex lg:items-center">
-                <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
-                    <a href="/docs"
-                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
-                        Docs
-                    </a>
-                    <a href="/podcast"
-                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
-                        Podcast
-                    </a>
-                    <a href="https://github.com/supercharge"
-                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
-                        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <title>Supercharge on GitHub</title>
-                            <path
-                                d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0">
-                            </path>
+                        <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                    </a>
-                    <a href="https://twitter.com/superchargejs"
-                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
-                        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <title>Supercharge on Twitter</title>
-                            <path
-                                d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 0 0 1.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 0 0-7 3.74 11.65 11.65 0 0 1-8.45-4.3 4.1 4.1 0 0 0 1.27 5.49C2.01 8.2 1.37 8.03.8 7.7v.05a4.1 4.1 0 0 0 3.3 4.03 4.1 4.1 0 0 1-1.86.07 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 0 16.4a11.62 11.62 0 0 0 6.29 1.84">
-                            </path>
-                        </svg>
-                    </a>
+                    </button>
+                </div>
+                <div class="hidden lg:ml-4 lg:flex">
+                    <div class="hidden lg:ml-6 lg:flex lg:space-x-8">
+                        <a href="/docs"
+                            class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
+                            Docs
+                        </a>
+                        <a href="/podcast"
+                            class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
+                            Podcast
+                        </a>
+                        <a href="https://github.com/supercharge"
+                            class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <title>Supercharge on GitHub</title>
+                                <path
+                                    d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/superchargejs"
+                            class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <title>Supercharge on Twitter</title>
+                                <path
+                                    d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 0 0 1.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 0 0-7 3.74 11.65 11.65 0 0 1-8.45-4.3 4.1 4.1 0 0 0 1.27 5.49C2.01 8.2 1.37 8.03.8 7.7v.05a4.1 4.1 0 0 0 3.3 4.03 4.1 4.1 0 0 1-1.86.07 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 0 16.4a11.62 11.62 0 0 0 6.29 1.84">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
