@@ -47,12 +47,25 @@ export class Documentation {
     const path = this.app.resourcePath(`docs/${this.version}/${file}`)
 
     if (await Fs.exists(path)) {
-      const content = await Fs.readFile(path) as unknown as string
-
-      return this.replaceLinks(Markdown(content))
+      return this.createHtmlFromMarkdown(path)
     }
 
     throw new Error('The requested docs page is not available.')
+  }
+
+  /**
+   * Returns the rendered HTML string for the given markdown `file`.
+   *
+   * @param file
+   *
+   * @returns {String}
+   */
+  async createHtmlFromMarkdown (file: string): Promise<string> {
+    const markdown = Markdown(
+      await Fs.content(file)
+    )
+
+    return this.replaceLinks(markdown)
   }
 
   /**
