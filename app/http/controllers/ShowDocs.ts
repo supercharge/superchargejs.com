@@ -8,7 +8,7 @@ export class ShowDocs {
    * Handle the given request.
    */
   handle ({ response }: HttpContext): unknown {
-    const version: string = Config.get('docs.default', 'main')
+    const version = Config.get('docs.default', 'main') as string
 
     return response.redirect().to(`/docs/${version}`)
   }
