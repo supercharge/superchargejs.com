@@ -43,11 +43,11 @@ renderer.code = (content: string, identifier = '', escaped: boolean) => {
   if (['info', 'success', 'warning'].includes(identifier)) {
     const html: string = Markdown(content, { renderer: alertRenderer })
 
-    return `<div class="alert alert-${identifier} docs__alert row">
-              <div class="col-1">
+    return `<div class="alert alert-${identifier} rounded flex px-4 text-sm">
+              <div class="flex-shrink-0">
                   <img src="/images/icons/alerts/${identifier}.svg" />
               </div>
-              <div class="col">${html}</div>
+              <div class="ml-4">${html}</div>
             </div>`
   }
 
