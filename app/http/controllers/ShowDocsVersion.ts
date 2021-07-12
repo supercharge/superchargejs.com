@@ -46,7 +46,7 @@ export class ShowDocsVersion {
 
     this.meta.docs = new Documentation(this.app, version)
 
-    if (!this.docs().isValidVersion()) {
+    if (this.docs().isInvalidVersion()) {
       return this.redirectToDefaultVersion(response, page)
     }
 

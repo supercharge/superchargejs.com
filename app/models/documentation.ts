@@ -92,6 +92,15 @@ export class Documentation {
   }
 
   /**
+   * Determine whether the given version is not valid.
+   *
+   * @returns {Boolean}
+   */
+  isInvalidVersion (): boolean {
+    return !this.isValidVersion()
+  }
+
+  /**
    * Returns all configured docs version mappings. The mapping keys are the
    * folder names and the values represent the name that is shown in the web.
    *
