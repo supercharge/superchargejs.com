@@ -45,6 +45,8 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
     "build:css": "postcss resources/css/app.css -o public/css/app.css",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
     "dev:css": "postcss --watch resources/css/app.css -o public/css/app.css",
