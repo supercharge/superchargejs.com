@@ -12,9 +12,12 @@
   },
   "rules": {
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": 0,
     "@typescript-eslint/return-await": 0,
     "@typescript-eslint/method-signature-style": 0,
-    "@typescript-eslint/strict-boolean-expressions": 0
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "only-multiline"
+    ]
   }
 }

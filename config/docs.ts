@@ -26,5 +26,5 @@ export default {
   versions: {
     main: 'Main',
     '2.x': '2.x',
-  }
+  },
 }

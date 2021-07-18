@@ -17,4 +17,5 @@ const app = Application
     Facade.setApplication(app)
   })
 
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 new ConsoleKernel(app).run()

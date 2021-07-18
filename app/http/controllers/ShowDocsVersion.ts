@@ -67,7 +67,7 @@ export class ShowDocsVersion {
       docsContent: content,
       versions: this.docs().versions(),
       navigation: this.docs().navigation(),
-      currentVersion: this.docs().versions()[version]
+      currentVersion: this.docs().versions()[version],
     })
   }
 
