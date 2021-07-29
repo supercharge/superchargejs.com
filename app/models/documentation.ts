@@ -44,10 +44,30 @@ export class Documentation {
    * @returns {String}
    */
   async readAndParseFile (file: string): Promise<string> {
-    const path = this.app.resourcePath(`docs/${this.version}/${file}`)
+    return this.createHtmlFromMarkdown(
+      await this.resolveDocsPathFor(file)
+    )
+  }
 
-    if (await Fs.exists(path)) {
-      return this.createHtmlFromMarkdown(path)
+  /**
+   * Returns the resolved file path to the given docs `file`. Throws an error
+   * if the given docs page does not exist for the requested `file`.
+   *
+   * @param {String} file
+   *
+   * @returns {Strin}
+   */
+  private async resolveDocsPathFor (file: string): Promise<string> {
+    const resourcePath = this.app.resourcePath(`docs/${this.version}/${file}`)
+
+    if (await Fs.exists(resourcePath)) {
+      return resourcePath
+    }
+
+    const packagePath = this.app.resourcePath(`docs/${this.version}/packages/${file}`)
+
+    if (await Fs.exists(packagePath)) {
+      return packagePath
     }
 
     throw new Error('The requested docs page is not available.')
