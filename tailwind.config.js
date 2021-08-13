@@ -16,10 +16,16 @@ module.exports = {
         brhendrix: ['BRHendrix', ...defaultTheme.fontFamily.sans],
       },
     },
-    colors: {
-      ...colors,
-      'light-blue': colors.sky
-    }
+    colors,
+    typography: {
+      DEFAULT: { // this is for the `prose` class
+        css: {
+          h4: {
+            'margin-top': '3rem'
+          },
+        },
+      },
+    },
   },
   variants: {},
   plugins: [
