@@ -36,6 +36,7 @@
     "postcss-cli": "~8.3.1",
     "tailwindcss": "~2.2.7",
     "tailwindcss-textshadow": "~2.1.3",
+    "ts-node": "~10.2.0",
     "typescript": "~4.3.5"
   },
   "engines": {
@@ -51,6 +52,7 @@
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
     "dev:css": "postcss --watch resources/css/app.css -o public/css/app.css",
     "dev:server": "nodemon --ext ts,js,hbs --exec 'ts-node' server.ts",
-    "test": "echo 'Missing tests.' && exit 1"
+    "test": "echo 'Missing tests.' && exit 1",
+    "start": "ts-node server.ts"
   }
 }
