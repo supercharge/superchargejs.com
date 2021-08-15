@@ -30,6 +30,7 @@ coverage
 # Secrets
 .env
 .env.**
+!.env.example
 
 # IDEA IntelliJ/Webstorm
 .idea
