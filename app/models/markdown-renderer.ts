@@ -39,8 +39,7 @@ export class MarkdownRenderer {
    */
   async render (markdown: string, options?: MarkedOptions): Promise<string> {
     const highlighter = await getHighlighter({
-      // theme: 'dracula',
-      theme: 'nord',
+      theme: 'github-dark',
       langs: ['bash', 'sh', 'shell', 'css', 'html', 'javascript', 'js', 'json', 'typescript', 'handlebars', 'hbs', 'nginx', 'markdown'],
     })
 

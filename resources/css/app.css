@@ -25,11 +25,6 @@
     @apply text-white !important;
   }
 
-  pre {
-    font-family: "Cascadida Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    @apply p-2 text-sm;
-  }
-
   @font-face {
     font-family: Cascadida Code;
     src: url(webfonts/CascadiaCode.woff2) format("woff2");
@@ -163,6 +158,12 @@
   }
   .prose a:hover > code {
     @apply text-indigo-900;
+  }
+
+  .prose pre {
+    @apply px-3 py-2;
+    font-family: "Cascadida Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.825rem;
   }
 }
 
