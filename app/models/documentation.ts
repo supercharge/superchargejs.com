@@ -2,16 +2,21 @@
 
 import Fs from '@supercharge/fs'
 import Str from '@supercharge/strings'
-import { Markdown } from './renderer'
 import { Application } from '@supercharge/contracts'
+import { MarkdownRenderer } from './markdown-renderer'
 
 export class Documentation {
   private readonly app: Application
   private readonly version: string
+  private readonly markdownRenderer: MarkdownRenderer
 
+  /**
+   * Create a new documentation instance.
+   */
   constructor (app: Application, version: string) {
     this.app = app
     this.version = version
+    this.markdownRenderer = new MarkdownRenderer()
   }
 
   /**
@@ -81,7 +86,7 @@ export class Documentation {
    * @returns {String}
    */
   async createHtmlFromMarkdown (file: string): Promise<string> {
-    const markdown = Markdown(
+    const markdown = await this.markdownRenderer.render(
       await Fs.content(file)
     )
 
