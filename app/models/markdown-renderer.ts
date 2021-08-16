@@ -2,6 +2,7 @@
 
 import { DocsRenderer } from './docs-renderer'
 import Markdown, { MarkedOptions } from 'marked'
+import { getHighlighter, Highlighter } from 'shiki'
 
 export class MarkdownRenderer {
   /**
@@ -37,25 +38,19 @@ export class MarkdownRenderer {
    * @returns {String}
    */
   async render (markdown: string, options?: MarkedOptions): Promise<string> {
+    const highlighter = await getHighlighter({
+      // theme: 'dracula',
+      theme: 'nord',
+      langs: ['bash', 'sh', 'shell', 'css', 'html', 'javascript', 'js', 'json', 'typescript', 'handlebars', 'hbs', 'nginx', 'markdown'],
+    })
+
     return new Promise((resolve, reject) => {
-      this.renderer(markdown, this.rendererConfig(options), (error, html) => {
+      this.renderer(markdown, this.rendererConfig(highlighter, options), (error, html) => {
         error
           ? reject(error)
           : resolve(html)
       })
     })
-  }
-
-  /**
-   * Returns the rendered HTML of the given `markdown` content.
-   *
-   * @param {String} markdown
-   * @param {MarkedOptions} options
-   *
-   * @returns {String}
-   */
-  renderSync (markdown: string, options?: MarkedOptions): string {
-    return this.renderer(markdown, this.rendererConfig(options))
   }
 
   /**
@@ -65,7 +60,7 @@ export class MarkdownRenderer {
    *
    * @returns {MarkedOptions}
    */
-  private rendererConfig (options?: MarkedOptions): MarkedOptions {
-    return { renderer: new DocsRenderer(options) }
+  private rendererConfig (highlighter: Highlighter, options?: MarkedOptions): MarkedOptions {
+    return { renderer: new DocsRenderer(highlighter, options) }
   }
 }

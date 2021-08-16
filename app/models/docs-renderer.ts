@@ -1,11 +1,26 @@
 'use strict'
 
+import { Highlighter } from 'shiki'
 import Str from '@supercharge/strings'
-import Marked, { Renderer } from 'marked'
+import Marked, { MarkedOptions, Renderer } from 'marked'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
 export class DocsRenderer extends Renderer {
+  /**
+   * Stores the shiki highlighter instance.
+   */
+  private readonly highlighter: Highlighter
+
+  /**
+   * Create a new renderer instance.
+   */
+  constructor (highlighter: Highlighter, options?: MarkedOptions) {
+    super(options)
+
+    this.highlighter = highlighter
+  }
+
   /**
    * Returns the HTML for the given heading `text` and `level`.
    *
@@ -47,35 +62,35 @@ export class DocsRenderer extends Renderer {
    * Returns the HTML for the given code block.
    *
    * @param {String} content
-   * @param {String} identifier
+   * @param {String} language
    * @param {Boolean} escaped
    *
    * @returns {String}
    */
-  code (content: string, identifier: string, escaped: boolean): string {
-    if (this.isAlert(identifier)) {
+  code (content: string, language: string): string {
+    if (this.isAlert(language)) {
       const html: string = Marked(content)
 
-      return `<div class="alert alert-${identifier} rounded flex px-4 text-sm">
+      return `<div class="alert alert-${language} rounded flex px-4 text-sm">
                 <div class="flex-shrink-0">
-                    <img src="/images/icons/alerts/${identifier}.svg" />
+                    <img src="/images/icons/alerts/${language}.svg" />
                 </div>
                 <div class="ml-4">${html}</div>
               </div>`
     }
 
-    return super.code(content, identifier, escaped)
+    return this.highlighter.codeToHtml(content, language)
   }
 
   /**
-   * Determine whether the given `identifier` is an alert.
+   * Determine whether the given code `language` is an alert.
    *
-   * @param {String} identifier
+   * @param {String} language
    *
    * @returns {Boolean}
    */
-  private isAlert (identifier: string): boolean {
-    return ['info', 'success', 'warning'].includes(identifier)
+  private isAlert (language: string): boolean {
+    return ['info', 'success', 'warning'].includes(language)
   }
 
   /**
