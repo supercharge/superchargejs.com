@@ -25,6 +25,11 @@
     @apply text-white !important;
   }
 
+  pre {
+    font-family: "Cascadida Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    @apply p-2 text-sm;
+  }
+
   @font-face {
     font-family: Cascadida Code;
     src: url(webfonts/CascadiaCode.woff2) format("woff2");
