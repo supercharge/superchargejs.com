@@ -176,6 +176,20 @@
     margin-bottom: 0;
   }
 
+  .prose a {
+    @apply text-indigo-600 no-underline;
+  }
+
+  .prose a:hover {
+    @apply text-indigo-900;
+  }
+
+  .prose a > code {
+    @apply text-indigo-600;
+  }
+  .prose a:hover > code {
+    @apply text-indigo-900;
+  }
 }
 
 .algolia-autocomplete {
