@@ -16,6 +16,8 @@ lib-cov
 pids
 results
 
+# Build & cache files
+dist
 node_modules
 npm-debug.log
 package-lock.json
