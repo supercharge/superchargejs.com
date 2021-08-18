@@ -46,14 +46,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "concurrently \"npm run prod:css\"",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "npm run lint -- --fix",
+    "start": "ts-node server.ts",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
     "dev:css": "postcss --watch resources/css/app.css -o public/css/app.css",
-    "prod:css": "NODE_ENV=production postcss resources/css/app.css -o public/css/app.css",
     "dev:server": "nodemon --ext ts,js,hbs --exec 'ts-node' server.ts",
-    "start": "ts-node server.ts",
+    "prod": "npm run production",
+    "production": "concurrently \"npm run prod:css\"",
+    "prod:css": "NODE_ENV=production postcss resources/css/app.css -o public/css/app.css",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
     "test": "echo 'Missing tests.' && exit 1"
   }
 }
