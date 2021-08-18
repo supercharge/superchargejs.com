@@ -38,7 +38,11 @@ export class Documentation {
    * @returns {String}
    */
   async get (page: string): Promise<string> {
-    return await this.readAndParseFile(`${page}.md`)
+    try {
+      return await this.readAndParseFile(`${page}.md`)
+    } catch (error) {
+      return ''
+    }
   }
 
   /**
