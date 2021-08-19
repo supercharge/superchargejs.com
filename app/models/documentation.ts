@@ -16,7 +16,7 @@ export class Documentation {
   constructor (app: Application, version: string) {
     this.app = app
     this.version = version
-    this.markdownRenderer = new MarkdownRenderer()
+    this.markdownRenderer = new MarkdownRenderer(app)
   }
 
   /**
