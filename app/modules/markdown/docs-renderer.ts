@@ -37,7 +37,7 @@ export class DocsRenderer extends Renderer {
     const slug = this.slugify(text)
 
     return `<h${level} class="flex items-center">
-              <a href="#${slug}" name="${slug}" class="p-1 -ml-8 mr-2 hover:text-blue-800 hover:bg-blueGray-100 rounded">
+              <a href="#${slug}" name="${slug}" class="p-1 -ml-8 mr-2 hover:bg-blueGray-100 rounded">
                 ${this.bookmarkIcon()}
               </a>
               ${text}
