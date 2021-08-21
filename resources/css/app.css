@@ -149,6 +149,18 @@
     @apply text-indigo-600 no-underline;
   }
 
+  .prose h2 {
+    @apply mt-16 mb-3;
+  }
+
+  .prose h3 {
+    @apply mb-2 mt-14;
+  }
+
+  .prose h4 {
+    @apply mt-12;
+  }
+
   .prose a:hover {
     @apply text-indigo-900;
   }
