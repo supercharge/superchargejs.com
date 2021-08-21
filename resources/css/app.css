@@ -173,7 +173,7 @@
   }
 
   .prose pre {
-    @apply px-4 py-3;
+    @apply px-4 py-3 leading-6;
     font-family: "Cascadida Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.825rem;
   }
