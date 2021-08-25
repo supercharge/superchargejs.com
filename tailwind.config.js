@@ -17,15 +17,6 @@ module.exports = {
       },
     },
     colors,
-    typography: {
-      DEFAULT: { // this is for the `prose` class
-        css: {
-          h4: {
-            'margin-top': '3rem'
-          },
-        },
-      },
-    },
   },
   variants: {},
   plugins: [

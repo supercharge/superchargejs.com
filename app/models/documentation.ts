@@ -3,12 +3,11 @@
 import Fs from '@supercharge/fs'
 import Str from '@supercharge/strings'
 import { Application } from '@supercharge/contracts'
-import { MarkdownRenderer } from './markdown-renderer'
+import { MarkdownRenderer } from '../modules/markdown/markdown-renderer'
 
 export class Documentation {
   private readonly app: Application
   private readonly version: string
-  private readonly markdownRenderer: MarkdownRenderer
 
   /**
    * Create a new documentation instance.
@@ -16,7 +15,6 @@ export class Documentation {
   constructor (app: Application, version: string) {
     this.app = app
     this.version = version
-    this.markdownRenderer = new MarkdownRenderer(app)
   }
 
   /**
@@ -28,6 +26,15 @@ export class Documentation {
     return require(
       this.app.resourcePath(`docs/${this.version}/navigation`)
     )
+  }
+
+  /**
+   * Returns the markdown renderer instance.
+   *
+   * @returns {MarkdownRenderer}
+   */
+  markdownRenderer (): MarkdownRenderer {
+    return this.app.make(MarkdownRenderer.name)
   }
 
   /**
@@ -90,7 +97,7 @@ export class Documentation {
    * @returns {String}
    */
   async createHtmlFromMarkdown (file: string): Promise<string> {
-    const markdown = await this.markdownRenderer.render(
+    const markdown = await this.markdownRenderer().render(
       await Fs.content(file)
     )
 
