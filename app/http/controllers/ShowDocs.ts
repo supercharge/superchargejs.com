@@ -7,9 +7,12 @@ export class ShowDocs {
   /**
    * Handle the given request.
    */
-  handle ({ response }: HttpContext): HttpRedirect {
+  handle ({ request, response }: HttpContext): HttpRedirect {
+    const { page }: { page?: string } = request.params as any
     const version = Config.get('docs.default', 'main') as string
 
-    return response.redirect().to(`/docs/${version}`)
+    return page
+      ? response.redirect().to(`/docs/${version}/${page}`)
+      : response.redirect().to(`/docs/${version}/installation`)
   }
 }
