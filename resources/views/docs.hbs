@@ -2,8 +2,8 @@
   <div class="lg:grid lg:grid-cols-4 lg:gap-8">
     <div class="border-r border-coolGray-100">
       <div class="relative py-16 lg:pl-8">
-        <div class="relative inline-block mb-8" x-data="{ open: false }">
-          <div @mouseenter="open = true">
+        <section class="relative inline-block mb-8 version-switch" x-data="{ open: false }">
+          <div @mouseenter="open = true" class="version-switch">
             <button type="button"
               class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 border rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
               id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -36,7 +36,7 @@
               {{/each}}
             </div>
           </div>
-        </div>
+        </section>
 
         {{#each navigation as |value title|}}
         <h3 id="{{value.slug}}" class="pt-3 pr-3 mb-3 text-sm font-bold">{{title}}</h3>
@@ -55,11 +55,11 @@
 
     <div class="col-span-3">
       <div class="py-16 lg:px-16">
-        <div class="max-w-2xl prose prose-md">
+        <article class="max-w-2xl prose prose-md">
 
           {{{docsContent}}}
 
-        </div>
+        </article>
       </div>
     </div>
 
