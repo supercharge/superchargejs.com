@@ -29,7 +29,7 @@ export class DocsRenderer extends Renderer {
    *
    * @returns {String}
    */
-  heading (text: string, level: HeadingLevel): string {
+  override heading (text: string, level: HeadingLevel): string {
     if (level === 1) {
       return `<h1>${text}</h1>`
     }
@@ -51,7 +51,7 @@ export class DocsRenderer extends Renderer {
    * @param body
    * @returns
    */
-  table (header: string, body: string): string {
+  override table (header: string, body: string): string {
     return `<table class="table-auto">
         ${header}
         ${body}
@@ -67,7 +67,7 @@ export class DocsRenderer extends Renderer {
    *
    * @returns {String}
    */
-  code (content: string, language: string): string {
+  override code (content: string, language: string): string {
     if (this.isAlert(language)) {
       const html: string = Marked(content)
 

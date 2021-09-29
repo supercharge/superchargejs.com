@@ -1,15 +1,11 @@
 'use strict'
 
 import Str from '@supercharge/strings'
+import { Controller } from '@supercharge/http'
 import { Documentation } from '../../models/documentation'
 import { Application, HttpContext, HttpResponse } from '@supercharge/contracts'
 
-export class ShowDocsVersion {
-  /**
-   * The application instance.
-   */
-  private readonly app: Application
-
+export class ShowDocsVersion extends Controller {
   /**
    * The internal properties.
    */
@@ -21,7 +17,8 @@ export class ShowDocsVersion {
    * Create a new instance.
    */
   constructor (app: Application) {
-    this.app = app
+    super(app)
+
     this.meta = {}
   }
 
@@ -42,7 +39,9 @@ export class ShowDocsVersion {
    * Handle the given request.
    */
   async handle ({ request, response }: HttpContext): Promise<any> {
-    const { version, page = 'installation' }: { version: string, page: string} = request.params as any
+    this.app.logger().info('Calling "ShowDocsVersion" controller')
+
+    const { version, page = 'installation' } = request.params().all()
 
     this.meta.docs = new Documentation(this.app, version)
 
@@ -53,9 +52,7 @@ export class ShowDocsVersion {
     const content = await this.docs().get(page)
 
     if (!content) {
-      return response
-        .status(404)
-        .redirect().to('/404')
+      return response.redirect().to('/404')
     }
 
     const title = `${Str(page).title().replaceAll('-', ' ').get() || 'Installation'} — Supercharge`
