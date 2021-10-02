@@ -1,13 +1,15 @@
 {
   "apps": [
     {
-      "name": "supercharge-website",
-      "script": "./server.js",
+      "name": "superchargejs.com",
+      "script": "npm",
+      "args": "start",
       "instances": 2,
       "exec_mode": "cluster",
+      "wait_ready": true,
       "env": {
         "NODE_ENV": "production",
-        "PORT": 2018
+        "PORT": 2021
       }
     }
   ]

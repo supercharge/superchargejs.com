@@ -1,18 +1,144 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+{{!-- This example requires Tailwind CSS v2.0+
 
-    <div class="container">
+This example requires some changes to your config:
 
-        {{> logo }}
+```
+// tailwind.config.js
+module.exports = {
+// ...
+plugins: [
+// ...
+require('@tailwindcss/forms'),
+],
+}
+```
+When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars
 
-        {{> nav/nav-center}}
+Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
+--}}
 
-        <button class="navbar-toggler sidebar__toggler" type="button" data-toggle="collapse"
-            data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header class="bg-white shadow-sm lg:static lg:overflow-y-visible" x-data="{ showMobileMenu: false }">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="relative flex justify-between xl:grid xl:grid-cols-9 md:gap-8">
+            <div class="flex md:left-0 md:inset-y-0 lg:static xl:col-span-2">
+                <div class="flex items-center flex-shrink-0">
+                    {{> logo }}
+                </div>
+            </div>
+            <div class="flex-1 min-w-0 xl:col-span-4">
+                <div class="flex items-center px-6 py-4 md:max-w-3xl md:mx-auto lg:max-w-none lg:mx-0 xl:px-0">
+                    <div class="w-full">
+                        <label for="search" class="sr-only">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 z-10 flex items-center pl-3 pointer-events-none">
+                                <!-- Heroicon name: solid/search -->
+                                <svg class="w-5 h-5 text-coolGray-300" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input id="docsearch" name="search"
+                                class="z-0 block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md placeholder-coolGray-500 border-coolGray-200 focus:outline-none focus:placeholder-coolGray-300 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                placeholder="Search the docs" type="search">
 
-        {{> nav/nav-right}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center md:absolute md:right-0 md:inset-y-0 md:hidden">
+                <!-- Mobile menu button -->
+                <button @click="showMobileMenu = !showMobileMenu" type="button"
+                    class="inline-flex items-center justify-center p-2 -mx-2 rounded-md text-coolGray-400 hover:bg-coolGray-100 hover:text-coolGray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    aria-expanded="false">
+                    <span class="sr-only">Open menu</span>
+                    {{!-- Icon when menu is closed.
 
+                    Heroicon name: outline/menu
+
+                    Menu open: "hidden", Menu closed: "block" --}}
+                    <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true" x-show="!showMobileMenu">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    {{!-- Icon when menu is open.
+
+                    Heroicon name: outline/x
+
+                    Menu open: "block", Menu closed: "hidden" --}}
+                    <svg class="w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true" x-show="showMobileMenu">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex md:items-center md:justify-end xl:col-span-3 md:space-x-8">
+                <a href="/docs"
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    Docs
+                </a>
+                <a href="/podcast"
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    Podcast
+                </a>
+                <a href="https://github.com/supercharge"
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <title>Supercharge on GitHub</title>
+                        <path
+                            d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/superchargejs"
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <title>Supercharge on Twitter</title>
+                        <path
+                            d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 0 0 1.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 0 0-7 3.74 11.65 11.65 0 0 1-8.45-4.3 4.1 4.1 0 0 0 1.27 5.49C2.01 8.2 1.37 8.03.8 7.7v.05a4.1 4.1 0 0 0 3.3 4.03 4.1 4.1 0 0 1-1.86.07 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 0 16.4a11.62 11.62 0 0 0 6.29 1.84">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
-</nav>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <nav class="md:hidden" aria-label="Global" x-show="showMobileMenu">
+        <div class="max-w-3xl px-2 pt-2 pb-3 mx-auto space-y-1 sm:px-4">
+            {{!-- <a href="/docs" aria-current="page"
+                class="block px-3 py-2 text-base rounded-md hover:bg-coolGray-100 "> --}}
+                <a href="/docs" class="block px-3 py-2 text-base rounded-md hover:bg-coolGray-100 ">
+                    Documentation
+                </a>
+
+                <a href="/podcast" class="block px-3 py-2 text-base font-medium rounded-md hover:bg-coolGray-50">
+                    Podcast
+                </a>
+
+                <div class="flex">
+                    <a href="https://github.com/supercharge"
+                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <title>Supercharge on GitHub</title>
+                            <path
+                                d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/superchargejs"
+                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <title>Supercharge on Twitter</title>
+                            <path
+                                d="M6.29 18.25c7.55 0 11.67-6.25 11.67-11.67v-.53c.8-.59 1.49-1.3 2.04-2.13-.75.33-1.54.55-2.36.65a4.12 4.12 0 0 0 1.8-2.27c-.8.48-1.68.81-2.6 1a4.1 4.1 0 0 0-7 3.74 11.65 11.65 0 0 1-8.45-4.3 4.1 4.1 0 0 0 1.27 5.49C2.01 8.2 1.37 8.03.8 7.7v.05a4.1 4.1 0 0 0 3.3 4.03 4.1 4.1 0 0 1-1.86.07 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 0 16.4a11.62 11.62 0 0 0 6.29 1.84">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+        </div>
+    </nav>
+</header>

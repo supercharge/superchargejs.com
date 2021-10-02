@@ -5,24 +5,24 @@
     {{> layout/head}}
 
     {{#stack 'css'}}
-        <link rel="stylesheet" href="/css/br-hendrix.css" type="text/css">
-        <link rel="stylesheet" href="/css/style.css" type="text/css">
-        <link rel="stylesheet" href="/css/prism.css" type="text/css">
+    <link rel="stylesheet" href="/css/br-hendrix.css" type="text/css">
+    <link rel="stylesheet" href="/css/app.css" type="text/css">
     {{/stack}}
 </head>
 
-<body class="bg-pattern">
+<body class="h-screen antialiased text-blueGray-700">
 
     {{> header }}
 
-    <div class="container" role="main">
-        <div class="row">
-            {{{ content }}}
-        </div>
-    </div>
+    <main class="container mx-auto" role="main">
+        {{{ content }}}
+    </main>
+
+    {{#append 'scripts'}}
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    {{/append}}
 
     {{> footer }}
-
 </body>
 
 </html>

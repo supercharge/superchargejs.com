@@ -1,0 +1,184 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  h1, h2, h3, h4, h5, h6, h7 {
+    @apply font-brhendrix;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  a, a:link, a:visited, a:active {
+    color: #2436de;
+  }
+
+  a.link-white {
+    @apply text-white !important;
+  }
+
+  @font-face {
+    font-family: Cascadida Code;
+    src: url(webfonts/CascadiaCode.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: Cascadida Code;
+    font-style: italic;
+    src: url(webfonts/CascadiaCodeItalic.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 300;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Light.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 300;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-LightOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 400;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 400;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-RegularOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 500;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Medium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 500;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-MediumOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 600;
+    src: url('webfonts/ATCOverlook/ATCOverlook-SemiBold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 600;
+    font-style: italic;
+    src: url('webfonts/ATCOverlook/ATCOverlook-SemiBoldOblique.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 700;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'ATC Overlook';
+    font-weight: 900;
+    src: url('webfonts/ATCOverlook/ATCOverlook-Black.woff2') format('woff2');
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 font-semibold rounded-lg;
+  }
+
+  .btn-primary {
+    @apply text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+
+  .btn-secondary {
+    @apply bg-coolGray-50 hover:shadow-sm hover:bg-coolGray-100 focus:outline-none focus:ring-2 focus:ring-coolGray-300 focus:ring-opacity-75;
+  }
+
+  .prose a {
+    @apply text-indigo-600 no-underline;
+  }
+
+  .prose h2 {
+    @apply mt-16 mb-3;
+  }
+
+  .prose h3 {
+    @apply mb-2 mt-14;
+  }
+
+  .prose h4 {
+    @apply mt-12;
+  }
+
+  .prose a:hover {
+    @apply text-indigo-900;
+  }
+
+  .prose a > code {
+    @apply text-indigo-600;
+  }
+  .prose a:hover > code {
+    @apply text-indigo-900;
+  }
+
+  .prose pre {
+    @apply px-4 py-3 leading-6;
+    font-family: "Cascadida Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.825rem;
+  }
+}
+
+.algolia-autocomplete {
+  width: 100%;
+}
+
+.alert-success {
+  @apply text-green-700 bg-green-50;
+}
+
+.alert-success strong {
+  color: #155724;
+}
+
+.alert-info {
+  @apply bg-sky-100 text-sky-700;
+  border: none;
+}
+
+.alert-info a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+.alert-info a code {
+  color: #DD4A68;
+  font-weight: normal;
+}
+
+.alert-info a:hover {
+  color: hsl(200, 23%, 92%);
+}
+
+.alert-info strong {
+  @apply text-sky-800;
+}
+
+.alert-warning {
+  @apply text-yellow-800 bg-yellow-50;
+}
+
+.alert-warning strong {
+  @apply text-yellow-800;
+}
