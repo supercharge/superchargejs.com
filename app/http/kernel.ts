@@ -12,9 +12,7 @@ export class HttpKernel extends Kernel {
    * informing that your HTTP server is ready to accept incoming requests.
    */
   override register (): void {
-    this.booted(() => {
-      this.sendReadySignal()
-    })
+    this.booted(() => this.sendReadySignal())
   }
 
   /**
@@ -22,9 +20,11 @@ export class HttpKernel extends Kernel {
    * signal before considering the application as "online". This feature allows
    * us to make use of zero-downtime restarts keeping processes available.
    */
-  private sendReadySignal (): void {
+  private sendReadySignal (): unknown {
     if (process.send) {
-      process.send('ready')
+      this.app().logger().info('Sent "ready" signal to the PM2 process')
+
+      return process.send('ready')
     }
   }
 
