@@ -16,7 +16,7 @@ module.exports = {
        * the configured `listen-timeout` before marking the app as ready.
        */
       wait_ready: true,
-      listen_timeout: 10_000,
+      listen_timeout: 15_000,
 
       env: {
         NODE_ENV: 'production',
