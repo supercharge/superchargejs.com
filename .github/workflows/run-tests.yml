@@ -13,7 +13,16 @@ jobs:
     name: Node ${{ matrix.node-version }}
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Clone repository
+      uses: actions/checkout@v2
+
+    - name: Ensure docs directory
+      run: mkdir resources/docs
+
+    - name: Clone docs repository
+      repository: supercharge/docs
+      path: resources/docs/2.x
+      ref: 2.x
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
