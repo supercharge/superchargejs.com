@@ -9,7 +9,7 @@ export class ShowDocs extends Controller {
    * Handle the given request.
    */
   handle ({ request, response }: HttpContext): HttpRedirect {
-    const { page }: { page?: string } = request.params as any
+    const page = request.param<string>('page')
     const version = Config.get('docs.default', 'main') as string
 
     return page
