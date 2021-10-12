@@ -5,18 +5,28 @@ import { createHttpApp } from '../bootstrap/create-http-app'
 
 const httpKernel = createHttpApp()
 
-test.skip('docs root path navigates to installation', async () => {
-  await Supertest(httpKernel.callback())
+test('docs root path navigates to installation', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
     .get('/docs')
-    .expect(200)
+    .expect(302)
+
+  expect(response.headers.location).toEqual('/docs/2.x/installation')
 })
 
-test.skip('routes to latest docs path', async () => {
-  const response = await Supertest(httpKernel.callback())
+test('routes to latest docs path', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
     .get('/docs/strings')
+    .expect(302)
+
+  expect(response.headers.location).toEqual('/docs/2.x/strings')
+})
+
+test('retrieves a docs page', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
+    .get('/docs/2.x/strings')
     .expect(200)
 
-  expect(response.body).toContain('npm install @supercharge/strings')
+  expect(response.text).toContain('npm i @supercharge/strings')
 })
 
 test.run()
