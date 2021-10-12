@@ -2,13 +2,12 @@
 
 import { createApp } from './create-app'
 import { HttpKernel } from '../app/http/kernel'
-import { HttpKernel as HttpKernelContract } from '@supercharge/contracts'
 
 /**
  * Creates and returns an HTTP application instance.
  */
-export function createHttpApp (): HttpKernelContract {
-  return HttpKernel.for(
+export function createHttpApp (): HttpKernel {
+  return new HttpKernel(
     createApp()
   )
 }
