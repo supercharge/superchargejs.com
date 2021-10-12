@@ -1,0 +1,32 @@
+import { test } from 'uvu'
+import expect from 'expect'
+import Supertest from 'supertest'
+import { createHttpApp } from '../bootstrap/create-http-app'
+
+const httpKernel = createHttpApp()
+
+test('docs root path navigates to installation', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
+    .get('/docs')
+    .expect(302)
+
+  expect(response.headers.location).toEqual('/docs/2.x/installation')
+})
+
+test('routes to latest docs path', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
+    .get('/docs/strings')
+    .expect(302)
+
+  expect(response.headers.location).toEqual('/docs/2.x/strings')
+})
+
+test('retrieves a docs page', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
+    .get('/docs/2.x/strings')
+    .expect(200)
+
+  expect(response.text).toContain('npm i @supercharge/strings')
+})
+
+test.run()

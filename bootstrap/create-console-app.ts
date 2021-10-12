@@ -8,7 +8,7 @@ import { ConsoleKernel as ConsoleKernelContract } from '@supercharge/contracts'
  * Creates and returns a console application instance.
  */
 export function createConsoleApp (): ConsoleKernelContract {
-  return new ConsoleKernel(
+  return ConsoleKernel.for(
     createApp()
   )
 }
