@@ -19,6 +19,9 @@ jobs:
     - name: Ensure docs directory
       run: mkdir resources/docs
 
+    - name: Create .env file
+      run: cp .env.example .env
+
     - name: Clone docs repository
       uses: actions/checkout@v2
       with:
