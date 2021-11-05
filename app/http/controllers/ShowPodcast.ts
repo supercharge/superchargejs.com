@@ -8,8 +8,5 @@ export class ShowPodcast {
    */
   handle ({ response }: HttpContext): unknown {
     return response.view('podcast', { title: 'A Supercharge Tale Podcast' })
-    //   {
-    //   layout: 'startpage'
-    // })
   }
 }
