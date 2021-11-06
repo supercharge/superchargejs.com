@@ -10,21 +10,22 @@ export class ShowNews extends Controller {
   /**
    * Handle the given request.
    */
-  async handle ({ request, response }: HttpContext): Promise<HttpResponse> {
-    const posts = await this.loadPosts()
-
-    return response.view('news', { posts })
+  async handle ({ response }: HttpContext): Promise<HttpResponse> {
+    return response.view('news', {
+      posts: await this.loadPosts()
+    })
   }
 
-  async loadPosts (): Promise<Post[]> {
+  /**
+   * Load all news posts.
+   *
+   * @returns {Post[]}
+   */
+  async loadPosts (): Promise<string[]> {
     return Collect(
       await Fs.allFiles(this.app.storagePath('posts'))
     ).map(async file => {
       return await Post.loadFrom(file, this.app)
     })
-  }
-
-  async render (posts: Post[]): Promise<string> {
-    //
   }
 }
