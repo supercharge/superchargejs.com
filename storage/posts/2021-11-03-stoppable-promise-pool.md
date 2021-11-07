@@ -1,11 +1,13 @@
 ---
 author: Marcus Pöhls
 publishedAt: 2021-11-03
-tags: [promise-pool, packages]
-title: Stoppable Promise Pool
+tags: [release, promise-pool]
+title: "Promise Pool 1.9.0: Stoppable Pool"
 ---
 
-Text
+Starting from version `1.9.0` of [`@supercharge/promise-pool`](https://github.com/supercharge/promise-pool) you can manually stop a running promise pool instance. You can stop a promise pool from the `.process()` or `.handleError()` methods. Both methods provide a stoppable `pool` instance as the third parameter.
+
+Here’s an example how to stop the processing of a running promise pool:
 
 ```js
 await PromisePool
@@ -35,3 +37,5 @@ await PromisePool
     // processes the `user` data
   })
 ```
+
+Enjoy!
