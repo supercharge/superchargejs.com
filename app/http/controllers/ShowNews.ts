@@ -12,7 +12,24 @@ export class ShowNews extends Controller {
    */
   async handle ({ response }: HttpContext): Promise<HttpResponse> {
     return response.view('news', {
-      posts: await this.loadPosts()
+      posts: await this.publishedPosts()
+    })
+  }
+
+  /**
+   * Returns the list of published posts, ordered DESC by publishedAt date.
+   *
+   * @returns {Object[]}
+   */
+  async publishedPosts (): Promise<object[]> {
+    const posts = await this.loadPosts()
+
+    return posts.filter(post => {
+      return post.isPublished()
+    }).sort((a, b) => {
+      return b.publishedAt().getTime() - a.publishedAt().getTime()
+    }).map(post => {
+      return post.toJSON()
     })
   }
 
@@ -21,8 +38,8 @@ export class ShowNews extends Controller {
    *
    * @returns {Post[]}
    */
-  async loadPosts (): Promise<string[]> {
-    return Collect(
+  async loadPosts (): Promise<Post[]> {
+    return await Collect(
       await Fs.allFiles(this.app.storagePath('posts'))
     ).map(async file => {
       return await Post.loadFrom(file, this.app)
