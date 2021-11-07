@@ -7,124 +7,27 @@
     making your server-side development enjoyable.
   </h3>
   <div class="flex flex-wrap justify-center mt-16 space-y-4 text-center sm:space-y-0 sm:space-x-4">
-    <a class="px-6 py-3 text-lg font-semibold leading-6 transition-colors duration-200 rounded shadow link-white hover:bg-none bg-gradient-to-r from-blue-600 hover:from-blue-700 to-indigo-500 hover:to-indigo-600 hover:bg-blue-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-900 focus:outline-none"
+    <a class="px-6 py-3 text-lg font-semibold leading-6 transition-colors duration-200 rounded shadow-sm link-white hover:bg-none bg-gradient-to-r from-blue-600 hover:from-blue-700 to-indigo-500 hover:to-indigo-600 hover:bg-blue-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-900 focus:outline-none"
       href="/docs">
       Get started
     </a>
+    <button
+      class="flex items-center justify-center px-4 py-2 space-x-2 font-mono text-sm leading-6 border rounded text-blueGray-500 sm:space-x-4 border-blueGray-200 hover:border-blueGray-300 bg-blueGray-100 hover:bg-blueGray-200 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-900 focus:outline-none"
+      href="/docs" onclick="copy()">
+      <span className="hidden sm:inline" aria-hidden="true">
+        $
+      </span>
+      <span class="text-blueGray-700">
+        npm init @supercharge/app@latest hello-supercharge
+      </span>
+      <span class="sr-only">(click to copy to clipboard)</span>
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+        <path
+          d="M8 16c0 1.886 0 2.828.586 3.414C9.172 20 10.114 20 12 20h4c1.886 0 2.828 0 3.414-.586C20 18.828 20 17.886 20 16v-4c0-1.886 0-2.828-.586-3.414C18.828 8 17.886 8 16 8m-8 8h4c1.886 0 2.828 0 3.414-.586C16 14.828 16 13.886 16 12V8m-8 8c-1.886 0-2.828 0-3.414-.586C4 14.828 4 13.886 4 12V8c0-1.886 0-2.828.586-3.414C5.172 4 6.114 4 8 4h4c1.886 0 2.828 0 3.414.586C16 5.172 16 6.114 16 8" />
+      </svg>
+    </button>
   </div>
 </div>
-
-
-{{!-- <section class="grey-pod">
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-lg-6 offset-lg-3">
-        <h2 class="mt-5 text-center">
-          Quick Start
-        </h2>
-      </div>
-    </div>
-</section>
-
-<section class="">
-  <div class="container">
-    <div class="row">
-      <div class="mt-5 col-lg-6 offset-lg-3">
-        <div class="shadow terminal space">
-          <div class="top">
-            <div class="btns">
-              <span class="circle red"></span>
-              <span class="circle yellow"></span>
-              <span class="circle green"></span>
-            </div>
-            <div class="text-xs title text-monospace">
-              Build your idea -- 70x32
-            </div>
-          </div>
-          <div class="text-sm body text-monospace">
-            <span class="red">></span> npm install -g @supercharge/installer <br>
-            <span class="green">Supercharge installer ready!</span>
-            <br><br>
-
-            <span class="red">></span> supercharge new my-app-name <br>
-            <span class="green">Crafting a new Supercharge application</span>
-            <br><br>
-
-            <span class="green">&nbsp; ✔</span> Ensure installation directory is empty <br>
-            <span class="green">&nbsp; ✔</span> Crafting your application <br>
-            <span class="green">&nbsp; ✔</span> Install application dependencies <br>
-            <span class="green">&nbsp; ✔</span> Initialize application setup <br>
-            <span class="green">&nbsp; ✔</span> Generate application key <br>
-            <span class="green">&nbsp; ✔</span> Set application name
-            <br><br>
-
-            &nbsp; &nbsp; Your project is ready for take off <br>
-            &nbsp; &nbsp; Launch the server with:
-            <br><br>
-
-            &nbsp; &nbsp; <span class="grey">$</span> <span class="green">cd my-app-name</span> <br>
-            &nbsp; &nbsp; <span class="grey">$</span> <span class="green">node server</span>
-            <br><br><br>
-            <span class="green">Enjoy the ride!</span>
-          </div>
-        </div>
-
-        <div class="mt-5">
-          <p>
-            The installer scaffolds a new Supercharge application within seconds.
-          </p>
-          <p>
-            You can directly start your development and toy around with the existing functionality.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section> --}}
-{{!--
-<section class="grey-pod">
-  <div class="container mt-5 mb-5">
-    <div class="row">
-      <div class="col-lg-6 offset-lg-3">
-        <h2 class="mt-5 text-center">
-          Start Building Your App
-        </h2>
-
-        <div class="mt-10 row">
-          <div class="col-6">
-            <h3 class="font-weight-bold condensed-loose">Craft CLI</h3>
-            <p>
-              Supercharge includes the <a href="/docs/craft-cli">Craft command line tool</a>. Craft helps you to
-              create features and files.
-            </p>
-          </div>
-          <div class="col-6">
-            <h3 class="font-weight-bold condensed-loose">Authentication Included</h3>
-            <p>
-              Supercharge helps you to quickly integrate the handling for <a href="/docs/authentication">login and sign
-                up</a>.
-            </p>
-          </div>
-          <div class="mt-5 col-6">
-            <h3 class="font-weight-bold condensed-loose">Class-based Testing</h3>
-            <p>
-              Supercharge <a href="/docs/create-and-debug-tests">supports class-based testing</a>. You don’t need to
-              run the same setup in each test file.
-            </p>
-          </div>
-          <div class="mt-5 col-6">
-            <h3 class="font-weight-bold condensed-loose">Open Source</h3>
-            <p>
-              Supercharge’s code is <a href="https://github.com/supercharge/supercharge">open source on GitHub</a>.
-              Send a pull request and we’ll make it happen. Together!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> --}}
 
 <div class="mb-8">
   <div class="max-w-6xl px-4 py-20 mx-auto sm:px-6 lg:px-8">
@@ -218,3 +121,15 @@
     </dl>
   </div>
 </div>
+
+{{#stack 'scripts'}}
+  <script>
+    function copy() {
+      navigator.clipboard
+        .writeText('npm init @supercharge/app@latest hello-supercharge')
+        .catch((e) => {
+          console.log(e)
+        })
+    }
+  </script>
+{{/stack}}
