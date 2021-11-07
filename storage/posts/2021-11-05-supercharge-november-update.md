@@ -1,7 +1,9 @@
 ---
 author: Marcus Pöhls
-publishedAt: 2021-11-11
+publishedAt:
+tags: [release]
+title: November 2021 Release
 ---
 
-# November 2021 Release
 tba.
+
