@@ -1,7 +1,7 @@
 'use strict'
 
 import Fs from '@supercharge/fs'
-import { Post } from '../../models/Post'
+import { Post } from '../../models/post'
 import Collect from '@supercharge/collections'
 import { Controller } from '@supercharge/http'
 import { HttpContext, HttpResponse } from '@supercharge/contracts'
