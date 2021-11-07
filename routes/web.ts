@@ -9,6 +9,7 @@
 
 import { Route } from '@supercharge/facades'
 import { HttpContext } from '@supercharge/contracts'
+import { ShowNews } from '../app/http/controllers/ShowNews'
 import { ShowDocs } from '../app/http/controllers/ShowDocs'
 import { ShowPodcast } from '../app/http/controllers/ShowPodcast'
 import { ShowStartpage } from '../app/http/controllers/ShowStartpage'
@@ -16,6 +17,7 @@ import { ShowDocsVersion } from '../app/http/controllers/ShowDocsVersion'
 
 Route.get('/', ShowStartpage)
 
+Route.get('/news', ShowNews)
 Route.get('/podcast', ShowPodcast)
 
 Route.prefix('/docs').group(() => {
