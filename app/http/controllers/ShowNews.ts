@@ -40,7 +40,7 @@ export class ShowNews extends Controller {
    */
   async loadPosts (): Promise<Post[]> {
     return await Collect(
-      await Fs.allFiles(this.app.storagePath('posts'))
+      await Fs.allFiles(this.app.resourcePath('news'))
     ).map(async file => {
       return await Post.loadFrom(file, this.app)
     })
