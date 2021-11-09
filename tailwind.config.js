@@ -4,7 +4,7 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [
+  content: [
     './resources/**/*.hbs',
     './resources/**/*.vue'
   ],
@@ -20,7 +20,7 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require('@tailwindcss/ui'),
+    // require('@tailwindcss/ui'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/custom-forms'),
     require('tailwindcss-textshadow'),

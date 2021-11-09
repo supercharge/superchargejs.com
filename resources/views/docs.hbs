@@ -30,7 +30,7 @@
 
               {{#each versions as |name version|}}
               <a href="/docs/{{version}}/{{../currentPage}}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blueGray-100 hover:text-blue-800" role="menuitem"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-blue-800" role="menuitem"
                 tabindex="-1" id="menu-item-0">
                 {{name}}</a>
               {{/each}}
@@ -45,7 +45,7 @@
           {{#each value.sections as |slug title|}}
           <li class="leading-6 {{#isEqual ../../currentPage slug}} border-b border-coolGray-100 font-bold {{/isEqual}}">
             <a href="/docs/{{../../version}}/{{slug}}"
-              class="block px-2 py-1 mr-2 rounded hover:bg-blueGray-100 hover:text-blue-800">{{title}}</a>
+              class="block px-2 py-1 mr-2 rounded hover:bg-slate-100 hover:text-blue-800">{{title}}</a>
           </li>
           {{/each}}
         </ul>

@@ -144,7 +144,7 @@
 }
 
 .alert-success {
-  @apply text-green-700 bg-green-50;
+  @apply text-emerald-700 bg-emerald-50;
 }
 
 .alert-success strong {

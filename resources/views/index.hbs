@@ -12,12 +12,12 @@
       Get started
     </a>
     <button
-      class="flex items-center justify-center px-4 py-2 space-x-2 font-mono text-sm leading-6 border rounded text-blueGray-500 sm:space-x-4 border-blueGray-200 hover:border-blueGray-300 bg-blueGray-100 hover:bg-blueGray-200 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-900 focus:outline-none"
+      class="flex items-center justify-center px-4 py-2 space-x-2 font-mono text-sm leading-6 border rounded text-slate-500 sm:space-x-4 border-slate-200 hover:border-slate-300 bg-slate-100 hover:bg-slate-200 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-900 focus:outline-none"
       href="/docs" onclick="copy()">
       <span className="hidden sm:inline" aria-hidden="true">
         $
       </span>
-      <span class="text-blueGray-700">
+      <span class="text-slate-600">
         npm init @supercharge/app@latest hello-supercharge
       </span>
       <span class="sr-only">(click to copy to clipboard)</span>
@@ -123,13 +123,13 @@
 </div>
 
 {{#stack 'scripts'}}
-  <script>
-    function copy() {
-      navigator.clipboard
-        .writeText('npm init @supercharge/app@latest hello-supercharge')
-        .catch((e) => {
-          console.log(e)
-        })
-    }
-  </script>
+<script>
+  function copy() {
+    navigator.clipboard
+      .writeText('npm init @supercharge/app@latest hello-supercharge')
+      .catch((e) => {
+        console.log(e)
+      })
+  }
+</script>
 {{/stack}}
