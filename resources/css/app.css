@@ -102,7 +102,7 @@
   }
 
   .btn-secondary {
-    @apply bg-coolGray-50 hover:shadow-sm hover:bg-coolGray-100 focus:outline-none focus:ring-2 focus:ring-coolGray-300 focus:ring-opacity-75;
+    @apply bg-gray-50 hover:shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75;
   }
 
   .prose a {

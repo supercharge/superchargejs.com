@@ -1,6 +1,6 @@
 <div class="px-4 mx-auto max-w-7xl">
   <div class="lg:grid lg:grid-cols-4 lg:gap-8">
-    <div class="border-r border-coolGray-100">
+    <div class="border-r border-gray-100">
       <div class="relative py-16 lg:pl-8">
         <section class="relative inline-block mb-8 version-switch" x-data="{ open: false }">
           <div @mouseenter="open = true" class="version-switch">
@@ -43,7 +43,7 @@
 
         <ul class="mb-6 ml-2">
           {{#each value.sections as |slug title|}}
-          <li class="leading-6 {{#isEqual ../../currentPage slug}} border-b border-coolGray-100 font-bold {{/isEqual}}">
+          <li class="leading-6 {{#isEqual ../../currentPage slug}} border-b border-gray-100 font-bold {{/isEqual}}">
             <a href="/docs/{{../../version}}/{{slug}}"
               class="block px-2 py-1 mr-2 rounded hover:bg-slate-100 hover:text-blue-800">{{title}}</a>
           </li>

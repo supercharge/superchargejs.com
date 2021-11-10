@@ -32,7 +32,7 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 z-10 flex items-center pl-3 pointer-events-none">
                                 <!-- Heroicon name: solid/search -->
-                                <svg class="w-5 h-5 text-coolGray-300" xmlns="http://www.w3.org/2000/svg"
+                                <svg class="w-5 h-5 text-gray-300" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd"
                                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
@@ -40,7 +40,7 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
                                 </svg>
                             </div>
                             <input id="docsearch" name="search"
-                                class="z-0 block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md placeholder-coolGray-500 border-coolGray-200 focus:outline-none focus:placeholder-coolGray-300 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                class="z-0 block w-full py-2 pl-10 pr-3 leading-5 bg-white border rounded-md placeholder-gray-500 border-gray-200 focus:outline-none focus:placeholder-gray-300 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 placeholder="Search the docs" type="search">
 
                         </div>
@@ -50,7 +50,7 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
             <div class="flex items-center md:absolute md:right-0 md:inset-y-0 md:hidden">
                 <!-- Mobile menu button -->
                 <button @click="showMobileMenu = !showMobileMenu" type="button"
-                    class="inline-flex items-center justify-center p-2 -mx-2 rounded-md text-coolGray-400 hover:bg-coolGray-100 hover:text-coolGray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                    class="inline-flex items-center justify-center p-2 -mx-2 rounded-md text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                     aria-expanded="false">
                     <span class="sr-only">Open menu</span>
                     {{!-- Icon when menu is closed.
@@ -77,19 +77,19 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
             </div>
             <div class="hidden md:flex md:items-center md:justify-end xl:col-span-3 md:space-x-8">
                 <a href="/news"
-                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                     News
                 </a>
                 <a href="/docs"
-                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                     Docs
                 </a>
                 {{!-- <a href="/podcast"
-                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                     Podcast
                 </a> --}}
                 <a href="https://github.com/supercharge"
-                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                     <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <title>Supercharge on GitHub</title>
                         <path
@@ -98,7 +98,7 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
                     </svg>
                 </a>
                 <a href="https://twitter.com/superchargejs"
-                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                    class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                     <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <title>Supercharge on Twitter</title>
                         <path
@@ -113,23 +113,23 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
     <!-- Mobile menu, show/hide based on menu state. -->
     <nav class="md:hidden" aria-label="Global" x-show="showMobileMenu">
         <div class="max-w-3xl px-2 pt-2 pb-3 mx-auto space-y-1 sm:px-4">
-            {{!-- <a href="/docs" aria-current="page"
-                class="block px-3 py-2 text-base rounded-md hover:bg-coolGray-100 "> --}}
-                <a href="/news" class="block px-3 py-2 text-base rounded-md hover:bg-coolGray-100 ">
+            {{!-- <a href="/docs" aria-current="page" class="block px-3 py-2 text-base rounded-md hover:bg-gray-100 ">
+                --}}
+                <a href="/news" class="block px-3 py-2 text-base rounded-md hover:bg-gray-100 ">
                     News
                 </a>
 
-                <a href="/docs" class="block px-3 py-2 text-base rounded-md hover:bg-coolGray-100 ">
+                <a href="/docs" class="block px-3 py-2 text-base rounded-md hover:bg-gray-100 ">
                     Documentation
                 </a>
 
-                {{!-- <a href="/podcast" class="block px-3 py-2 text-base font-medium rounded-md hover:bg-coolGray-50">
+                {{!-- <a href="/podcast" class="block px-3 py-2 text-base font-medium rounded-md hover:bg-gray-50">
                     Podcast
                 </a> --}}
 
                 <div class="flex">
                     <a href="https://github.com/supercharge"
-                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <title>Supercharge on GitHub</title>
                             <path
@@ -138,7 +138,7 @@ Open: "fixed inset-0 z-40 overflow-y-auto", Closed: ""
                         </svg>
                     </a>
                     <a href="https://twitter.com/superchargejs"
-                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-coolGray-100 hover:text-blue-800">
+                        class="inline-flex items-center px-2 py-1 font-medium rounded hover:bg-gray-100 hover:text-blue-800">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <title>Supercharge on Twitter</title>
                             <path
