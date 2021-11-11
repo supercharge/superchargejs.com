@@ -75,7 +75,7 @@ export class DocsRenderer extends Renderer {
                 <div class="flex-shrink-0">
                     <img src="/images/icons/alerts/${language}.svg" />
                 </div>
-                <div class="ml-4">${html}</div>
+                <div class="ml-4 flex items-center">${html}</div>
               </div>`
     }
 
