@@ -5,7 +5,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     './resources/**/*.hbs',
-    './resources/**/*.vue'
+    './resources/**/*.vue',
+    './app/modules/markdown/docs-renderer.ts',
   ],
   theme: {
     extend: {
