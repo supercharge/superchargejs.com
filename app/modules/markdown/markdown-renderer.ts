@@ -3,7 +3,7 @@
 import { DocsRenderer } from './docs-renderer'
 import Markdown, { MarkedOptions } from 'marked'
 import { Application } from '@supercharge/contracts'
-import { getHighlighter, Highlighter, IShikiTheme, loadTheme } from 'shiki'
+import { getHighlighter as getCodeBlockHighlighter, Highlighter, IShikiTheme, Lang, loadTheme } from 'shiki'
 
 export class MarkdownRenderer {
   /**
@@ -20,8 +20,8 @@ export class MarkdownRenderer {
    * The code block highlighter reference.
    */
   private readonly meta: {
-    codeHighlighter?: Highlighter
     renderConfig?: MarkedOptions
+    codeBlockHighlighter?: Highlighter
   }
 
   /**
@@ -29,17 +29,17 @@ export class MarkdownRenderer {
    */
   constructor (app: Application) {
     this.app = app
-    this.renderer = Markdown
     this.meta = {}
+    this.renderer = Markdown
   }
 
   /**
    * Boot the markdown renderer.
    */
   async boot (): Promise<void> {
-    this.meta.codeHighlighter = await getHighlighter({
+    this.meta.codeBlockHighlighter = await getCodeBlockHighlighter({
       theme: await this.loadTheme(),
-      langs: ['bash', 'sh', 'shell', 'css', 'html', 'javascript', 'js', 'json', 'typescript', 'handlebars', 'hbs', 'nginx', 'markdown'],
+      langs: this.supportedLanguages(),
     })
   }
 
@@ -56,16 +56,25 @@ export class MarkdownRenderer {
   }
 
   /**
+   * Returns the list of supported languages.
+   *
+   * @returns {Lang[]}
+   */
+  supportedLanguages (): Lang[] {
+    return ['bash', 'css', 'handlebars', 'hbs', 'html', 'javascript', 'js', 'json', 'markdown', 'nginx', 'sh', 'shell', 'typescript']
+  }
+
+  /**
    * Returns the code highlighter instance.
    *
    * @returns {Highlighter}
    */
-  codeHighlighter (): Highlighter {
-    if (!this.meta.codeHighlighter) {
-      throw new Error('Missing code highlighter instance')
+  codeBlockHighlighter (): Highlighter {
+    if (!this.meta.codeBlockHighlighter) {
+      throw new Error('Missing syntax/code-block highlighter instance')
     }
 
-    return this.meta.codeHighlighter
+    return this.meta.codeBlockHighlighter
   }
 
   /**
@@ -78,7 +87,7 @@ export class MarkdownRenderer {
   private rendererConfig (options?: MarkedOptions): MarkedOptions {
     if (!this.meta.renderConfig) {
       this.meta.renderConfig = {
-        renderer: new DocsRenderer(this.codeHighlighter(), options)
+        renderer: new DocsRenderer(this.codeBlockHighlighter(), options)
       }
     }
 
