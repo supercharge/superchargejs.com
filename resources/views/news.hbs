@@ -1,4 +1,4 @@
-<div class="max-w-3xl px-4 mx-auto mb-12">
+<div class="max-w-3xl px-4 mx-auto mb-12 prose prose-md">
   <div class="my-24 text-center">
     <h1 class="mb-6 text-4xl font-extrabold text-slate-800">Supercharge News</h1>
 
@@ -8,16 +8,14 @@
   </div>
 
   {{#each posts}}
-    <article class="mb-24">
-      <div class="prose prose-md">
-        <h2>{{ title }}</h2>
-        <p class="mb-5 text-slate-500">{{ publishedAt }}</p>
+  <article class="mt-20 mb-20">
+    <h2>{{ title }}</h2>
+    <p class="mb-6 text-slate-500">{{ publishedAt }}</p>
 
-        {{{ content }}}
-      </div>
-    </article>
+    {{{ content }}}
+  </article>
 
-    {{!-- <hr> --}}
+  <hr>
   {{/each}}
 
 </div>
