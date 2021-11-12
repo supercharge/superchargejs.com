@@ -12,7 +12,7 @@
     "@supercharge/goodies": "~1.10.0",
     "@supercharge/http": "~2.0.0-alpha.7",
     "@supercharge/routing": "~2.0.0-alpha.7",
-    "@supercharge/strings": "~1.22.0",
+    "@supercharge/strings": "~1.23.0",
     "@supercharge/view": "~2.0.0-alpha.7",
     "front-matter": "~4.0.2",
     "marked": "~3.0.7",
