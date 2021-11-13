@@ -56,7 +56,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-node server.ts",
+    "start": "ts-eager server.ts",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
     "dev:css": "npm run build:css -- --watch",
     "build:css": "postcss resources/css/app.css -o public/css/app.css",
