@@ -61,7 +61,22 @@ export class MarkdownRenderer {
    * @returns {Lang[]}
    */
   supportedLanguages (): Lang[] {
-    return ['bash', 'css', 'handlebars', 'hbs', 'html', 'javascript', 'js', 'json', 'markdown', 'nginx', 'sh', 'shell', 'typescript']
+    return [
+      'bash',
+      'css',
+      'handlebars',
+      'hbs',
+      'html',
+      'javascript',
+      'js',
+      'json',
+      'markdown',
+      'nginx',
+      'sh',
+      'shell',
+      'typescript',
+      'yaml'
+    ]
   }
 
   /**
