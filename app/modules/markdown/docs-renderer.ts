@@ -36,7 +36,7 @@ export class DocsRenderer extends Renderer {
 
     const slug = this.slugify(text)
 
-    return `<h${level} class="flex items-center">
+    return `<h${level} class="flex items-center" id="${slug}">
               <a href="#${slug}" name="${slug}" class="p-1 -ml-8 mr-2 hover:bg-slate-100 rounded">
                 ${this.bookmarkIcon()}
               </a>
@@ -49,13 +49,28 @@ export class DocsRenderer extends Renderer {
    *
    * @param header
    * @param body
-   * @returns
+   *
+   * @returns {String}
    */
   override table (header: string, body: string): string {
     return `<table class="table-auto">
         ${header}
         ${body}
       </table>`
+  }
+
+  /**
+   * Returns the HTML for the a list.
+   *
+   * @param body
+   * @param ordered
+   *
+   * @returns {String}
+   */
+  override list (body: string, ordered: boolean): string {
+    return ordered
+      ? `<ol class="leading-5">${body}</ol>`
+      : `<ul class="leading-5">${body}</ul>`
   }
 
   /**
@@ -78,7 +93,6 @@ export class DocsRenderer extends Renderer {
                 <div class="ml-4 flex items-center">${html}</div>
               </div>`
     }
-
     return this.highlighter.codeToHtml(content, language)
   }
 
@@ -91,6 +105,36 @@ export class DocsRenderer extends Renderer {
    */
   private isAlert (language: string): boolean {
     return ['info', 'success', 'warning'].includes(language)
+  }
+
+  /**
+   * Determine whether the given code block `meta` information contains a filename.
+   *
+   * @param {String[]} meta
+   *
+   * @returns {Boolean}
+   */
+  private containsFilename (meta: string[]): boolean {
+    return !!meta.find(item => {
+      return item.startsWith('file=')
+    })
+  }
+
+  /**
+   * Determine whether the given code block `meta` information contains a filename.
+   *
+   * @param {String[]} meta
+   *
+   * @returns {Boolean}
+   */
+  private filenameFrom (meta: string[]): string {
+    const file = meta.find(item => {
+      return item.startsWith('file=')
+    })
+
+    return file
+      ? file.replace('file=', '')
+      : ''
   }
 
   /**
