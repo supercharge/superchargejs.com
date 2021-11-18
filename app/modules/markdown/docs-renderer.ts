@@ -108,36 +108,6 @@ export class DocsRenderer extends Renderer {
   }
 
   /**
-   * Determine whether the given code block `meta` information contains a filename.
-   *
-   * @param {String[]} meta
-   *
-   * @returns {Boolean}
-   */
-  private containsFilename (meta: string[]): boolean {
-    return !!meta.find(item => {
-      return item.startsWith('file=')
-    })
-  }
-
-  /**
-   * Determine whether the given code block `meta` information contains a filename.
-   *
-   * @param {String[]} meta
-   *
-   * @returns {Boolean}
-   */
-  private filenameFrom (meta: string[]): string {
-    const file = meta.find(item => {
-      return item.startsWith('file=')
-    })
-
-    return file
-      ? file.replace('file=', '')
-      : ''
-  }
-
-  /**
    * Returns the SVG HTML of a bookmark icon.
    *
    * @returns {String}
