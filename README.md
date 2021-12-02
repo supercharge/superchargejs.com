@@ -5,8 +5,7 @@
   <br/>
   <br/>
   <p>
-    Supercharge is an open-source Node.js framework <br>
-    making your server-side development enjoyable.
+    Repository of the Supercharge website
   </p>
   <br/>
   <p>
@@ -22,44 +21,27 @@
 ---
 
 
-## Quick Start
-Use the official Supercharge installer to quickly create a new application. Installing is as simple as this:
-
-```
-npm install -g @supercharge/installer
-```
-
-You can create a new application once you installed the Supercharge installer on your computer.
-
-Use the `supercharge new <app-name>` command:
-
-```
-$ supercharge new my-app-name
-Crafting a new Supercharge application
-
-  ✔ Ensure installation directory is empty
-  ✔ Crafting your application
-  ✔ Install application dependencies
-  ✔ Initialize application setup
-```
-
-That’s it! Change into the app directory and start the server with `node server` 🚀
+## Supercharge Website
+This repository contains the source code for the [Supercharge website](https://superchargejs.com).
 
 
-## About Supercharge
-Supercharge is Node.js framework — not just a web-framework.
+## Local Development
+You can work on this project on your local machine with a simple setup. We provide a setup script that you can run to quickly get the app up an running.
 
-Supercharge builds on top of the hapi.js web framework and adds dozens utilities, like configuration and database management, mailing, logging, encryptiong, hashing, pagination, and more. It also integrates Mongoose as a powerful ORM for intuitive database interactions.
+1. Fork this repository
+2. Clone the repository
+    ```bash
+    git clone git@github.com:{username}/superchargejs.com superchargejs.com
+    ```
+3. Navigate into the new directory:
+    ```bash
+    cd superchargejs.com
+    ```
+5. Run the `setup.sh` script, which will take all the steps necessary to prepare your local install:
+    ```bash
+    ./bin/setup.sh
+    ```
 
-
-## Learning
-Supercharge has an extensive [documentation](https://superchargejs.com/docs) that gives you all the information to get started with the framework.
-
-Did you create a tutorial, video, blog post, plugin, library, or anything else related to Supercharge? Please let me know! Create an issue or tweet me [@marcuspoehls](https://twitter.com/marcuspoehls). I'm very happy to create a content list and share it with everybody!
-
-
-## License
-Supercharge is [MIT licensed](https://github.com/superchargejs/framework/blob/master/LICENSE).
 
 ---
 
