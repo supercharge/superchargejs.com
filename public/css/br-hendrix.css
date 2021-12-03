@@ -48,57 +48,57 @@
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 300;
-  font-display: swap;
+  font-dispay: optional;
   src: url('webfonts/BRHendrixLight/font.woff2') format('woff2'), url('webfonts/BRHendrixLight/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 500;
-  font-display: swap;
+  font-dispay: optional;
   src: url('webfonts/BRHendrixMedium/font.woff2') format('woff2'), url('webfonts/BRHendrixMedium/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 300;
-  font-display: swap;
+  font-dispay: optional;
   font-style: italic;
   src: url('webfonts/BRHendrixLightItalic/font.woff2') format('woff2'), url('webfonts/BRHendrixLightItalic/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 400;
-  font-display: swap;
+  font-dispay: optional;
   font-style: italic;
   src: url('webfonts/BRHendrixRegularItalic/font.woff2') format('woff2'), url('webfonts/BRHendrixRegularItalic/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 400;
-  font-display: swap;
+  font-dispay: optional;
   src: url('webfonts/BRHendrixRegular/font.woff2') format('woff2'), url('webfonts/BRHendrixRegular/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 900;
-  font-display: swap;
+  font-dispay: optional;
   src: url('webfonts/BRHendrixBlack/font.woff2') format('woff2'), url('webfonts/BRHendrixBlack/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 700;
-  font-display: swap;
+  font-dispay: optional;
   src: url('webfonts/BRHendrixBold/font.woff2') format('woff2'), url('webfonts/BRHendrixBold/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 500;
-  font-display: swap;
+  font-dispay: optional;
   font-style: italic;
   src: url('webfonts/BRHendrixMediumItalic/font.woff2') format('woff2'), url('webfonts/BRHendrixMediumItalic/font.woff') format('woff');
 }
 @font-face {
   font-family: 'BRHendrix';
   font-weight: 600;
-  font-display: swap;
+  font-dispay: optional;
   src: url('webfonts/BRHendrixSemiBold/font.woff2') format('woff2'), url('webfonts/BRHendrixSemiBold/font.woff') format('woff');
 }
