@@ -74,6 +74,7 @@ export class MarkdownRenderer {
       'nginx',
       'sh',
       'shell',
+      'ts',
       'typescript',
       'yaml'
     ]
