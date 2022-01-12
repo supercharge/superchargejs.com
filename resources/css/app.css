@@ -181,3 +181,7 @@
 .alert-warning strong {
   @apply text-yellow-800;
 }
+
+ol, ul li > p {
+  @apply leading-6;
+}
