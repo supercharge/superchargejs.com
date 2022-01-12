@@ -2,8 +2,8 @@
 
 import Fs from '@supercharge/fs'
 import { Post } from '../../models/post'
-import Collect from '@supercharge/collections'
 import { Controller } from '@supercharge/http'
+import { Collect } from '@supercharge/collections'
 import { HttpContext, HttpResponse } from '@supercharge/contracts'
 
 export class ShowNews extends Controller {
@@ -43,6 +43,6 @@ export class ShowNews extends Controller {
       await Fs.allFiles(this.app.resourcePath('news'))
     ).map(async file => {
       return await Post.loadFrom(file, this.app)
-    })
+    }).all()
   }
 }
