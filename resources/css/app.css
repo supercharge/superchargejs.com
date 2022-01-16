@@ -118,7 +118,7 @@
   }
 
   .prose a {
-    @apply text-indigo-600 no-underline;
+    @apply font-semibold text-indigo-600 no-underline;
   }
 
   .prose a:hover {
