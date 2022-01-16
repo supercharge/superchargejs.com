@@ -39,7 +39,8 @@ export class ShowDocsVersion extends Controller {
    * Handle the given request.
    */
   async handle ({ request, response }: HttpContext): Promise<any> {
-    const { version, page = 'installation' } = request.params().all()
+    const page = request.params().get('page', 'installation') as string
+    const version = request.params().get('version') as string
 
     this.meta.docs = new Documentation(this.app, version)
 

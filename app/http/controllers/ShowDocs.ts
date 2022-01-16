@@ -8,8 +8,8 @@ export class ShowDocs extends Controller {
    * Handle the given request.
    */
   handle ({ request, response }: HttpContext): HttpRedirect {
-    const page = request.param<string>('page')
-    const version = this.app.config().get('docs.default', 'main') as string
+    const page = request.param('page')
+    const version = this.app.config().get<string>('docs.default', 'main')
 
     return page
       ? response.redirect().to(`/docs/${version}/${page}`)
