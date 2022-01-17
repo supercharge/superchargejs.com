@@ -143,7 +143,7 @@
 }
 
 .alert {
-  @apply text-md;
+  @apply flex px-4 rounded text-md;
 }
 
 .alert-success {
@@ -160,12 +160,12 @@
 }
 
 .alert-info {
-  @apply bg-sky-100 text-sky-700;
+  @apply text-blue-700 bg-blue-100;
   border: none;
 }
 
 .alert-info a {
-  @apply font-bold text-sky-800 hover:text-sky-900 hover:underline;
+  @apply font-bold text-blue-800 hover:text-blue-900 hover:underline;
   text-shadow: none;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .alert-info strong {
-  @apply text-sky-800;
+  @apply text-blue-800;
 }
 
 .alert-warning {
