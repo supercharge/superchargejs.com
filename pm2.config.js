@@ -4,7 +4,7 @@ module.exports = {
   apps: [
     {
       name: 'superchargejs.com',
-      script: 'node -r @swc-node/register server.ts',
+      script: './node_modules/ts-node/dist/bin.js',
       args: 'server.ts',
       exec_mode: 'cluster',
       instances: 2,
