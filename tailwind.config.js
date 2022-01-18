@@ -23,7 +23,7 @@ module.exports = {
         return {
           DEFAULT: {
             css: {
-              color: theme('colors.slate.600'),
+              color: theme('colors.slate.700'),
 
               h1: {
                 color: theme('colors.gray.900'),

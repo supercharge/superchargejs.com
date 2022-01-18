@@ -143,7 +143,7 @@
 }
 
 .alert {
-  @apply flex px-4 rounded text-md;
+  @apply flex px-4 rounded;
 }
 
 .alert-success {
