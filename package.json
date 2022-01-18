@@ -21,6 +21,7 @@
   "devDependencies": {
     "@supercharge/eslint-config-typescript": "~1.0.1",
     "@supercharge/tsconfig": "~3.1.0",
+    "@swc-node/register": "~1.4.2",
     "@tailwindcss/forms": "~0.4.0",
     "@tailwindcss/typography": "~0.5.0",
     "@types/marked": "~3.0.2",
@@ -38,7 +39,6 @@
     "supertest": "~6.2.1",
     "tailwindcss": "~3.0.15",
     "tailwindcss-textshadow": "~2.1.3",
-    "ts-eager": "~2.0.2",
     "ts-node": "~10.4.0",
     "typescript": "~4.4.4",
     "uvu": "~0.5.3"
@@ -49,18 +49,18 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-eager server.ts",
+    "start": "node -r @swc-node/register server.ts",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
     "dev:css": "npm run build:css -- --watch",
     "build:css": "postcss resources/css/app.css -o public/css/app.css",
-    "dev:server": "nodemon --ext ts,js,hbs --exec 'ts-eager' server.ts",
+    "dev:server": "nodemon --ext ts,js,hbs --exec npm start",
     "prod": "npm run production",
     "production": "concurrently \"npm run prod:css\"",
     "prod:css": "NODE_ENV=production postcss resources/css/app.css -o public/css/app.css",
     "lint": "eslint . --ext .ts",
     "lint:fix": "npm run lint -- --fix",
     "test": "npm run lint && npm run test:coverage",
-    "test:run": "uvu -r ts-eager/register",
+    "test:run": "uvu -r @swc-node/register",
     "test:coverage": "c8 --include=dist npm run test:run && npm run test:report",
     "test:report": "c8 report --reporter=html"
   }
