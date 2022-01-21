@@ -8,7 +8,7 @@ export class MarkdownServiceProvider extends ServiceProvider {
    * Register application services to the container.
     */
   override register (): void {
-    this.app().singleton(MarkdownRenderer.name, () => {
+    this.app().singleton(MarkdownRenderer, () => {
       return new MarkdownRenderer(this.app())
     })
   }
@@ -17,6 +17,6 @@ export class MarkdownServiceProvider extends ServiceProvider {
    * Boot application services.
    */
   override async boot (): Promise<void> {
-    await this.app().make<MarkdownRenderer>(MarkdownRenderer.name).boot()
+    await this.app().make(MarkdownRenderer).boot()
   }
 }
