@@ -1,8 +1,7 @@
 'use strict'
 
 import { Highlighter } from 'shiki'
-import Str from '@supercharge/strings'
-import Marked, { MarkedOptions, Renderer } from 'marked'
+import Marked, { MarkedOptions, Renderer, Slugger } from 'marked'
 
 type AlertTypes = 'success' | 'info' | 'warning'
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
@@ -30,12 +29,12 @@ export class DocsRenderer extends Renderer {
    *
    * @returns {String}
    */
-  override heading (text: string, level: HeadingLevel): string {
+  override heading (text: string, level: HeadingLevel, _raw: string, slugger: Slugger): string {
     if (level === 1) {
       return `<h1>${text}</h1>`
     }
 
-    const slug = this.slugify(text)
+    const slug = slugger.slug(text)
 
     return `<h${level} class="flex items-center" id="${slug}">
               <a href="#${slug}" name="${slug}" class="p-1 -ml-8 mr-2 hover:bg-slate-100 rounded">
@@ -205,16 +204,5 @@ export class DocsRenderer extends Renderer {
           d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
       </svg>
     `
-  }
-
-  /**
-   * Returns the slugified `input`.
-   *
-   * @param {String} input
-   *
-   * @returns  {String}
-   */
-  private slugify (input: string): string {
-    return Str(input).slug().get()
   }
 }
