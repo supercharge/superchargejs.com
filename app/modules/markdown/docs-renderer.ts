@@ -93,6 +93,7 @@ export class DocsRenderer extends Renderer {
                 <div class="ml-4 flex items-center">${html}</div>
               </div>`
     }
+
     return this.highlighter.codeToHtml(content, { lang: language })
   }
 
