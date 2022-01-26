@@ -119,6 +119,8 @@ export class MarkdownRenderer {
    * @returns {String}
    */
   async render (markdown: string, options?: MarkedOptions): Promise<string> {
+    await this.tableOfContents(markdown)
+
     return new Promise((resolve, reject) => {
       this.renderer(markdown, this.rendererConfig(options), (error, html) => {
         error
@@ -126,5 +128,39 @@ export class MarkdownRenderer {
           : resolve(html)
       })
     })
+  }
+
+  /**
+   * Returns the rendered table of contents as HTML retrieved from the given `markdown` content.
+   *
+   * @param {String} markdown
+   * @param {MarkedOptions} options
+   *
+   * @returns {String}
+   */
+  async tableOfContents (markdown: string, options?: MarkedOptions): Promise<string> {
+    const tokens = this.renderer.lexer(markdown, options)
+
+    // filter H2 and H3
+    const headings = tokens.filter(token => {
+      return token.type === 'heading' && [2, 3].includes(token.depth)
+    })
+
+    return this.renderer.parser(headings)
+  }
+
+  /**
+   * Returns the rendered HTML of the given `markdown` content.
+   *
+   * @param {String} markdown
+   * @param {MarkedOptions} options
+   *
+   * @returns {String}
+   */
+  async renderWithToc (markdown: string, options?: MarkedOptions): Promise<string> {
+    const toc = await this.tableOfContents(markdown, options)
+    const content = await this.render(markdown, options)
+
+    return `${toc} \n${content}`
   }
 }
