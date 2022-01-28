@@ -50,8 +50,8 @@ export class MarkdownRenderer {
    */
   async loadTheme (): Promise<IShikiTheme> {
     return loadTheme(
-      this.app.resourcePath('shiki-themes/firefox-light.json')
-      // this.app.resourcePath('shiki-themes/night-owl-light.json')
+      this.app.resourcePath('shiki-themes/aura-dark.json')
+      // this.app.resourcePath('shiki-themes/firefox-light.json')
     )
   }
 
