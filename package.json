@@ -50,7 +50,7 @@
   "private": true,
   "scripts": {
     "start": "node -r @swc-node/register server.ts",
-    "dev": "concurrently \"npm run dev:css\" \"npm run dev:server\"",
+    "dev": "concurrently \"npm run tsc:check\" \"npm run dev:css\" \"npm run dev:server\"",
     "dev:css": "npm run build:css -- --watch",
     "build:css": "postcss resources/css/app.css -o public/css/app.css",
     "dev:server": "nodemon --ext ts,js,hbs --exec npm start",
@@ -59,6 +59,7 @@
     "prod:css": "NODE_ENV=production postcss resources/css/app.css -o public/css/app.css",
     "lint": "eslint . --ext .ts",
     "lint:fix": "npm run lint -- --fix",
+    "tsc:check": "tsc --watch --noEmit --skipLibCheck",
     "test": "npm run lint && npm run test:coverage",
     "test:run": "uvu -r @swc-node/register",
     "test:coverage": "c8 --include=dist npm run test:run && npm run test:report",
