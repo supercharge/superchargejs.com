@@ -3,6 +3,7 @@
 import { DocsRenderer } from './docs-renderer'
 import Markdown, { MarkedOptions } from 'marked'
 import { Application } from '@supercharge/contracts'
+import { TableOfContentsRenderer } from './toc-renderer'
 import { getHighlighter as getCodeBlockHighlighter, Highlighter, IShikiTheme, Lang, loadTheme } from 'shiki'
 
 export class MarkdownRenderer {
@@ -119,8 +120,6 @@ export class MarkdownRenderer {
    * @returns {String}
    */
   async render (markdown: string, options?: MarkedOptions): Promise<string> {
-    await this.tableOfContents(markdown)
-
     return new Promise((resolve, reject) => {
       this.renderer(markdown, this.rendererConfig(options), (error, html) => {
         error
@@ -139,14 +138,33 @@ export class MarkdownRenderer {
    * @returns {String}
    */
   async tableOfContents (markdown: string, options?: MarkedOptions): Promise<string> {
-    const tokens = this.renderer.lexer(markdown, options)
+    const headings = this.retrieveHeadingsFrom(markdown)
+    const tocRenderer = new TableOfContentsRenderer(options)
 
-    // filter H2 and H3
-    const headings = tokens.filter(token => {
-      return token.type === 'heading' && [2, 3].includes(token.depth)
+    this.renderer.parser(headings, { renderer: tocRenderer })
+
+    const toc = tocRenderer.headings().map(heading => {
+      return heading.level === 2
+        ? `- [${heading.text}](#${heading.slug})`
+        : `  - [${heading.text}](#${heading.slug})`
+    }).join('\n')
+
+    return await this.render(toc, options)
+  }
+
+  /**
+   * Returns only heading tokens from the given `markdown` content.
+   *
+   * @param markdown string
+   *
+   * @returns {Markdown.Token[]}
+   */
+  private retrieveHeadingsFrom (markdown: string): Markdown.Token[] {
+    const tokens = this.renderer.lexer(markdown)
+
+    return tokens.filter(token => {
+      return token.type === 'heading'
     })
-
-    return this.renderer.parser(headings)
   }
 
   /**

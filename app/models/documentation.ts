@@ -97,7 +97,7 @@ export class Documentation {
    * @returns {String}
    */
   async createHtmlFromMarkdown (file: string): Promise<string> {
-    const markdown = await this.markdownRenderer().render(
+    const markdown = await this.markdownRenderer().renderWithToc(
       await Fs.content(file)
     )
 
