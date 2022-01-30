@@ -155,6 +155,10 @@
   text-shadow: none;
 }
 
+.alert-success code {
+  @apply text-emerald-900;
+}
+
 .alert-success strong {
   @apply text-emerald-800;
 }
@@ -167,6 +171,10 @@
 .alert-info a {
   @apply font-bold text-blue-800 hover:text-blue-900 hover:underline;
   text-shadow: none;
+}
+
+.alert-info code {
+  @apply text-blue-900;
 }
 
 .alert-info a code {
@@ -184,6 +192,10 @@
 
 .alert-warning a {
   @apply font-bold text-yellow-800 hover:text-yellow-900 hover:underline;
+}
+
+.alert-warning code {
+  @apply text-yellow-900;
 }
 
 .alert-warning strong {
