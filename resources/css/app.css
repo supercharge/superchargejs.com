@@ -114,7 +114,7 @@
   }
 
   .btn-secondary {
-    @apply bg-gray-50 hover:shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75;
+    @apply bg-slate-50 hover:shadow-sm hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-opacity-75;
   }
 
   .prose a {
