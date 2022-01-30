@@ -1,6 +1,6 @@
 <div class="px-4 mx-auto max-w-7xl">
-  <div class="lg:grid lg:grid-cols-4 lg:gap-8">
-    <div class="border-r border-slate-100">
+  <div class="grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-8">
+    <div class="md:border-r border-slate-100">
       <div class="relative py-16 lg:pl-8">
         <section class="relative inline-block mb-8 version-switch" x-data="{ open: false }">
           <div @mouseenter="open = true" class="version-switch">
@@ -54,8 +54,8 @@
       </div>
     </div>
 
-    <div class="col-span-3">
-      <div class="py-16 lg:px-16">
+    <div class="col-span-2 lg:col-span-3">
+      <div class="py-16 lg:px-16 md:px-8">
         <article class="max-w-2xl prose prose-md">
 
           {{{docsContent}}}
