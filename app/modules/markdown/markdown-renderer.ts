@@ -1,5 +1,6 @@
 'use strict'
 
+import { DocsPage } from './docs-page'
 import { DocsRenderer } from './docs-renderer'
 import Markdown, { MarkedOptions } from 'marked'
 import { Application } from '@supercharge/contracts'
@@ -130,6 +131,21 @@ export class MarkdownRenderer {
   }
 
   /**
+   * Returns the rendered HTML of the given `markdown` content.
+   *
+   * @param {String} markdown
+   * @param {MarkedOptions} options
+   *
+   * @returns {String}
+   */
+  async renderWithToc (markdown: string, options?: MarkedOptions): Promise<string> {
+    const toc = await this.tableOfContents(markdown, options)
+    const { title, content } = await this.extractTitleAndContent(markdown, options)
+
+    return `${title}\n ${toc}\n ${content}`
+  }
+
+  /**
    * Returns the rendered table of contents as HTML retrieved from the given `markdown` content.
    *
    * @param {String} markdown
@@ -168,17 +184,18 @@ export class MarkdownRenderer {
   }
 
   /**
-   * Returns the rendered HTML of the given `markdown` content.
+   * Returns the page title from the given `markdown` content.
    *
    * @param {String} markdown
-   * @param {MarkedOptions} options
    *
    * @returns {String}
    */
-  async renderWithToc (markdown: string, options?: MarkedOptions): Promise<string> {
-    const toc = await this.tableOfContents(markdown, options)
-    const content = await this.render(markdown, options)
+  async extractTitleAndContent (markdown: string, options?: MarkedOptions): Promise<{ title: string, content: string }> {
+    const page = new DocsPage(markdown)
 
-    return `${toc} \n${content}`
+    return {
+      title: await this.render(page.titleOr(''), options),
+      content: await this.render(page.content(), options)
+    }
   }
 }
