@@ -1,10 +1,10 @@
 <div class="px-4 mx-auto max-w-7xl">
   <div class="grid sm:grid-cols-1 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-8">
     <div class="col-span-1 md:border-r border-slate-100">
-      <div class="relative md:py-16 sm:pt-8 lg:pl-8">
+      <div class="relative md:py-16 lg:pl-8">
 
         {{!-- navbar on small screens --}}
-        <div class="block md:hidden" x-data="{ showNavbar: false }">
+        <div class="block mt-8 md:hidden" x-data="{ showNavbar: false }">
           <button type="button" @click="showNavbar = !showNavbar"
             class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 border rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 focus:ring-indigo-500"
             id="menu-button" aria-expanded="true" aria-haspopup="true">
