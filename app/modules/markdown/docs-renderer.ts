@@ -45,6 +45,25 @@ export class DocsRenderer extends Renderer {
   }
 
   /**
+   * Returns the SVG HTML of a bookmark icon.
+   *
+   * @returns {String}
+   */
+  private bookmarkIcon (): string {
+    return `
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16" height="16" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor"
+        class="fill-current stroke-current"
+        stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+        class="icon">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+      </svg>
+    `
+  }
+
+  /**
    * Returns the HTML for the given table `header` and `body`.
    *
    * @param header
@@ -84,14 +103,7 @@ export class DocsRenderer extends Renderer {
    */
   override code (content: string, language: string): string {
     if (this.isAlert(language)) {
-      const html = Marked(content)
-
-      return `<div class="alert alert-${language}">
-                <div class="flex-shrink-0 mt-1">
-                    <p>${this.alertIconFor(language)}</p>
-                </div>
-                <div class="ml-4 flex items-center">${html}</div>
-              </div>`
+      return this.renderAlert(content, language)
     }
 
     return this.highlighter.codeToHtml(content, { lang: language })
@@ -109,22 +121,22 @@ export class DocsRenderer extends Renderer {
   }
 
   /**
-   * Returns the SVG HTML of a bookmark icon.
+   * Returns the rendered alert block for the given `content`.
+   *
+   * @param {String} content
+   * @param {AlertTypes} language
    *
    * @returns {String}
    */
-  private bookmarkIcon (): string {
-    return `
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16" height="16" viewBox="0 0 24 24"
-        fill="none" stroke="currentColor"
-        class="fill-current stroke-current"
-        stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-        class="icon">
-          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-      </svg>
-    `
+  private renderAlert (content: string, language: AlertTypes): string {
+    const html = Marked(content)
+
+    return `<div class="alert alert-${language}">
+              <div class="flex-shrink-0 mt-1">
+                  <p>${this.alertIconFor(language)}</p>
+              </div>
+              <div class="ml-4 flex items-center">${html}</div>
+            </div>`
   }
 
   /**
