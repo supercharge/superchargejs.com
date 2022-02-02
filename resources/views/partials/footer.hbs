@@ -39,26 +39,27 @@
 
 
 {{#stack 'scripts'}}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-    <script type="text/javascript">
-        docsearch({
-            apiKey: '84032854d3792b1afa2050c7fdb1019d',
-            indexName: 'superchargejs',
-            inputSelector: '#docsearch',
-            algoliaOptions: { 'facetFilters': ["version:{{docsVersion version}}"] },
-            debug: false // Set debug to true if you want to inspect the dropdown
-        });
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        appId: 'KFURHL6LA7',
+        apiKey: 'fa3c12c47d751a7d88cd4fd3538a050d',
+        indexName: 'superchargejs',
+        inputSelector: '#docsearch',
+        algoliaOptions: { 'facetFilters': ["version:{{docsVersion version}}"] },
+        debug: false // Set debug to true if you want to inspect the dropdown
+    });
 
-        var _paq = _paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function () {
-            var u = "//piwik.futurestud.io/";
-            _paq.push(['setTrackerUrl', u + 'piwik.php']);
-            _paq.push(['setSiteId', '7']);
-            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
-        })();
-    </script>
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//piwik.futurestud.io/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', '7']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+    })();
+</script>
 {{/stack}}
