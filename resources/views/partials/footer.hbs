@@ -43,10 +43,12 @@
 <script type="text/javascript">
     docsearch({
         appId: 'KFURHL6LA7',
-        apiKey: 'fa3c12c47d751a7d88cd4fd3538a050d',
+        apiKey: '3ee7e37283d5accf02b534208fe42b48',
         indexName: 'superchargejs',
         inputSelector: '#docsearch',
-        algoliaOptions: { 'facetFilters': ["version:{{docsVersion version}}"] },
+        algoliaOptions: {
+            facetFilters: ["version:{{docsVersion version}} {{docsVersion version}}"]
+        },
         debug: false // Set debug to true if you want to inspect the dropdown
     });
 
