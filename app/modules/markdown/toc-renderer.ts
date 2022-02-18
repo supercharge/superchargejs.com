@@ -1,10 +1,10 @@
 'use strict'
 
-import { MarkedOptions, Renderer, Slugger } from 'marked'
+import { marked, Renderer, Slugger } from 'marked'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
-interface Headings {
+interface Heading {
   level: HeadingLevel
   text: string
   slug: string
@@ -15,13 +15,13 @@ export class TableOfContentsRenderer extends Renderer {
     /**
      * Stores the headings.
      */
-    headings: Headings[]
+    headings: Heading[]
   }
 
   /**
    * Create a new renderer instance.
    */
-  constructor (options?: MarkedOptions) {
+  constructor (options?: marked.MarkedOptions) {
     super(options)
 
     this.meta = { headings: [] }
@@ -30,9 +30,9 @@ export class TableOfContentsRenderer extends Renderer {
   /**
    * Returns the list of headings.
    *
-   * @returns {Headings[]}
+   * @returns {Heading[]}
    */
-  headings (): Headings[] {
+  headings (): Heading[] {
     return this.meta.headings
   }
 

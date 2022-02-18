@@ -1,7 +1,7 @@
 'use strict'
 
 import { Highlighter } from 'shiki'
-import Marked, { MarkedOptions, Renderer, Slugger } from 'marked'
+import { marked, Renderer, Slugger } from 'marked'
 
 type AlertTypes = 'success' | 'info' | 'warning'
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
@@ -15,7 +15,7 @@ export class DocsRenderer extends Renderer {
   /**
    * Create a new renderer instance.
    */
-  constructor (highlighter: Highlighter, options?: MarkedOptions) {
+  constructor (highlighter: Highlighter, options?: marked.MarkedOptions) {
     super(options)
 
     this.highlighter = highlighter
@@ -129,7 +129,7 @@ export class DocsRenderer extends Renderer {
    * @returns {String}
    */
   private renderAlert (content: string, language: AlertTypes): string {
-    const html = Marked(content)
+    const html = marked(content)
 
     return `<div class="alert alert-${language}">
               <div class="flex-shrink-0 mt-1">

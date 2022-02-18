@@ -1,8 +1,8 @@
 'use strict'
 
+import { marked } from 'marked'
 import { DocsPage } from './docs-page'
 import { DocsRenderer } from './docs-renderer'
-import Markdown, { MarkedOptions } from 'marked'
 import { Application } from '@supercharge/contracts'
 import { TableOfContentsRenderer } from './toc-renderer'
 import { getHighlighter as getCodeBlockHighlighter, Highlighter, IShikiTheme, Lang, loadTheme } from 'shiki'
@@ -16,13 +16,13 @@ export class MarkdownRenderer {
   /**
    * The Markdown renderer reference.
    */
-  private readonly renderer: typeof Markdown
+  private readonly renderer: typeof marked
 
   /**
    * The code block highlighter reference.
    */
   private readonly meta: {
-    renderConfig?: MarkedOptions
+    renderConfig?: marked.MarkedOptions
     codeBlockHighlighter?: Highlighter
   }
 
@@ -32,7 +32,7 @@ export class MarkdownRenderer {
   constructor (app: Application) {
     this.app = app
     this.meta = {}
-    this.renderer = Markdown
+    this.renderer = marked
   }
 
   /**
@@ -98,11 +98,11 @@ export class MarkdownRenderer {
   /**
    * Returns the renderer configuration.
    *
-   * @param {MarkedOptions} options
+   * @param {marked.MarkedOptions} options
    *
-   * @returns {MarkedOptions}
+   * @returns {marked.MarkedOptions}
    */
-  private rendererConfig (options?: MarkedOptions): MarkedOptions {
+  private rendererConfig (options?: marked.MarkedOptions): marked.MarkedOptions {
     if (!this.meta.renderConfig) {
       this.meta.renderConfig = {
         renderer: new DocsRenderer(this.codeBlockHighlighter(), options)
@@ -116,11 +116,11 @@ export class MarkdownRenderer {
    * Returns the rendered HTML of the given `markdown` content.
    *
    * @param {String} markdown
-   * @param {MarkedOptions} options
+   * @param {marked.MarkedOptions} options
    *
    * @returns {String}
    */
-  async render (markdown: string, options?: MarkedOptions): Promise<string> {
+  async render (markdown: string, options?: marked.MarkedOptions): Promise<string> {
     return new Promise((resolve, reject) => {
       this.renderer(markdown, this.rendererConfig(options), (error, html) => {
         error
@@ -134,11 +134,11 @@ export class MarkdownRenderer {
    * Returns the rendered HTML of the given `markdown` content.
    *
    * @param {String} markdown
-   * @param {MarkedOptions} options
+   * @param {marked.MarkedOptions} options
    *
    * @returns {String}
    */
-  async renderWithToc (markdown: string, options?: MarkedOptions): Promise<string> {
+  async renderWithToc (markdown: string, options?: marked.MarkedOptions): Promise<string> {
     const toc = await this.tableOfContents(markdown, options)
     const { title, content } = await this.extractTitleAndContent(markdown, options)
 
@@ -149,11 +149,11 @@ export class MarkdownRenderer {
    * Returns the rendered table of contents as HTML retrieved from the given `markdown` content.
    *
    * @param {String} markdown
-   * @param {MarkedOptions} options
+   * @param {marked.MarkedOptions} options
    *
    * @returns {String}
    */
-  async tableOfContents (markdown: string, options?: MarkedOptions): Promise<string> {
+  async tableOfContents (markdown: string, options?: marked.MarkedOptions): Promise<string> {
     const headings = this.retrieveHeadingsFrom(markdown)
     const tocRenderer = new TableOfContentsRenderer(options)
 
@@ -175,7 +175,7 @@ export class MarkdownRenderer {
    *
    * @returns {Markdown.Token[]}
    */
-  private retrieveHeadingsFrom (markdown: string): Markdown.Token[] {
+  private retrieveHeadingsFrom (markdown: string): marked.Token[] {
     const tokens = this.renderer.lexer(markdown)
 
     return tokens.filter(token => {
@@ -190,7 +190,7 @@ export class MarkdownRenderer {
    *
    * @returns {String}
    */
-  async extractTitleAndContent (markdown: string, options?: MarkedOptions): Promise<{ title: string, content: string }> {
+  async extractTitleAndContent (markdown: string, options?: marked.MarkedOptions): Promise<{ title: string, content: string }> {
     const page = new DocsPage(markdown)
 
     return {
