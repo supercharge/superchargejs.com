@@ -21,8 +21,7 @@ Route.get('/news', ShowNews)
 Route.get('/podcast', ShowPodcast)
 
 Route.prefix('/docs').group(() => {
-  Route.get('/', ShowDocs)
-  Route.get('/:page', ShowDocs)
+  Route.get('/:page?', ShowDocs)
   Route.get('/:version/:page', ShowDocsVersion)
 })
 
