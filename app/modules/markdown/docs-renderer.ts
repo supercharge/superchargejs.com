@@ -135,7 +135,7 @@ export class DocsRenderer extends Renderer {
               <div class="flex-shrink-0 mt-1">
                   <p>${this.alertIconFor(language)}</p>
               </div>
-              <div class="ml-4 flex items-center">${html}</div>
+              <div class="ml-4">${html}</div>
             </div>`
   }
 
