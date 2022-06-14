@@ -19,7 +19,7 @@
     "shiki": "~0.10.1"
   },
   "devDependencies": {
-    "@supercharge/eslint-config-typescript": "~2.2.0",
+    "@supercharge/eslint-config-typescript": "~2.3.0",
     "@supercharge/tsconfig": "~3.1.0",
     "@swc-node/register": "~1.5.1",
     "@tailwindcss/forms": "~0.5.2",
