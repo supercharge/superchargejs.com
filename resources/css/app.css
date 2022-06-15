@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   h1, h2, h3, h4, h5, h6, h7 {
     @apply font-brhendrix;
@@ -15,6 +14,10 @@
 
   h2 {
     @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
   }
 
   a, a:link, a:visited, a:active {
