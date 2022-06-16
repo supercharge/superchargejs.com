@@ -32,13 +32,13 @@ module.exports = {
               h2: {
                 color: theme('colors.gray.900'),
                 'margin-bottom': theme('margin.3'),
-                'margin-top': theme('margin.16')
+                'margin-top': theme('margin.20')
               },
 
               h3: {
                 color: theme('colors.gray.900'),
                 'margin-bottom': theme('margin.2'),
-                'margin-top': theme('margin.14')
+                'margin-top': theme('margin.16')
               },
 
               h4: {
