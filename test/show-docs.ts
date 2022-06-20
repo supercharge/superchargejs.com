@@ -10,7 +10,7 @@ test('docs root path navigates to installation', async () => {
     .get('/docs')
     .expect(302)
 
-  expect(response.headers.location).toEqual('/docs/2.x/installation')
+  expect(response.headers.location).toEqual('/docs/3.x/installation')
 })
 
 test('routes to latest docs path', async () => {
@@ -18,12 +18,20 @@ test('routes to latest docs path', async () => {
     .get('/docs/strings')
     .expect(302)
 
-  expect(response.headers.location).toEqual('/docs/2.x/strings')
+  expect(response.headers.location).toEqual('/docs/3.x/strings')
 })
 
-test('retrieves a docs page', async () => {
+test('retrieves a 2.x docs page', async () => {
   const response = await Supertest(await httpKernel.serverCallback())
     .get('/docs/2.x/strings')
+    .expect(200)
+
+  expect(response.text).toContain('npm i @supercharge/strings')
+})
+
+test('retrieves a 3.x docs page', async () => {
+  const response = await Supertest(await httpKernel.serverCallback())
+    .get('/docs/3.x/strings')
     .expect(200)
 
   expect(response.text).toContain('npm i @supercharge/strings')
