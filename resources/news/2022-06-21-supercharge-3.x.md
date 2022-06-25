@@ -128,7 +128,9 @@ Supercharge v3 requires Node.js 16. You may check out the [docs on system requir
 
 
 #### Shutdown Method in Service Providers
-Tba.
+Starting with the v3 release you can implement an `async shutdown()` method in your `ServiceProvider` instances. The `shutdown` method will be called by the application instance when receiving a `SIGINT` or `SIGTERM` signal. Both signals are usually emitted when using CTRL+C in your terminal to stop a process.
+
+Here’s a sample service provider using the `shutdown` method to stop a database connection:
 
 ```ts
 import { ServiceProvider } from '@supercharge/support'
