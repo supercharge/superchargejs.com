@@ -17,7 +17,7 @@
   }
 
   h4 {
-    @apply text-lg;
+    @apply text-base;
   }
 
   a, a:link, a:visited, a:active {
