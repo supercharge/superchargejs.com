@@ -55,7 +55,33 @@ The last step is to add the `config/session.ts` file. Please create that file in
 
 
 ### HTTP State Bag
-Tba.
+Supercharge v3 changed the way you’re sharing state across controller and middleware along the request lifecycle. The shared state in v2 could be anything, like an object, or a string, or an array.
+
+This changed in v3 where the state is always an object. We also introduced a state bag to interact with the shared state. The state bag provides methods like `get`, `set`, `has`, `remove`, `all`, `clear`.
+
+**Supercharge v2**
+
+```ts
+// setting values
+request.state().userId = 'user-identifier'
+
+// getting values
+request.state().userId
+// 'user-identifier'
+```
+
+**Supercharge v3**
+
+```ts
+// setting values
+request.state().set('userId', 'user-identifier')
+
+// getting values
+request.state().get('userId')
+// 'user-identifier'
+```
+
+Please find more details in the [HTTP docs on sharing state](/docs/requests).
 
 
 ### Extended HTTP Request and Response
@@ -114,6 +140,8 @@ We extended the `@supercharge/config` package and added the following methods:
 - `isNotEmpty(key)`: determine whether the config store contains an item for the given `key` with is not empty
 - `ensureNotEmpty(key)`: throws an error if the config store contains an item for the given key which has an empty value
 
+Find more details in the [config docs](/docs/configuration).
+
 
 ### Visibility Changes in the Manager
 The `Manager` class from the `@supercharge/manager` package now uses `protected` method visibilities to allow access from parent classes. Previously, we used the `private` visibility but that constraint isn’t flexible when extending the `Manager` base class.
@@ -154,7 +182,21 @@ export class MongodbServiceProvider extends ServiceProvider implements ServicePr
 }
 ```
 
+Find more details in the [service provider docs](/docs/service-providers#the-shutdown-method).
+
 
 #### Container Aliases
-Tba.
+The Supercharge service container supports binding aliases starting in v3. Binding aliases describe alternative keys pointing to a binding.
 
+Here’s an example used in the framework. The Supercharge HTTP server uses the `server` binding. To be more specific what server instance will be resolved, we added the `http.server` alias for the `server` binding. Here’s the code used in the HTTP service provider:
+
+```ts
+this.app()
+  .singleton('server', () => new Server(this.app()))
+  .alias('server', 'http.server')
+
+const server = app.make('http.server')
+// resolves the HTTP server instance
+```
+
+Find more details in the [service container docs](/docs/service-container).
