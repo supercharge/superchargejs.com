@@ -9,7 +9,9 @@ export class MarkdownServiceProvider extends ServiceProvider {
     */
   override register (): void {
     this.app().singleton(MarkdownRenderer, () => {
-      return new MarkdownRenderer(this.app())
+      return new MarkdownRenderer(
+        this.app()
+      )
     })
   }
 
