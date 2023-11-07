@@ -2,7 +2,9 @@
 
 DOCS_VERSIONS=(
   main
-  2.x
+#   2.x
+  3.x
+  4.x
 )
 
 for version in "${DOCS_VERSIONS[@]}"; do

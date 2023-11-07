@@ -11,7 +11,7 @@ export default {
    * redirects requests to “/docs” to “/docs/{default}”.
    *
    */
-  default: '3.x',
+  default: '4.x',
 
   /**
    * --------------------------------------------------------------------------
@@ -25,6 +25,7 @@ export default {
    */
   versions: {
     // main: 'Main',
+    '4.x': '4.x',
     '3.x': '3.x',
     '2.x': '2.x',
     // '1.x': '1.x',
