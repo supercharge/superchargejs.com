@@ -13,4 +13,7 @@
       "node"
     ]
   },
+  "ts-node": {
+    "swc": true
+  }
 }
