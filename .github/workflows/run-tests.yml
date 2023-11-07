@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Clone repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Create .env file
       run: cp .env.example .env
@@ -23,21 +23,21 @@ jobs:
       run: mkdir resources/docs
 
     - name: Clone 2.x docs repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: supercharge/docs
         path: resources/docs/2.x
         ref: 2.x
 
     - name: Clone 3.x docs repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         repository: supercharge/docs
         path: resources/docs/3.x
         ref: 3.x
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
