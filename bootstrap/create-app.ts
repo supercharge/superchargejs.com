@@ -7,7 +7,7 @@ import { ErrorHandler } from '../app/errors/handler.js'
 import { Application as ApplicationContract } from '@supercharge/contracts'
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-const __dirname = Path.dirname(fileURLToPath(import.meta.url))
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const appRootDir = Path.resolve(__dirname, '..')
 
 /**
