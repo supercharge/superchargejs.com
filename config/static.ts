@@ -1,4 +1,3 @@
-'use strict'
 
 import { Env } from '@supercharge/facades'
 
@@ -16,7 +15,7 @@ export default {
    *   - `maxage: 30` caches a resource for the next 30s
    *
    */
-  maxage: Env.get('STATIC_MAXAGE', 0),
+  maxage: Env.number('STATIC_MAXAGE', 0),
 
   /**
    * --------------------------------------------------------------------------
@@ -28,7 +27,7 @@ export default {
    * middleware to respond first, before serving static assets.
    *
    */
-  defer: Env.get('STATIC_DEFER', false),
+  defer: Env.boolean('STATIC_DEFER', false),
 
   /**
    * --------------------------------------------------------------------------
@@ -40,7 +39,7 @@ export default {
    * and serving hidden files may have security implications.
    *
    */
-  hidden: Env.get('STATIC_SERVE_HIDDEN', false),
+  hidden: Env.boolean('STATIC_SERVE_HIDDEN', false),
 
   /**
    * --------------------------------------------------------------------------
@@ -52,5 +51,5 @@ export default {
    * request using the router. You may use a static file instead.
    *
    */
-  index: Env.get('STATIC_INDEX', false),
+  index: Env.boolean('STATIC_INDEX', false),
 }

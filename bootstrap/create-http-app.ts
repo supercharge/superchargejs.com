@@ -1,7 +1,6 @@
-'use strict'
 
-import { createApp } from './create-app'
-import { HttpKernel } from '../app/http/kernel'
+import { createApp } from './create-app.js'
+import { HttpKernel } from '../app/http/kernel.js'
 
 /**
  * Creates and returns an HTTP application instance.

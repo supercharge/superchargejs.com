@@ -1,4 +1,3 @@
-'use strict'
 
 import { Controller } from '@supercharge/http'
 import { HttpContext, HttpRedirect } from '@supercharge/contracts'

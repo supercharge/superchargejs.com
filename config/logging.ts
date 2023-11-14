@@ -1,6 +1,5 @@
-'use strict'
 
-import Path from 'path'
+import Path from 'node:path'
 import { App, Env } from '@supercharge/facades'
 
 export default {

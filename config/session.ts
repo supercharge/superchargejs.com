@@ -1,6 +1,5 @@
-'use strict'
 
-import Str from '@supercharge/strings'
+import { Str } from '@supercharge/strings'
 import { App, Env } from '@supercharge/facades'
 
 export default {

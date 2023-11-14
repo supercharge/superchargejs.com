@@ -1,9 +1,8 @@
-'use strict'
 
 import Path from 'path'
 import { Facade } from '@supercharge/facades'
 import { Application } from '@supercharge/core'
-import { ErrorHandler } from '../app/errors/handler'
+import { ErrorHandler } from '../app/errors/handler.js'
 import { Application as ApplicationContract } from '@supercharge/contracts'
 
 /**

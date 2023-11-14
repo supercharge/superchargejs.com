@@ -1,8 +1,7 @@
-'use strict'
 
-import { BodyparserOptions } from '@supercharge/contracts'
+import { BodyparserConfig } from '@supercharge/contracts'
 
-const bodyparserConfig: BodyparserOptions = {
+const bodyparserConfig: BodyparserConfig = {
   /**
    * --------------------------------------------------------------------------
    * Request Payload Encoding
@@ -157,6 +156,15 @@ const bodyparserConfig: BodyparserOptions = {
      * This option configures the limit of an uploaded file.
      */
     maxFileSize: '200mb',
+
+    /**
+     * ------------------------------------------------------------------------
+     * Multipart Batch File Size Limit
+     * ------------------------------------------------------------------------
+     *
+     * This option configures the size limit of all uploaded files.
+     */
+    maxTotalFileSize: '200mb',
 
     /**
      * ------------------------------------------------------------------------

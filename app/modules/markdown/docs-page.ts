@@ -1,6 +1,5 @@
-'use strict'
 
-import Str from '@supercharge/strings'
+import { Str } from '@supercharge/strings'
 
 export class DocsPage {
   /**

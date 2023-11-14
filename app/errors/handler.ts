@@ -1,4 +1,3 @@
-'use strict'
 
 import { ErrorHandler as Handler } from '@supercharge/core'
 

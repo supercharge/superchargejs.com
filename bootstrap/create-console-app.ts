@@ -1,7 +1,6 @@
-'use strict'
 
-import { createApp } from './create-app'
-import { ConsoleKernel } from '../app/console/kernel'
+import { createApp } from './create-app.js'
+import { ConsoleKernel } from '../app/console/kernel.js'
 import { ConsoleKernel as ConsoleKernelContract } from '@supercharge/contracts'
 
 /**

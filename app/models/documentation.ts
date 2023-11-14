@@ -1,9 +1,8 @@
-'use strict'
 
 import Fs from '@supercharge/fs'
-import Str from '@supercharge/strings'
+import { Str } from '@supercharge/strings'
 import { Application } from '@supercharge/contracts'
-import { MarkdownRenderer } from '../modules/markdown/markdown-renderer'
+import { MarkdownRenderer } from '../modules/markdown/markdown-renderer.js'
 
 export class Documentation {
   private readonly app: Application

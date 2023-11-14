@@ -1,4 +1,3 @@
-'use strict'
 
 // import Middleware from '@supercharge/http-server/middleware/verify-csrf-token'
 

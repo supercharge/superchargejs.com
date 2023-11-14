@@ -1,8 +1,7 @@
-'use strict'
 
-import Str from '@supercharge/strings'
+import { Str } from '@supercharge/strings'
 import { Controller } from '@supercharge/http'
-import { Documentation } from '../../models/documentation'
+import { Documentation } from '../../models/documentation.js'
 import { Application, HttpContext, HttpResponse } from '@supercharge/contracts'
 
 export class ShowDocsVersion extends Controller {
@@ -39,8 +38,8 @@ export class ShowDocsVersion extends Controller {
    * Handle the given request.
    */
   async handle ({ request, response }: HttpContext): Promise<any> {
-    const page = request.params().get('page', 'installation') as string
-    const version = request.params().get('version') as string
+    const page = request.params<{ page?: string }>().get<string>('page', 'installation')
+    const version = request.params<{ version: string }>().get('version')
 
     this.meta.docs = new Documentation(this.app, version)
 

@@ -1,4 +1,3 @@
-'use strict'
 
 import { RouteServiceProvider as ServiceProvider } from '@supercharge/core'
 

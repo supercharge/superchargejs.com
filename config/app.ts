@@ -1,4 +1,3 @@
-'use strict'
 
 import { App, Env } from '@supercharge/facades'
 

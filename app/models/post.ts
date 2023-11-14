@@ -1,11 +1,10 @@
-'use strict'
 
 import Fs from '@supercharge/fs'
-import Str from '@supercharge/strings'
+import { Str } from '@supercharge/strings'
 import FrontMatter from 'front-matter'
 import { tap } from '@supercharge/goodies'
 import { Application } from '@supercharge/contracts'
-import { MarkdownRenderer } from '../modules/markdown/markdown-renderer'
+import { MarkdownRenderer } from '../modules/markdown/markdown-renderer.js'
 
 export class Post {
   /**
@@ -43,6 +42,7 @@ export class Post {
    * @returns {Post}
    */
   static async createFrom (raw: string, app: Application): Promise<Post> {
+    // @ts-expect-error TODO: fix this
     const parsed = FrontMatter<PostAttributes>(raw)
 
     return new this()

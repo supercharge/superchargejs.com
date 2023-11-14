@@ -1,4 +1,3 @@
-'use strict'
 
 import { createHttpApp } from './bootstrap/create-http-app'
 

@@ -1,4 +1,3 @@
-'use strict'
 
 import { Env } from '@supercharge/facades'
 
@@ -11,7 +10,7 @@ export default {
    * This setting defines the `Access-Control-Max-Age` header in seconds.
    *
    */
-  maxAge: Env.get('STATIC_MAXAGE', 0),
+  maxAge: Env.number('STATIC_MAXAGE', 0),
 
   /**
    * --------------------------------------------------------------------------

@@ -1,9 +1,8 @@
-'use strict'
 
 import { MiddlewareCtor } from '@supercharge/contracts'
 import { HttpKernel as Kernel } from '@supercharge/core'
-import { ServeStaticAssets } from './middleware/serve-static-assets'
 import { HandleCorsMiddleware as HandleCors } from '@supercharge/http'
+import { ServeStaticAssets } from './middleware/serve-static-assets.js'
 
 export class HttpKernel extends Kernel {
   /**

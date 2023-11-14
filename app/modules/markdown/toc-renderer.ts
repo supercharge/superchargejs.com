@@ -1,6 +1,5 @@
-'use strict'
 
-import { marked, Renderer, Slugger } from 'marked'
+import { marked, MarkedOptions, Renderer, Slugger } from 'marked'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
@@ -21,7 +20,7 @@ export class TableOfContentsRenderer extends Renderer {
   /**
    * Create a new renderer instance.
    */
-  constructor (options?: marked.MarkedOptions) {
+  constructor (options?: MarkedOptions) {
     super(options)
 
     this.meta = { headings: [] }

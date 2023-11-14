@@ -1,4 +1,3 @@
-'use strict'
 
 import { ServeStaticAssetsMiddleware as Middleware } from '@supercharge/http'
 
@@ -9,6 +8,7 @@ export class ServeStaticAssets extends Middleware {
    * @returns {String}
    */
   override assetsLocation (): string {
+    this.app.logger().alert('public path ' + this.app.publicPath())
     return this.app.publicPath()
   }
 }

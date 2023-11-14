@@ -1,7 +1,6 @@
-'use strict'
 
 import { Highlighter } from 'shiki'
-import { marked, Renderer, Slugger } from 'marked'
+import { marked, MarkedOptions, Renderer, Slugger } from 'marked'
 
 type AlertTypes = 'success' | 'info' | 'warning'
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
@@ -15,7 +14,7 @@ export class DocsRenderer extends Renderer {
   /**
    * Create a new renderer instance.
    */
-  constructor (highlighter: Highlighter, options?: marked.MarkedOptions) {
+  constructor (highlighter: Highlighter, options?: MarkedOptions) {
     super(options)
 
     this.highlighter = highlighter
@@ -23,11 +22,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the HTML for the given heading `text` and `level`.
-   *
-   * @param {String} text
-   * @param {HeadingLevel} level
-   *
-   * @returns {String}
    */
   override heading (text: string, level: HeadingLevel, _raw: string, slugger: Slugger): string {
     if (level === 1) {
@@ -46,8 +40,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the SVG HTML of a bookmark icon.
-   *
-   * @returns {String}
    */
   private bookmarkIcon (): string {
     return `
@@ -65,11 +57,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the HTML for the given table `header` and `body`.
-   *
-   * @param header
-   * @param body
-   *
-   * @returns {String}
    */
   override table (header: string, body: string): string {
     return `<table class="table-auto">
@@ -80,11 +67,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the HTML for the a list.
-   *
-   * @param body
-   * @param ordered
-   *
-   * @returns {String}
    */
   override list (body: string, ordered: boolean): string {
     return ordered
@@ -94,12 +76,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the HTML for the given code block.
-   *
-   * @param {String} content
-   * @param {String} language
-   * @param {Boolean} escaped
-   *
-   * @returns {String}
    */
   override code (content: string, language: string): string {
     if (this.isAlert(language)) {
@@ -111,10 +87,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Determine whether the given code `language` is an alert.
-   *
-   * @param {String} language
-   *
-   * @returns {Boolean}
    */
   private isAlert (language: string): language is AlertTypes {
     return ['info', 'success', 'warning'].includes(language)
@@ -122,11 +94,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the rendered alert block for the given `content`.
-   *
-   * @param {String} content
-   * @param {AlertTypes} language
-   *
-   * @returns {String}
    */
   private renderAlert (content: string, language: AlertTypes): string {
     const html = marked(content)
@@ -141,8 +108,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the SVG HTML of an info icon.
-   *
-   * @returns {String}
    */
   private alertIconFor (type: AlertTypes): string {
     switch (type) {
@@ -159,8 +124,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the SVG HTML of an info icon.
-   *
-   * @returns {String}
    */
   private alertSuccessIcon (): string {
     return `
@@ -179,8 +142,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the SVG HTML of an info icon.
-   *
-   * @returns {String}
    */
   private alertInfoIcon (): string {
     return `
@@ -201,8 +162,6 @@ export class DocsRenderer extends Renderer {
 
   /**
    * Returns the SVG HTML of an info icon.
-   *
-   * @returns {String}
    */
   private alertWarningIcon (): string {
     return `
