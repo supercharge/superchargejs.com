@@ -5,6 +5,6 @@
  *
  * @returns {String}
  */
-module.exports = function docsVersion (version) {
+export default function docsVersion (version) {
   return version || '2.x'
 }

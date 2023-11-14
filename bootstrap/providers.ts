@@ -4,8 +4,6 @@ import { ServiceProviderCtor } from '@supercharge/contracts'
 import { RouteServiceProvider } from '../app/providers/route-service-provider.js'
 import { MarkdownServiceProvider } from '../app/modules/markdown/markdown-service-provider.js'
 
-console.log('puper')
-
 export const providers: ServiceProviderCtor[] = [
   /**
    * All listed providers will be registered and booted while starting

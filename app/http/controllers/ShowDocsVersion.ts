@@ -61,7 +61,7 @@ export class ShowDocsVersion extends Controller {
       currentPage: page,
       docsContent: content,
       versions: this.docs().versions(),
-      navigation: this.docs().navigation(),
+      navigation: await this.docs().navigation(),
       currentVersion: this.docs().versions()[version],
     })
   }

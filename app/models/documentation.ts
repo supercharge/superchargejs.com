@@ -21,9 +21,9 @@ export class Documentation {
    *
    * @returns {String}
    */
-  navigation (): string {
-    return require(
-      this.app.resourcePath(`docs/${this.version}/navigation`)
+  async navigation (): Promise<string> {
+    return await import(
+      this.app.resourcePath(`docs/${this.version}/navigation.js`)
     )
   }
 
