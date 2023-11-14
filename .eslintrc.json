@@ -17,6 +17,7 @@
     "@typescript-eslint/comma-dangle": [
       "error",
       "only-multiline"
-    ]
+    ],
+    "@typescript-eslint/no-empty-interface": 0
   }
 }
