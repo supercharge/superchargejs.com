@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [20.x]
 
     name: Node ${{ matrix.node-version }}
 
@@ -37,12 +37,12 @@ jobs:
         ref: 3.x
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: npm install
 
     - name: Run tests
       run: npm test
