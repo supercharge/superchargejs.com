@@ -1,7 +1,7 @@
 import { test } from 'uvu'
-import expect from 'expect'
+import { expect } from 'expect'
 import Supertest from 'supertest'
-import { createHttpApp } from '../bootstrap/create-http-app'
+import { createHttpApp } from '../bootstrap/create-http-app.js'
 
 const httpKernel = createHttpApp()
 

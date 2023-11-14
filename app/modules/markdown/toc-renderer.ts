@@ -1,5 +1,6 @@
 
-import { marked, MarkedOptions, Renderer, Slugger } from 'marked'
+import { Str } from '@supercharge/strings'
+import { MarkedOptions, Renderer } from 'marked'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
@@ -43,9 +44,9 @@ export class TableOfContentsRenderer extends Renderer {
    *
    * @returns {String}
    */
-  override heading (text: string, level: HeadingLevel, _raw: string, slugger: Slugger): string {
+  override heading (text: string, level: HeadingLevel, _raw: string): string {
     if ([2, 3].includes(level)) {
-      this.headings().push({ text, level, slug: slugger.slug(text) })
+      this.headings().push({ text, level, slug: Str(text).slug().get() })
     }
 
     return ''

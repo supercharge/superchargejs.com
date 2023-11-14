@@ -1,6 +1,7 @@
 
 import { Highlighter } from 'shiki'
-import { marked, MarkedOptions, Renderer, Slugger } from 'marked'
+import { Str } from '@supercharge/strings'
+import { marked, MarkedOptions, Renderer } from 'marked'
 
 type AlertTypes = 'success' | 'info' | 'warning'
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
@@ -23,12 +24,12 @@ export class DocsRenderer extends Renderer {
   /**
    * Returns the HTML for the given heading `text` and `level`.
    */
-  override heading (text: string, level: HeadingLevel, _raw: string, slugger: Slugger): string {
+  override heading (text: string, level: HeadingLevel, _raw: string): string {
     if (level === 1) {
       return `<h1>${text}</h1>`
     }
 
-    const slug = slugger.slug(text)
+    const slug = Str(text).slug().get()
 
     return `<h${level} class="flex items-center" id="${slug}">
               <a href="#${slug}" name="${slug}" class="p-1 -ml-1 md:-ml-8 mr-2 hover:bg-slate-100 rounded">

@@ -105,13 +105,7 @@ export class MarkdownRenderer {
    * Returns the rendered HTML of the given `markdown` content.
    */
   async render (markdown: string, options?: MarkedOptions): Promise<string> {
-    return new Promise((resolve, reject) => {
-      this.renderer(markdown, this.rendererConfig(options), (error, html) => {
-        error
-          ? reject(error)
-          : resolve(html)
-      })
-    })
+    return await this.renderer(markdown, this.rendererConfig(options))
   }
 
   /**
