@@ -28,6 +28,7 @@
     "@types/node": "~20.9.1",
     "@types/supertest": "~2.0.16",
     "autoprefixer": "~10.4.16",
+    "bun-types": "~1.0.12",
     "c8": "~8.0.1",
     "concurrently": "~8.2.2",
     "cssnano": "~6.0.1",
@@ -62,7 +63,6 @@
     "tsc:check": "tsc --noEmit --skipLibCheck",
     "dev:tsc:check": "npm run tsc:check -- --watch",
     "test": "npm run lint && npm run test:run",
-    "test:run": "c8 --include=dist uvu -r ts-node/register",
-    "posttest": "c8 report --reporter=html"
+    "test:run": "bun test --coverage"
   }
 }
