@@ -15,9 +15,9 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        bun-version: [1.0.x]
 
-    name: Node ${{ matrix.node-version }}
+    name: Bun ${{ matrix.bun-version }}
 
     steps:
     - name: Clone repository
@@ -43,15 +43,20 @@ jobs:
         path: resources/docs/3.x
         ref: 3.x
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+
+    - name: Use Bun ${{ matrix.bun-version }}
+      uses: oven-sh/setup-bun@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        bun-version: ${{ matrix.bun-version }}
 
     - name: Install dependencies
-      run: npm install
+      run: bun install
 
     - name: Run tests
-      run: npm test
+      run: bun test
       env:
         CI: true
