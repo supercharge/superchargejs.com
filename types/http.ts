@@ -1,4 +1,6 @@
 
+import '@supercharge/contracts'
+
 declare module '@supercharge/contracts' {
   export interface HttpRequestHeaders {
     // add custom HTTP request headers, like
