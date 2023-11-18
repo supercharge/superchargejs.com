@@ -1,6 +1,9 @@
 name: Run tests
 
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
 
 concurrency:
   # the group name is composed of two elements:
