@@ -10,7 +10,8 @@
   "compilerOptions": {
     "outDir": "./dist",
     "types": [
-      "node"
+      "node",
+      "bun-types"
     ]
   },
   "ts-node": {
