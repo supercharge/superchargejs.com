@@ -1,9 +1,8 @@
-'use strict'
 
 import { ViewServiceProvider } from '@supercharge/view'
 import { ServiceProviderCtor } from '@supercharge/contracts'
-import { RouteServiceProvider } from '../app/providers/route-service-provider'
-import { MarkdownServiceProvider } from '../app/modules/markdown/markdown-service-provider'
+import { RouteServiceProvider } from '../app/providers/route-service-provider.js'
+import { MarkdownServiceProvider } from '../app/modules/markdown/markdown-service-provider.js'
 
 export const providers: ServiceProviderCtor[] = [
   /**

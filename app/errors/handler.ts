@@ -1,4 +1,3 @@
-'use strict'
 
 import { ErrorHandler as Handler } from '@supercharge/core'
 
@@ -8,6 +7,10 @@ export class ErrorHandler extends Handler {
    * upstream to an error tracking service, like Sentry or Bugsnag.
    */
   override register (): void {
+    this.reportable(async (error) => {
+      this.logger().error('Received error -->', error)
+    })
+
     // this.reportable(async (ctx, error) => {
     //   await this.sendToIssueTracker(error)
     // })

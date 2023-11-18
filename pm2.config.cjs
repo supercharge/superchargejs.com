@@ -4,8 +4,16 @@ module.exports = {
   apps: [
     {
       name: 'superchargejs.com',
-      script: './node_modules/ts-node/dist/bin.js',
+      /**
+       * ts-node doesn’t work with ESM as of Nov, 18th 2023. We need to use a different
+       * tool to run the project. We decided to use Bun instead of Node.js because
+       * this project is simple and Bun runs TypeScript without extra tooling.
+       */
+      // script: './node_modules/ts-node/dist/bin.js',
+      // args: 'server.ts',
+      interpreter: '~/.bun/bin/bun',
       args: 'server.ts',
+
       exec_mode: 'cluster',
       instances: 2,
 

@@ -1,6 +1,6 @@
-'use strict'
 
-import { marked, Renderer, Slugger } from 'marked'
+import { Str } from '@supercharge/strings'
+import { MarkedOptions, Renderer } from 'marked'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
@@ -21,7 +21,7 @@ export class TableOfContentsRenderer extends Renderer {
   /**
    * Create a new renderer instance.
    */
-  constructor (options?: marked.MarkedOptions) {
+  constructor (options?: MarkedOptions) {
     super(options)
 
     this.meta = { headings: [] }
@@ -29,8 +29,6 @@ export class TableOfContentsRenderer extends Renderer {
 
   /**
    * Returns the list of headings.
-   *
-   * @returns {Heading[]}
    */
   headings (): Heading[] {
     return this.meta.headings
@@ -38,15 +36,10 @@ export class TableOfContentsRenderer extends Renderer {
 
   /**
    * Returns the HTML for the given heading `text` and `level`.
-   *
-   * @param {String} text
-   * @param {HeadingLevel} level
-   *
-   * @returns {String}
    */
-  override heading (text: string, level: HeadingLevel, _raw: string, slugger: Slugger): string {
+  override heading (text: string, level: HeadingLevel, _raw: string): string {
     if ([2, 3].includes(level)) {
-      this.headings().push({ text, level, slug: slugger.slug(text) })
+      this.headings().push({ text, level, slug: Str(text).slug().get() })
     }
 
     return ''

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { createConsoleApp } from './bootstrap/create-console-app'
+import { createConsoleApp } from './bootstrap/create-console-app.js'
 
 /**
  * Start a command line application, called “craft”. Craft commands

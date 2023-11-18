@@ -10,10 +10,12 @@
   "compilerOptions": {
     "outDir": "./dist",
     "types": [
-      "node"
+      "node",
+      "bun-types"
     ]
   },
   "ts-node": {
-    "swc": true
+    "swc": true,
+    "esm": true,
   }
 }

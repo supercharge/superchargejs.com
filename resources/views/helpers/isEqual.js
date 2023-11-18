@@ -1,6 +1,6 @@
 'use strict'
 
-function isEqual (first, second, options) {
+export default function isEqual (first, second, options) {
   if (arguments.length < 3) {
     throw new Error('Handlebars Helper "isEqual" needs 2 parameters')
   }
@@ -11,5 +11,3 @@ function isEqual (first, second, options) {
 
   return options.inverse(this)
 }
-
-module.exports = isEqual

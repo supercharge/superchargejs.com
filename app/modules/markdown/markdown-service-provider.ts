@@ -1,7 +1,6 @@
-'use strict'
 
 import { ServiceProvider } from '@supercharge/support'
-import { MarkdownRenderer } from './markdown-renderer'
+import { MarkdownRenderer } from './markdown-renderer.js'
 
 export class MarkdownServiceProvider extends ServiceProvider {
   /**
