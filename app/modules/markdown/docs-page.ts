@@ -16,8 +16,6 @@ export class DocsPage {
 
   /**
    * Returns the lines as an array.
-   *
-   * @returns {String[]}
    */
   lines (): string[] {
     return Str(this.markdown).lines()
@@ -25,8 +23,6 @@ export class DocsPage {
 
   /**
    * Returns the document’s title. Returns `undefined` if the document doesn’t have a title.
-   *
-   * @returns {String|undefined}
    */
   title (): string | undefined {
     return this.lines().find(line => {
@@ -36,8 +32,6 @@ export class DocsPage {
 
   /**
    * Returns the document’s title or the given `defaultValue`.
-   *
-   * @returns {String}
    */
   titleOr (defaultValue: string): string {
     return this.title() ?? defaultValue
@@ -45,8 +39,6 @@ export class DocsPage {
 
   /**
    * Returns the document’s content.
-   *
-   * @returns {String}
    */
   content (): string {
     return this.lines().filter(line => {

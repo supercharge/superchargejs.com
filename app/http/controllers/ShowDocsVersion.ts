@@ -23,8 +23,6 @@ export class ShowDocsVersion extends Controller {
 
   /**
    * Returns the documentation instance.
-   *
-   * @returns {Documentation}
    */
   docs (): Documentation {
     if (this.meta.docs) {
@@ -38,7 +36,7 @@ export class ShowDocsVersion extends Controller {
    * Handle the given request.
    */
   async handle ({ request, response }: HttpContext): Promise<any> {
-    const page = request.params<{ page?: string }>().get<string>('page', 'installation')
+    const page = request.params<{ page?: string }>().get('page', 'installation')
     const version = request.params<{ version: string }>().get('version')
 
     this.meta.docs = new Documentation(this.app, version)
@@ -68,11 +66,6 @@ export class ShowDocsVersion extends Controller {
 
   /**
    * Redirect to the docs default version.
-   *
-   * @param response
-   * @param page
-   *
-   * @returns
    */
   private redirectToDefaultVersion (response: HttpResponse, page: string): any {
     return response.redirect().to(`/docs/${this.docs().defaultVersion()}/${page}`)

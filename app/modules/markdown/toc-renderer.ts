@@ -29,8 +29,6 @@ export class TableOfContentsRenderer extends Renderer {
 
   /**
    * Returns the list of headings.
-   *
-   * @returns {Heading[]}
    */
   headings (): Heading[] {
     return this.meta.headings
@@ -38,11 +36,6 @@ export class TableOfContentsRenderer extends Renderer {
 
   /**
    * Returns the HTML for the given heading `text` and `level`.
-   *
-   * @param {String} text
-   * @param {HeadingLevel} level
-   *
-   * @returns {String}
    */
   override heading (text: string, level: HeadingLevel, _raw: string): string {
     if ([2, 3].includes(level)) {

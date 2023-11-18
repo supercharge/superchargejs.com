@@ -30,8 +30,6 @@ export class HttpKernel extends Kernel {
   /**
    * Returns the application’s global middleware stack. Every middleware
    * listed here runs on every request to the application.
-   *
-   * @returns {MiddlewareCtor[]}
    */
   override middleware (): MiddlewareCtor[] {
     return [
@@ -53,8 +51,6 @@ export class HttpKernel extends Kernel {
    *   Route.get('/profile', …)
    * })
    * ```
-   *
-   * @returns {Object}
    */
   override routeMiddleware (): { [name: string]: MiddlewareCtor} {
     return {

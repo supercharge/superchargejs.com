@@ -17,8 +17,6 @@ export class ShowNews extends Controller {
 
   /**
    * Returns the list of published posts, ordered DESC by publishedAt date.
-   *
-   * @returns {Object[]}
    */
   async publishedPosts (): Promise<object[]> {
     const posts = await this.loadPosts()
@@ -34,8 +32,6 @@ export class ShowNews extends Controller {
 
   /**
    * Load all news posts.
-   *
-   * @returns {Post[]}
    */
   async loadPosts (): Promise<Post[]> {
     return await Collect(
