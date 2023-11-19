@@ -9,7 +9,7 @@ module.exports = {
        * tool to run the project. We decided to use tsx instead of Node.js because
        * this project is simple and tsx runs TypeScript without extra tooling.
        */
-      script: 'tsx',
+      script: 'server.ts',
       interpreter: 'node',
       interpreter_args: '--import tsx',
 
