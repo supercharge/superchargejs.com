@@ -6,12 +6,11 @@ module.exports = {
       name: 'superchargejs.com',
       /**
        * ts-node doesn’t work with ESM as of Nov, 18th 2023. We need to use a different
-       * tool to run the project. We decided to use tsx instead of Node.js because
-       * this project is simple and tsx runs TypeScript without extra tooling.
+       * tool to run the project. We decided to use Bun instead of Node.js because
+       * this project is simple and Bun runs TypeScript without extra tooling.
        */
-      script: 'tsx',
-      interpreter: 'node',
-      interpreter_args: '--import tsx',
+      // script: './node_modules/ts-node/dist/bin.js',
+      // args: 'server.ts',
 
       exec_mode: 'cluster',
       instances: 2,
@@ -23,7 +22,12 @@ module.exports = {
        * the configured `listen-timeout` before marking the app as ready.
        */
       wait_ready: true,
-      listen_timeout: 15_000
+      listen_timeout: 15_000,
+
+      env: {
+        NODE_ENV: 'production',
+        PORT: 2021
+      }
     }
   ]
 }

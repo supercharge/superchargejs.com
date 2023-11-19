@@ -4,17 +4,15 @@ module.exports = {
   apps: [
     {
       name: 'superchargejs.com',
-      /**
-       * ts-node doesn’t work with ESM as of Nov, 18th 2023. We need to use a different
-       * tool to run the project. We decided to use tsx instead of Node.js because
-       * this project is simple and tsx runs TypeScript without extra tooling.
-       */
-      script: 'tsx',
-      interpreter: 'node',
-      interpreter_args: '--import tsx',
+      interpreter: 'bun',
+      script: 'server.ts',
 
-      exec_mode: 'cluster',
-      instances: 2,
+      /**
+       * cluster mode is not working when using a custom "interpreter"
+       * @see https://github.com/Unitech/pm2/issues/1575
+       */
+      // exec_mode: 'cluster',
+      // instances: 2,
 
       /**
        * The `wait-ready` and `listen-timeout` settings support graceful restarts in a
@@ -23,7 +21,7 @@ module.exports = {
        * the configured `listen-timeout` before marking the app as ready.
        */
       wait_ready: true,
-      listen_timeout: 15_000
+      listen_timeout: 15_000,
     }
   ]
 }
