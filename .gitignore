@@ -21,6 +21,8 @@ dist
 node_modules
 npm-debug.log
 .swc
+package-lock.json
+bun.lockb
 
 # Docs
 resources/docs
