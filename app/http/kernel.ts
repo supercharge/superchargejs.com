@@ -20,10 +20,9 @@ export class HttpKernel extends Kernel {
    * us to make use of zero-downtime restarts keeping processes available.
    */
   private sendReadySignal (): void {
-    if (process.send) {
-      this.app().logger().info('Sent "ready" signal to the PM2 process')
-
+    if (typeof process.send === 'function') {
       process.send('ready')
+      this.app().logger().info('Sent process "ready" signal')
     }
   }
 
