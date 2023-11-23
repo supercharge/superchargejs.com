@@ -4,6 +4,7 @@ module.exports = {
   apps: [
     {
       name: 'superchargejs.com',
+
       /**
        * ts-node doesn’t work with ESM as of Nov, 18th 2023. We need to use a different
        * tool to run the project. We decided to use tsx instead of Node.js because
